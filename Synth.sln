@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SynthEngine", "SynthEngine\SynthEngine.csproj", "{643FADF2-DFB5-4B52-A93C-D150EF22FEBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{DF6C25BF-E965-4385-B6F2-B829245CC3DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{643FADF2-DFB5-4B52-A93C-D150EF22FEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{643FADF2-DFB5-4B52-A93C-D150EF22FEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{643FADF2-DFB5-4B52-A93C-D150EF22FEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{643FADF2-DFB5-4B52-A93C-D150EF22FEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF6C25BF-E965-4385-B6F2-B829245CC3DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6C25BF-E965-4385-B6F2-B829245CC3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6C25BF-E965-4385-B6F2-B829245CC3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6C25BF-E965-4385-B6F2-B829245CC3DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BC562EF-DD69-4F37-911E-6BCCE461163F}
+	EndGlobalSection
+EndGlobal
