@@ -4,6 +4,9 @@ using System.Windows.Forms;
 
 namespace Synth.Modules.Modifiers.Filters {
 
+    //  Need to calibrate cutoff and modulator properties
+
+
     public class VCF : iModule {
         #region Enums
         public enum eFilterType { 
@@ -36,12 +39,13 @@ namespace Synth.Modules.Modifiers.Filters {
                 _Filter.Cutoff = _cutoff; }
         }
 
-        private double _cv;
-        public double CV {
-            get { return _cv; }
+        private iModule? _modulator;
+        public iModule? Modulator {
+            get { return _modulator; }
             set {
-                _cv = value;
-                _Filter.CV = _cv; 
+                Debug.Assert(value != null);
+                _modulator = value;
+                _Filter.Modulator = _modulator; 
             }
         }
 
@@ -118,7 +122,8 @@ namespace Synth.Modules.Modifiers.Filters {
                 if(_source != null)
                     _Filter.Source = _source;
                 _Filter.Cutoff = _cutoff;
-                _Filter.CV = _cv;
+                if(_modulator != null)
+                    _Filter.Modulator = _modulator;
                 if (_Filter.GetType() == typeof(BandPass))
                     ((BandPass)_Filter).Bandwidth = _bandwidth;
                 else if (_Filter.GetType() == typeof(Notch))

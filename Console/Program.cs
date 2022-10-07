@@ -73,18 +73,18 @@ void init() {
 
 
     vcf.Source = m;
-    vcf.FilterType = VCF.eFilterType.Butterworth;
-    vcf.Cutoff = .5;
-    vcf.CV = mw.Value;
-    vcf.Resonance = 1;
+    vcf.FilterType = VCF.eFilterType.Notch;
+    vcf.Cutoff = 1.2;
+    vcf.Modulator = mw;
+    vcf.Resonance = 5;
 
 
 
-    env2.Keyboard = kbd;
-    env2.Release = 1;
+    env1.Keyboard = kbd;
+    env1.Release = 1;
 
     vca.Source = vcf;
-    vca.Modulator = env2;
+    vca.Modulator = env1;
 
     output.Source = vca;
 
@@ -97,7 +97,6 @@ void init() {
     engine.Modules.Add(m);
     engine.Modules.Add(env1);
     engine.Modules.Add(vcf);
-    engine.Modules.Add(env2);
     engine.Modules.Add(vca);
 
 

@@ -3,7 +3,7 @@ internal class RC : iFilter {
     #region Public Properties
     public iModule Source { get; set; } = new NullModule();
     public double Cutoff { get; set; }
-    public double CV { get; set; }
+    public iModule Modulator { get; set; } = new NullModule();
     #endregion
 
     #region Private Poperties
@@ -15,7 +15,7 @@ internal class RC : iFilter {
         if (Source == null)
             return;
 
-        double fc = Math.Pow(2, 5 * Cutoff + 4 * CV + 7);
+        double fc = Math.Pow(2, 5 * Cutoff + 4 * Modulator?.Value ?? 0 + 7);
 
         double RC = 1.0 / (2 * Math.PI * fc);
         double dt = 1.0 / 1 / timeIncrement;

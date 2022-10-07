@@ -3,7 +3,7 @@ internal class Notch : iFilter {
     #region Public Properties
     public iModule Source { get; set; } = new NullModule();
     public double Cutoff { get; set; }
-    public double CV { get; set; }
+    public iModule Modulator { get; set; } = new NullModule();
     public double Bandwidth;
     public double Attenuation;
     #endregion
@@ -27,7 +27,7 @@ internal class Notch : iFilter {
         if (!double.IsFinite(prevPrevOut))
             prevPrevOut = 0;
 
-        double fc = Math.Min(Math.Pow(2, 5 * Cutoff + 4 * CV + 7), 20000);
+        double fc = Math.Min(Math.Pow(2, 5 * Cutoff + 4 * Modulator?.Value ?? 0 + 7), 20000);
 
         double w0 = fc * 2 * Math.PI;
         double K = w0 / Math.Tan(w0 * timeIncrement / 2);

@@ -4,5 +4,5 @@ public interface iFilter : iModule
 {
     public iModule Source { get; set; }
     public double Cutoff { get; set; }
-    public double CV { get; set; }
+    public iModule Modulator { get; set; }
 }
