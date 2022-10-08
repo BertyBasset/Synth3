@@ -1,3 +1,17 @@
+// To DO
+//.5 Labels for Waveform/Octave knobs
+// 1 Switches
+// 2 Easy way of binding controls to synth
+// 3 Hook up UI to Synth
+// 4 Stop flickering when redrawing
+// 5 Smoother mouse operation
+// 6 Modulaiton MAtrix System
+// 7 Patch Save/REcall
+// 8 Effects Section
+// 9 Midi filter, show gate
+
+
+
 using Synth.IO;
 using Synth.Modules.Modifiers;
 using Synth.Modules.Modifiers.Filters;

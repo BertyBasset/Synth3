@@ -11,11 +11,7 @@ using System.Windows.Markup;
 
 namespace UI.Controls {
     public partial class Knob : UserControl {
-        // To DO
-        // 1 Easy way of binding controls to synth
-        // 2 Stop flickering when redrawing
-        // 3 Smoother mouse operation
-        // 4 Limit to Divisions peoperty  DONE
+
 
         int _oldIntValue = 0;
 
