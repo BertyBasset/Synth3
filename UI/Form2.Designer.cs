@@ -29,13 +29,15 @@
             // knob1
             // 
             this.knob1.BackColor = System.Drawing.Color.Navy;
+            this.knob1.Divisions = 10;
             this.knob1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.knob1.LabelText = "Test";
-            this.knob1.Location = new System.Drawing.Point(221, 149);
+            this.knob1.Location = new System.Drawing.Point(215, 127);
+            this.knob1.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Dot;
             this.knob1.Max = 1D;
             this.knob1.Min = 0D;
             this.knob1.Name = "knob1";
-            this.knob1.Size = new System.Drawing.Size(96, 96);
+            this.knob1.Size = new System.Drawing.Size(90, 95);
             this.knob1.TabIndex = 0;
             this.knob1.Thickness = 2;
             this.knob1.Value = 1D;

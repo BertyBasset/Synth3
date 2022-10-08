@@ -24,6 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
             this.lblLabelText = new System.Windows.Forms.Label();
+            this.lbl0 = new System.Windows.Forms.Label();
+            this.lbl10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblLabelText
@@ -38,18 +40,47 @@
             this.lblLabelText.Text = "label1";
             this.lblLabelText.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // lbl0
+            // 
+            this.lbl0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl0.AutoSize = true;
+            this.lbl0.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl0.Location = new System.Drawing.Point(6, 123);
+            this.lbl0.Name = "lbl0";
+            this.lbl0.Size = new System.Drawing.Size(10, 12);
+            this.lbl0.TabIndex = 1;
+            this.lbl0.Text = "0";
+            this.lbl0.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lbl10
+            // 
+            this.lbl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl10.AutoSize = true;
+            this.lbl10.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl10.Location = new System.Drawing.Point(132, 123);
+            this.lbl10.Name = "lbl10";
+            this.lbl10.Size = new System.Drawing.Size(15, 12);
+            this.lbl10.TabIndex = 2;
+            this.lbl10.Text = "10";
+            this.lbl10.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // Knob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl10);
+            this.Controls.Add(this.lbl0);
             this.Controls.Add(this.lblLabelText);
             this.Name = "Knob";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Label lblLabelText;
+        private Label lbl0;
+        private Label lbl10;
     }
 }
