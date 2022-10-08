@@ -90,6 +90,7 @@
             this.knob1.ForeColor = System.Drawing.Color.White;
             this.knob1.HideLabels = false;
             this.knob1.LabelText = "FREQUENCY";
+            this.knob1.LimitToDivisions = false;
             this.knob1.Location = new System.Drawing.Point(10, 15);
             this.knob1.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob1.Max = 1D;
@@ -107,9 +108,10 @@
             this.knob2.ForeColor = System.Drawing.Color.White;
             this.knob2.HideLabels = true;
             this.knob2.LabelText = "OCTAVE";
+            this.knob2.LimitToDivisions = true;
             this.knob2.Location = new System.Drawing.Point(84, 15);
             this.knob2.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob2.Max = 100D;
+            this.knob2.Max = 4D;
             this.knob2.Min = 0D;
             this.knob2.Name = "knob2";
             this.knob2.Size = new System.Drawing.Size(77, 77);
@@ -124,6 +126,7 @@
             this.knob3.ForeColor = System.Drawing.Color.White;
             this.knob3.HideLabels = false;
             this.knob3.LabelText = "PULSE WIDTH";
+            this.knob3.LimitToDivisions = false;
             this.knob3.Location = new System.Drawing.Point(247, 15);
             this.knob3.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob3.Max = 100D;
@@ -141,9 +144,10 @@
             this.knob4.ForeColor = System.Drawing.Color.White;
             this.knob4.HideLabels = true;
             this.knob4.LabelText = "WAVEFORM";
+            this.knob4.LimitToDivisions = true;
             this.knob4.Location = new System.Drawing.Point(174, 15);
             this.knob4.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob4.Max = 100D;
+            this.knob4.Max = 4D;
             this.knob4.Min = 0D;
             this.knob4.Name = "knob4";
             this.knob4.Size = new System.Drawing.Size(77, 77);
@@ -158,9 +162,10 @@
             this.knob5.ForeColor = System.Drawing.Color.White;
             this.knob5.HideLabels = true;
             this.knob5.LabelText = "WAVEFORM";
+            this.knob5.LimitToDivisions = true;
             this.knob5.Location = new System.Drawing.Point(174, 126);
             this.knob5.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob5.Max = 100D;
+            this.knob5.Max = 4D;
             this.knob5.Min = 0D;
             this.knob5.Name = "knob5";
             this.knob5.Size = new System.Drawing.Size(77, 77);
@@ -175,6 +180,7 @@
             this.knob6.ForeColor = System.Drawing.Color.White;
             this.knob6.HideLabels = false;
             this.knob6.LabelText = "PULSE WIDTH";
+            this.knob6.LimitToDivisions = false;
             this.knob6.Location = new System.Drawing.Point(247, 126);
             this.knob6.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob6.Max = 100D;
@@ -192,9 +198,10 @@
             this.knob7.ForeColor = System.Drawing.Color.White;
             this.knob7.HideLabels = true;
             this.knob7.LabelText = "OCTAVE";
+            this.knob7.LimitToDivisions = true;
             this.knob7.Location = new System.Drawing.Point(84, 126);
             this.knob7.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob7.Max = 100D;
+            this.knob7.Max = 4D;
             this.knob7.Min = 0D;
             this.knob7.Name = "knob7";
             this.knob7.Size = new System.Drawing.Size(77, 77);
@@ -209,6 +216,7 @@
             this.knob8.ForeColor = System.Drawing.Color.White;
             this.knob8.HideLabels = false;
             this.knob8.LabelText = "FREQUENCY";
+            this.knob8.LimitToDivisions = false;
             this.knob8.Location = new System.Drawing.Point(10, 126);
             this.knob8.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob8.Max = 100D;
@@ -236,9 +244,10 @@
             this.knob9.ForeColor = System.Drawing.Color.White;
             this.knob9.HideLabels = true;
             this.knob9.LabelText = "WAVEFORM";
+            this.knob9.LimitToDivisions = true;
             this.knob9.Location = new System.Drawing.Point(174, 237);
             this.knob9.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob9.Max = 100D;
+            this.knob9.Max = 4D;
             this.knob9.Min = 0D;
             this.knob9.Name = "knob9";
             this.knob9.Size = new System.Drawing.Size(77, 77);
@@ -253,6 +262,7 @@
             this.knob10.ForeColor = System.Drawing.Color.White;
             this.knob10.HideLabels = false;
             this.knob10.LabelText = "PULSE WIDTH";
+            this.knob10.LimitToDivisions = false;
             this.knob10.Location = new System.Drawing.Point(247, 237);
             this.knob10.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob10.Max = 100D;
@@ -270,9 +280,10 @@
             this.knob11.ForeColor = System.Drawing.Color.White;
             this.knob11.HideLabels = true;
             this.knob11.LabelText = "OCTAVE";
+            this.knob11.LimitToDivisions = true;
             this.knob11.Location = new System.Drawing.Point(84, 237);
             this.knob11.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob11.Max = 100D;
+            this.knob11.Max = 4D;
             this.knob11.Min = 0D;
             this.knob11.Name = "knob11";
             this.knob11.Size = new System.Drawing.Size(77, 77);
@@ -287,6 +298,7 @@
             this.knob12.ForeColor = System.Drawing.Color.White;
             this.knob12.HideLabels = false;
             this.knob12.LabelText = "FREQUENCY";
+            this.knob12.LimitToDivisions = false;
             this.knob12.Location = new System.Drawing.Point(10, 237);
             this.knob12.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob12.Max = 100D;
@@ -324,6 +336,7 @@
             this.knob13.ForeColor = System.Drawing.Color.White;
             this.knob13.HideLabels = false;
             this.knob13.LabelText = "OSC 1";
+            this.knob13.LimitToDivisions = false;
             this.knob13.Location = new System.Drawing.Point(341, 15);
             this.knob13.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob13.Max = 100D;
@@ -341,6 +354,7 @@
             this.knob14.ForeColor = System.Drawing.Color.White;
             this.knob14.HideLabels = false;
             this.knob14.LabelText = "OSC 2";
+            this.knob14.LimitToDivisions = false;
             this.knob14.Location = new System.Drawing.Point(340, 126);
             this.knob14.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob14.Max = 100D;
@@ -358,6 +372,7 @@
             this.knob15.ForeColor = System.Drawing.Color.White;
             this.knob15.HideLabels = false;
             this.knob15.LabelText = "OSC 3";
+            this.knob15.LimitToDivisions = false;
             this.knob15.Location = new System.Drawing.Point(341, 237);
             this.knob15.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob15.Max = 100D;
@@ -373,7 +388,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Navy;
             this.panel5.CornerRadius = 10;
-            this.panel5.LabelText = "FILTER";
+            this.panel5.LabelText = "FILTER - ENV 1";
             this.panel5.LineWidth = 2;
             this.panel5.Location = new System.Drawing.Point(432, 3);
             this.panel5.Name = "panel5";
@@ -383,7 +398,7 @@
             // panel6
             // 
             this.panel6.CornerRadius = 10;
-            this.panel6.LabelText = "AMPLIFIER";
+            this.panel6.LabelText = "AMPLIFIER - ENV 2";
             this.panel6.LineWidth = 2;
             this.panel6.Location = new System.Drawing.Point(432, 224);
             this.panel6.Name = "panel6";
@@ -397,9 +412,10 @@
             this.knob16.ForeColor = System.Drawing.Color.White;
             this.knob16.HideLabels = true;
             this.knob16.LabelText = "TYPE";
+            this.knob16.LimitToDivisions = true;
             this.knob16.Location = new System.Drawing.Point(436, 15);
             this.knob16.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob16.Max = 100D;
+            this.knob16.Max = 4D;
             this.knob16.Min = 0D;
             this.knob16.Name = "knob16";
             this.knob16.Size = new System.Drawing.Size(77, 77);
@@ -415,6 +431,7 @@
             this.knob17.ForeColor = System.Drawing.Color.White;
             this.knob17.HideLabels = false;
             this.knob17.LabelText = "CUTOFF";
+            this.knob17.LimitToDivisions = false;
             this.knob17.Location = new System.Drawing.Point(510, 15);
             this.knob17.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob17.Max = 100D;
@@ -433,6 +450,7 @@
             this.knob18.ForeColor = System.Drawing.Color.White;
             this.knob18.HideLabels = false;
             this.knob18.LabelText = "RESONANCE";
+            this.knob18.LimitToDivisions = false;
             this.knob18.Location = new System.Drawing.Point(584, 15);
             this.knob18.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob18.Max = 100D;
@@ -451,6 +469,7 @@
             this.knob19.ForeColor = System.Drawing.Color.White;
             this.knob19.HideLabels = false;
             this.knob19.LabelText = "ENVELOPE";
+            this.knob19.LimitToDivisions = false;
             this.knob19.Location = new System.Drawing.Point(658, 14);
             this.knob19.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob19.Max = 100D;
@@ -468,6 +487,7 @@
             this.knob20.ForeColor = System.Drawing.Color.White;
             this.knob20.HideLabels = false;
             this.knob20.LabelText = "RELEASE";
+            this.knob20.LimitToDivisions = false;
             this.knob20.Location = new System.Drawing.Point(659, 126);
             this.knob20.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob20.Max = 100D;
@@ -485,6 +505,7 @@
             this.knob21.ForeColor = System.Drawing.Color.White;
             this.knob21.HideLabels = false;
             this.knob21.LabelText = "SUSTAIN";
+            this.knob21.LimitToDivisions = false;
             this.knob21.Location = new System.Drawing.Point(585, 126);
             this.knob21.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob21.Max = 100D;
@@ -502,6 +523,7 @@
             this.knob22.ForeColor = System.Drawing.Color.White;
             this.knob22.HideLabels = false;
             this.knob22.LabelText = "DECAY";
+            this.knob22.LimitToDivisions = false;
             this.knob22.Location = new System.Drawing.Point(510, 126);
             this.knob22.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob22.Max = 100D;
@@ -519,6 +541,7 @@
             this.knob23.ForeColor = System.Drawing.Color.White;
             this.knob23.HideLabels = false;
             this.knob23.LabelText = "ATTACK";
+            this.knob23.LimitToDivisions = false;
             this.knob23.Location = new System.Drawing.Point(436, 126);
             this.knob23.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob23.Max = 100D;
@@ -536,6 +559,7 @@
             this.knob24.ForeColor = System.Drawing.Color.White;
             this.knob24.HideLabels = false;
             this.knob24.LabelText = "RELEASE";
+            this.knob24.LimitToDivisions = false;
             this.knob24.Location = new System.Drawing.Point(658, 237);
             this.knob24.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob24.Max = 100D;
@@ -553,6 +577,7 @@
             this.knob25.ForeColor = System.Drawing.Color.White;
             this.knob25.HideLabels = false;
             this.knob25.LabelText = "SUSTAIN";
+            this.knob25.LimitToDivisions = false;
             this.knob25.Location = new System.Drawing.Point(584, 237);
             this.knob25.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob25.Max = 100D;
@@ -570,6 +595,7 @@
             this.knob26.ForeColor = System.Drawing.Color.White;
             this.knob26.HideLabels = false;
             this.knob26.LabelText = "DECAY";
+            this.knob26.LimitToDivisions = false;
             this.knob26.Location = new System.Drawing.Point(510, 237);
             this.knob26.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob26.Max = 100D;
@@ -587,6 +613,7 @@
             this.knob27.ForeColor = System.Drawing.Color.White;
             this.knob27.HideLabels = false;
             this.knob27.LabelText = "ATTACK";
+            this.knob27.LimitToDivisions = false;
             this.knob27.Location = new System.Drawing.Point(436, 237);
             this.knob27.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob27.Max = 100D;
@@ -604,6 +631,7 @@
             this.knob28.ForeColor = System.Drawing.Color.White;
             this.knob28.HideLabels = false;
             this.knob28.LabelText = "GLIDE";
+            this.knob28.LimitToDivisions = false;
             this.knob28.Location = new System.Drawing.Point(745, 12);
             this.knob28.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob28.Max = 100D;
@@ -621,6 +649,7 @@
             this.knob29.ForeColor = System.Drawing.Color.White;
             this.knob29.HideLabels = false;
             this.knob29.LabelText = "NOISE";
+            this.knob29.LimitToDivisions = false;
             this.knob29.Location = new System.Drawing.Point(341, 347);
             this.knob29.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob29.Max = 100D;
@@ -648,9 +677,10 @@
             this.knob30.ForeColor = System.Drawing.Color.White;
             this.knob30.HideLabels = true;
             this.knob30.LabelText = "SHAPE";
+            this.knob30.LimitToDivisions = true;
             this.knob30.Location = new System.Drawing.Point(86, 349);
             this.knob30.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob30.Max = 100D;
+            this.knob30.Max = 4D;
             this.knob30.Min = 0D;
             this.knob30.Name = "knob30";
             this.knob30.Size = new System.Drawing.Size(77, 77);
@@ -665,6 +695,7 @@
             this.knob31.ForeColor = System.Drawing.Color.White;
             this.knob31.HideLabels = false;
             this.knob31.LabelText = "RATE";
+            this.knob31.LimitToDivisions = false;
             this.knob31.Location = new System.Drawing.Point(12, 349);
             this.knob31.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob31.Max = 100D;
@@ -692,9 +723,10 @@
             this.knob32.ForeColor = System.Drawing.Color.White;
             this.knob32.HideLabels = true;
             this.knob32.LabelText = "SHAPE";
+            this.knob32.LimitToDivisions = true;
             this.knob32.Location = new System.Drawing.Point(249, 349);
             this.knob32.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob32.Max = 100D;
+            this.knob32.Max = 4D;
             this.knob32.Min = 0D;
             this.knob32.Name = "knob32";
             this.knob32.Size = new System.Drawing.Size(77, 77);
@@ -709,9 +741,10 @@
             this.knob33.ForeColor = System.Drawing.Color.White;
             this.knob33.HideLabels = false;
             this.knob33.LabelText = "RATE";
+            this.knob33.LimitToDivisions = false;
             this.knob33.Location = new System.Drawing.Point(175, 349);
             this.knob33.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob33.Max = 100D;
+            this.knob33.Max = 5D;
             this.knob33.Min = 0D;
             this.knob33.Name = "knob33";
             this.knob33.Size = new System.Drawing.Size(77, 77);
@@ -726,6 +759,7 @@
             this.knob34.ForeColor = System.Drawing.Color.White;
             this.knob34.HideLabels = false;
             this.knob34.LabelText = "RELEASE";
+            this.knob34.LimitToDivisions = false;
             this.knob34.Location = new System.Drawing.Point(658, 347);
             this.knob34.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob34.Max = 100D;
@@ -743,6 +777,7 @@
             this.knob35.ForeColor = System.Drawing.Color.White;
             this.knob35.HideLabels = false;
             this.knob35.LabelText = "SUSTAIN";
+            this.knob35.LimitToDivisions = false;
             this.knob35.Location = new System.Drawing.Point(584, 347);
             this.knob35.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob35.Max = 100D;
@@ -760,6 +795,7 @@
             this.knob36.ForeColor = System.Drawing.Color.White;
             this.knob36.HideLabels = false;
             this.knob36.LabelText = "DECAY";
+            this.knob36.LimitToDivisions = false;
             this.knob36.Location = new System.Drawing.Point(510, 347);
             this.knob36.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob36.Max = 100D;
@@ -777,6 +813,7 @@
             this.knob37.ForeColor = System.Drawing.Color.White;
             this.knob37.HideLabels = false;
             this.knob37.LabelText = "ATTACK";
+            this.knob37.LimitToDivisions = false;
             this.knob37.Location = new System.Drawing.Point(436, 347);
             this.knob37.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.knob37.Max = 100D;
@@ -862,6 +899,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Shed Prophet";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

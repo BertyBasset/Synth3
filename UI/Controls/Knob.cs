@@ -15,17 +15,19 @@ namespace UI.Controls {
         // 1 Easy way of binding controls to synth
         // 2 Stop flickering when redrawing
         // 3 Smoother mouse operation
-        // 4 Limit to Divisions peoperty
+        // 4 Limit to Divisions peoperty  DONE
+
+        int _oldIntValue = 0;
 
 
         // Event with Value prop
-        public event EventHandler<double> ValueChanged;
+        public event EventHandler<double>? ValueChanged;
+        public event EventHandler<int>? IntValueChanged;
 
         public enum MarkerStyleEnum {
             Line = 0,
             Dot
         }
-
 
         public bool HideLabels {
             get { return !lbl0.Visible; }
@@ -36,7 +38,7 @@ namespace UI.Controls {
         }
 
         private MarkerStyleEnum _markerStyle;
-        public MarkerStyleEnum  MarkerStyle {
+        public MarkerStyleEnum MarkerStyle {
             get { return _markerStyle; }
             set {
                 _markerStyle = value;
@@ -44,7 +46,16 @@ namespace UI.Controls {
             }
         }
 
-        private int _sweepAngle=270;
+        private bool _limitToDivisions;
+        public bool LimitToDivisions {
+            get { return _limitToDivisions; }
+            set {
+                _limitToDivisions = value;
+            }
+        }
+
+
+        private int _sweepAngle = 270;
         public int SweepAngle {
             get { return _sweepAngle; }
             set {
@@ -80,7 +91,7 @@ namespace UI.Controls {
 
         public string LabelText {
             get { return lblLabelText.Text; }
-            set { lblLabelText.Text = value; }  
+            set { lblLabelText.Text = value; }
         }
 
         private int _margin = 17;
@@ -145,6 +156,29 @@ namespace UI.Controls {
             }
         }
 
+
+        private double __v;
+        private double _v {
+            get { return __v; }
+            set {
+                __v = value;
+
+                if (!LimitToDivisions)
+                    Value = __v;
+                else {
+                    var newValue = (Math.Round(__v / Divisions));
+                    if (newValue < Min)
+                        newValue = Min;
+                    if (newValue > Max)
+                        newValue = Max;
+
+
+                    if (newValue != Value)
+                        Value = newValue;
+                }
+            }
+        }
+
         private double _value = 0;
         public double Value {
             get { return _value; }
@@ -155,22 +189,37 @@ namespace UI.Controls {
                 if (_value > _max)
                     _value = _max;
 
+                _intValue = (int)Math.Round(_value);
+                if (_intValue != _oldIntValue) {
+                    if (IntValueChanged != null) {
+                        IntValueChanged(this, _intValue);
+                    }
+                    _oldIntValue = _intValue;
+                }
+
+
+
                 Knob_Paint(this, null);
 
                 // Raise Value Changed Event
-                if(ValueChanged != null)
+                if (ValueChanged != null) {
                     ValueChanged(this, _value);
+                }
 
             }
         }
 
+        private int _intValue = 0;
+        public int IntValue {
+            get { return _intValue; }
+        }
 
 
 
         private int Percent {
             get { 
+                // Percent Value compared to range (Max - Min)
                 return (int)((_value - _min) / (_max - _min) * 100);
-               
             }
         }
 
@@ -193,7 +242,7 @@ namespace UI.Controls {
                     var currenPos = new Point(e.X, e.Y);
 
                     var change = currenPos.Y - startPos.Y;
-                    Value = Value -= (Max- Min)* change/1000 ;
+                    _v = _v- (Max- Min)* change/1000 ;
                 }
             };
         }
