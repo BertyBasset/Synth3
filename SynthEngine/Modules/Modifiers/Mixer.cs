@@ -12,7 +12,7 @@ public class Mixer : iModule {
     // This is an enumarable but with a CollectionChanged event so we can resize Levels list when new Sources are added
     public ObservableCollection<iModule> Sources { get; set; } = new();
 
-    public List<float> Levels { get; set; } = new();
+    public List<double> Levels { get; set; } = new();
     #endregion
 
     #region iModule Members

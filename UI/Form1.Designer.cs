@@ -25,50 +25,50 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new UI.Controls.Panel();
-            this.knob1 = new UI.Controls.Knob();
-            this.knob2 = new UI.Controls.Knob();
-            this.knob3 = new UI.Controls.Knob();
-            this.knob4 = new UI.Controls.Knob();
-            this.knob5 = new UI.Controls.Knob();
-            this.knob6 = new UI.Controls.Knob();
-            this.knob7 = new UI.Controls.Knob();
-            this.knob8 = new UI.Controls.Knob();
+            this.kOsc1Freq = new UI.Controls.Knob();
+            this.kOsc1Octave = new UI.Controls.Knob();
+            this.kOsc1PW = new UI.Controls.Knob();
+            this.kOsc1Waveform = new UI.Controls.Knob();
+            this.kOsc2Waveform = new UI.Controls.Knob();
+            this.kOsc2PW = new UI.Controls.Knob();
+            this.kOsc2Octave = new UI.Controls.Knob();
+            this.kOsc2Freq = new UI.Controls.Knob();
             this.panel2 = new UI.Controls.Panel();
-            this.knob9 = new UI.Controls.Knob();
-            this.knob10 = new UI.Controls.Knob();
-            this.knob11 = new UI.Controls.Knob();
-            this.knob12 = new UI.Controls.Knob();
+            this.kOsc3Waveform = new UI.Controls.Knob();
+            this.kOsc3PW = new UI.Controls.Knob();
+            this.kOsc3Octave = new UI.Controls.Knob();
+            this.kOsc3Freq = new UI.Controls.Knob();
             this.panel3 = new UI.Controls.Panel();
             this.panel4 = new UI.Controls.Panel();
-            this.knob13 = new UI.Controls.Knob();
-            this.knob14 = new UI.Controls.Knob();
-            this.knob15 = new UI.Controls.Knob();
+            this.kOsc1Mix = new UI.Controls.Knob();
+            this.kOsc2Mix = new UI.Controls.Knob();
+            this.kOsc3Mix = new UI.Controls.Knob();
             this.panel5 = new UI.Controls.Panel();
             this.panel6 = new UI.Controls.Panel();
-            this.knob16 = new UI.Controls.Knob();
-            this.knob17 = new UI.Controls.Knob();
-            this.knob18 = new UI.Controls.Knob();
-            this.knob19 = new UI.Controls.Knob();
-            this.knob20 = new UI.Controls.Knob();
-            this.knob21 = new UI.Controls.Knob();
-            this.knob22 = new UI.Controls.Knob();
-            this.knob23 = new UI.Controls.Knob();
-            this.knob24 = new UI.Controls.Knob();
-            this.knob25 = new UI.Controls.Knob();
-            this.knob26 = new UI.Controls.Knob();
-            this.knob27 = new UI.Controls.Knob();
-            this.knob28 = new UI.Controls.Knob();
-            this.knob29 = new UI.Controls.Knob();
+            this.kVcfType = new UI.Controls.Knob();
+            this.kVcfCutoff = new UI.Controls.Knob();
+            this.kVcfResonance = new UI.Controls.Knob();
+            this.kVcfEnvelope = new UI.Controls.Knob();
+            this.kEnv1Release = new UI.Controls.Knob();
+            this.kEnv1Sustain = new UI.Controls.Knob();
+            this.kEnv1Decay = new UI.Controls.Knob();
+            this.kEnv1Attack = new UI.Controls.Knob();
+            this.kEnv2Release = new UI.Controls.Knob();
+            this.kEnv2Sustain = new UI.Controls.Knob();
+            this.kEnv2Decay = new UI.Controls.Knob();
+            this.kEnv2Attack = new UI.Controls.Knob();
+            this.kGlide = new UI.Controls.Knob();
+            this.kNoiseMix = new UI.Controls.Knob();
             this.panel7 = new UI.Controls.Panel();
-            this.knob30 = new UI.Controls.Knob();
-            this.knob31 = new UI.Controls.Knob();
+            this.kLfo1Shape = new UI.Controls.Knob();
+            this.kLfo1Rate = new UI.Controls.Knob();
             this.panel8 = new UI.Controls.Panel();
-            this.knob32 = new UI.Controls.Knob();
-            this.knob33 = new UI.Controls.Knob();
-            this.knob34 = new UI.Controls.Knob();
-            this.knob35 = new UI.Controls.Knob();
-            this.knob36 = new UI.Controls.Knob();
-            this.knob37 = new UI.Controls.Knob();
+            this.kLfo2Shape = new UI.Controls.Knob();
+            this.kLfo2Rate = new UI.Controls.Knob();
+            this.kEnv3Release = new UI.Controls.Knob();
+            this.kEnv3Sustain = new UI.Controls.Knob();
+            this.kEnv3Decay = new UI.Controls.Knob();
+            this.kEnv3Attack = new UI.Controls.Knob();
             this.panel9 = new UI.Controls.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,149 +84,149 @@
             this.panel1.Size = new System.Drawing.Size(323, 105);
             this.panel1.TabIndex = 0;
             // 
-            // knob1
+            // kOsc1Freq
             // 
-            this.knob1.Divisions = 10;
-            this.knob1.ForeColor = System.Drawing.Color.White;
-            this.knob1.HideLabels = false;
-            this.knob1.LabelText = "FREQUENCY";
-            this.knob1.LimitToDivisions = false;
-            this.knob1.Location = new System.Drawing.Point(10, 15);
-            this.knob1.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob1.Max = 1D;
-            this.knob1.Min = 0D;
-            this.knob1.Name = "knob1";
-            this.knob1.Size = new System.Drawing.Size(77, 77);
-            this.knob1.SweepAngle = 270;
-            this.knob1.TabIndex = 1;
-            this.knob1.Thickness = 2;
-            this.knob1.Value = 1D;
+            this.kOsc1Freq.Divisions = 10;
+            this.kOsc1Freq.ForeColor = System.Drawing.Color.White;
+            this.kOsc1Freq.HideLabels = false;
+            this.kOsc1Freq.LabelText = "FREQUENCY";
+            this.kOsc1Freq.LimitToDivisions = false;
+            this.kOsc1Freq.Location = new System.Drawing.Point(10, 20);
+            this.kOsc1Freq.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc1Freq.Max = 0.083333D;
+            this.kOsc1Freq.Min = -0.083333D;
+            this.kOsc1Freq.Name = "kOsc1Freq";
+            this.kOsc1Freq.Size = new System.Drawing.Size(77, 77);
+            this.kOsc1Freq.SweepAngle = 270;
+            this.kOsc1Freq.TabIndex = 1;
+            this.kOsc1Freq.Thickness = 2;
+            this.kOsc1Freq.Value = 0D;
             // 
-            // knob2
+            // kOsc1Octave
             // 
-            this.knob2.Divisions = 4;
-            this.knob2.ForeColor = System.Drawing.Color.White;
-            this.knob2.HideLabels = true;
-            this.knob2.LabelText = "OCTAVE";
-            this.knob2.LimitToDivisions = true;
-            this.knob2.Location = new System.Drawing.Point(84, 15);
-            this.knob2.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob2.Max = 4D;
-            this.knob2.Min = 0D;
-            this.knob2.Name = "knob2";
-            this.knob2.Size = new System.Drawing.Size(77, 77);
-            this.knob2.SweepAngle = 135;
-            this.knob2.TabIndex = 2;
-            this.knob2.Thickness = 2;
-            this.knob2.Value = 0D;
+            this.kOsc1Octave.Divisions = 4;
+            this.kOsc1Octave.ForeColor = System.Drawing.Color.White;
+            this.kOsc1Octave.HideLabels = true;
+            this.kOsc1Octave.LabelText = "OCTAVE";
+            this.kOsc1Octave.LimitToDivisions = true;
+            this.kOsc1Octave.Location = new System.Drawing.Point(84, 20);
+            this.kOsc1Octave.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc1Octave.Max = 4D;
+            this.kOsc1Octave.Min = 0D;
+            this.kOsc1Octave.Name = "kOsc1Octave";
+            this.kOsc1Octave.Size = new System.Drawing.Size(77, 77);
+            this.kOsc1Octave.SweepAngle = 135;
+            this.kOsc1Octave.TabIndex = 2;
+            this.kOsc1Octave.Thickness = 2;
+            this.kOsc1Octave.Value = 0D;
             // 
-            // knob3
+            // kOsc1PW
             // 
-            this.knob3.Divisions = 10;
-            this.knob3.ForeColor = System.Drawing.Color.White;
-            this.knob3.HideLabels = false;
-            this.knob3.LabelText = "PULSE WIDTH";
-            this.knob3.LimitToDivisions = false;
-            this.knob3.Location = new System.Drawing.Point(247, 15);
-            this.knob3.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob3.Max = 100D;
-            this.knob3.Min = 0D;
-            this.knob3.Name = "knob3";
-            this.knob3.Size = new System.Drawing.Size(77, 77);
-            this.knob3.SweepAngle = 270;
-            this.knob3.TabIndex = 3;
-            this.knob3.Thickness = 2;
-            this.knob3.Value = 60D;
+            this.kOsc1PW.Divisions = 10;
+            this.kOsc1PW.ForeColor = System.Drawing.Color.White;
+            this.kOsc1PW.HideLabels = false;
+            this.kOsc1PW.LabelText = "PULSE WIDTH";
+            this.kOsc1PW.LimitToDivisions = false;
+            this.kOsc1PW.Location = new System.Drawing.Point(247, 20);
+            this.kOsc1PW.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc1PW.Max = 1D;
+            this.kOsc1PW.Min = -1D;
+            this.kOsc1PW.Name = "kOsc1PW";
+            this.kOsc1PW.Size = new System.Drawing.Size(77, 77);
+            this.kOsc1PW.SweepAngle = 270;
+            this.kOsc1PW.TabIndex = 3;
+            this.kOsc1PW.Thickness = 2;
+            this.kOsc1PW.Value = 0D;
             // 
-            // knob4
+            // kOsc1Waveform
             // 
-            this.knob4.Divisions = 4;
-            this.knob4.ForeColor = System.Drawing.Color.White;
-            this.knob4.HideLabels = true;
-            this.knob4.LabelText = "WAVEFORM";
-            this.knob4.LimitToDivisions = true;
-            this.knob4.Location = new System.Drawing.Point(174, 15);
-            this.knob4.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob4.Max = 4D;
-            this.knob4.Min = 0D;
-            this.knob4.Name = "knob4";
-            this.knob4.Size = new System.Drawing.Size(77, 77);
-            this.knob4.SweepAngle = 135;
-            this.knob4.TabIndex = 4;
-            this.knob4.Thickness = 2;
-            this.knob4.Value = 0D;
+            this.kOsc1Waveform.Divisions = 4;
+            this.kOsc1Waveform.ForeColor = System.Drawing.Color.White;
+            this.kOsc1Waveform.HideLabels = true;
+            this.kOsc1Waveform.LabelText = "WAVEFORM";
+            this.kOsc1Waveform.LimitToDivisions = true;
+            this.kOsc1Waveform.Location = new System.Drawing.Point(174, 20);
+            this.kOsc1Waveform.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc1Waveform.Max = 4D;
+            this.kOsc1Waveform.Min = 0D;
+            this.kOsc1Waveform.Name = "kOsc1Waveform";
+            this.kOsc1Waveform.Size = new System.Drawing.Size(77, 77);
+            this.kOsc1Waveform.SweepAngle = 135;
+            this.kOsc1Waveform.TabIndex = 4;
+            this.kOsc1Waveform.Thickness = 2;
+            this.kOsc1Waveform.Value = 1D;
             // 
-            // knob5
+            // kOsc2Waveform
             // 
-            this.knob5.Divisions = 4;
-            this.knob5.ForeColor = System.Drawing.Color.White;
-            this.knob5.HideLabels = true;
-            this.knob5.LabelText = "WAVEFORM";
-            this.knob5.LimitToDivisions = true;
-            this.knob5.Location = new System.Drawing.Point(174, 126);
-            this.knob5.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob5.Max = 4D;
-            this.knob5.Min = 0D;
-            this.knob5.Name = "knob5";
-            this.knob5.Size = new System.Drawing.Size(77, 77);
-            this.knob5.SweepAngle = 135;
-            this.knob5.TabIndex = 9;
-            this.knob5.Thickness = 2;
-            this.knob5.Value = 0D;
+            this.kOsc2Waveform.Divisions = 4;
+            this.kOsc2Waveform.ForeColor = System.Drawing.Color.White;
+            this.kOsc2Waveform.HideLabels = true;
+            this.kOsc2Waveform.LabelText = "WAVEFORM";
+            this.kOsc2Waveform.LimitToDivisions = true;
+            this.kOsc2Waveform.Location = new System.Drawing.Point(174, 131);
+            this.kOsc2Waveform.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc2Waveform.Max = 4D;
+            this.kOsc2Waveform.Min = 0D;
+            this.kOsc2Waveform.Name = "kOsc2Waveform";
+            this.kOsc2Waveform.Size = new System.Drawing.Size(77, 77);
+            this.kOsc2Waveform.SweepAngle = 135;
+            this.kOsc2Waveform.TabIndex = 9;
+            this.kOsc2Waveform.Thickness = 2;
+            this.kOsc2Waveform.Value = 1D;
             // 
-            // knob6
+            // kOsc2PW
             // 
-            this.knob6.Divisions = 10;
-            this.knob6.ForeColor = System.Drawing.Color.White;
-            this.knob6.HideLabels = false;
-            this.knob6.LabelText = "PULSE WIDTH";
-            this.knob6.LimitToDivisions = false;
-            this.knob6.Location = new System.Drawing.Point(247, 126);
-            this.knob6.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob6.Max = 100D;
-            this.knob6.Min = 0D;
-            this.knob6.Name = "knob6";
-            this.knob6.Size = new System.Drawing.Size(77, 77);
-            this.knob6.SweepAngle = 270;
-            this.knob6.TabIndex = 8;
-            this.knob6.Thickness = 2;
-            this.knob6.Value = 0D;
+            this.kOsc2PW.Divisions = 10;
+            this.kOsc2PW.ForeColor = System.Drawing.Color.White;
+            this.kOsc2PW.HideLabels = false;
+            this.kOsc2PW.LabelText = "PULSE WIDTH";
+            this.kOsc2PW.LimitToDivisions = false;
+            this.kOsc2PW.Location = new System.Drawing.Point(247, 131);
+            this.kOsc2PW.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc2PW.Max = 1D;
+            this.kOsc2PW.Min = -1D;
+            this.kOsc2PW.Name = "kOsc2PW";
+            this.kOsc2PW.Size = new System.Drawing.Size(77, 77);
+            this.kOsc2PW.SweepAngle = 270;
+            this.kOsc2PW.TabIndex = 8;
+            this.kOsc2PW.Thickness = 2;
+            this.kOsc2PW.Value = 0D;
             // 
-            // knob7
+            // kOsc2Octave
             // 
-            this.knob7.Divisions = 4;
-            this.knob7.ForeColor = System.Drawing.Color.White;
-            this.knob7.HideLabels = true;
-            this.knob7.LabelText = "OCTAVE";
-            this.knob7.LimitToDivisions = true;
-            this.knob7.Location = new System.Drawing.Point(84, 126);
-            this.knob7.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob7.Max = 4D;
-            this.knob7.Min = 0D;
-            this.knob7.Name = "knob7";
-            this.knob7.Size = new System.Drawing.Size(77, 77);
-            this.knob7.SweepAngle = 135;
-            this.knob7.TabIndex = 7;
-            this.knob7.Thickness = 2;
-            this.knob7.Value = 0D;
+            this.kOsc2Octave.Divisions = 4;
+            this.kOsc2Octave.ForeColor = System.Drawing.Color.White;
+            this.kOsc2Octave.HideLabels = true;
+            this.kOsc2Octave.LabelText = "OCTAVE";
+            this.kOsc2Octave.LimitToDivisions = true;
+            this.kOsc2Octave.Location = new System.Drawing.Point(84, 131);
+            this.kOsc2Octave.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc2Octave.Max = 4D;
+            this.kOsc2Octave.Min = 0D;
+            this.kOsc2Octave.Name = "kOsc2Octave";
+            this.kOsc2Octave.Size = new System.Drawing.Size(77, 77);
+            this.kOsc2Octave.SweepAngle = 135;
+            this.kOsc2Octave.TabIndex = 7;
+            this.kOsc2Octave.Thickness = 2;
+            this.kOsc2Octave.Value = 0D;
             // 
-            // knob8
+            // kOsc2Freq
             // 
-            this.knob8.Divisions = 10;
-            this.knob8.ForeColor = System.Drawing.Color.White;
-            this.knob8.HideLabels = false;
-            this.knob8.LabelText = "FREQUENCY";
-            this.knob8.LimitToDivisions = false;
-            this.knob8.Location = new System.Drawing.Point(10, 126);
-            this.knob8.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob8.Max = 100D;
-            this.knob8.Min = 0D;
-            this.knob8.Name = "knob8";
-            this.knob8.Size = new System.Drawing.Size(77, 77);
-            this.knob8.SweepAngle = 270;
-            this.knob8.TabIndex = 6;
-            this.knob8.Thickness = 2;
-            this.knob8.Value = 0D;
+            this.kOsc2Freq.Divisions = 10;
+            this.kOsc2Freq.ForeColor = System.Drawing.Color.White;
+            this.kOsc2Freq.HideLabels = false;
+            this.kOsc2Freq.LabelText = "FREQUENCY";
+            this.kOsc2Freq.LimitToDivisions = false;
+            this.kOsc2Freq.Location = new System.Drawing.Point(10, 131);
+            this.kOsc2Freq.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc2Freq.Max = 0.083333D;
+            this.kOsc2Freq.Min = -0.083333D;
+            this.kOsc2Freq.Name = "kOsc2Freq";
+            this.kOsc2Freq.Size = new System.Drawing.Size(77, 77);
+            this.kOsc2Freq.SweepAngle = 270;
+            this.kOsc2Freq.TabIndex = 6;
+            this.kOsc2Freq.Thickness = 2;
+            this.kOsc2Freq.Value = -0.01D;
             // 
             // panel2
             // 
@@ -238,77 +238,77 @@
             this.panel2.Size = new System.Drawing.Size(323, 105);
             this.panel2.TabIndex = 5;
             // 
-            // knob9
+            // kOsc3Waveform
             // 
-            this.knob9.Divisions = 4;
-            this.knob9.ForeColor = System.Drawing.Color.White;
-            this.knob9.HideLabels = true;
-            this.knob9.LabelText = "WAVEFORM";
-            this.knob9.LimitToDivisions = true;
-            this.knob9.Location = new System.Drawing.Point(174, 237);
-            this.knob9.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob9.Max = 4D;
-            this.knob9.Min = 0D;
-            this.knob9.Name = "knob9";
-            this.knob9.Size = new System.Drawing.Size(77, 77);
-            this.knob9.SweepAngle = 135;
-            this.knob9.TabIndex = 14;
-            this.knob9.Thickness = 2;
-            this.knob9.Value = 0D;
+            this.kOsc3Waveform.Divisions = 4;
+            this.kOsc3Waveform.ForeColor = System.Drawing.Color.White;
+            this.kOsc3Waveform.HideLabels = true;
+            this.kOsc3Waveform.LabelText = "WAVEFORM";
+            this.kOsc3Waveform.LimitToDivisions = true;
+            this.kOsc3Waveform.Location = new System.Drawing.Point(174, 242);
+            this.kOsc3Waveform.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc3Waveform.Max = 4D;
+            this.kOsc3Waveform.Min = 0D;
+            this.kOsc3Waveform.Name = "kOsc3Waveform";
+            this.kOsc3Waveform.Size = new System.Drawing.Size(77, 77);
+            this.kOsc3Waveform.SweepAngle = 135;
+            this.kOsc3Waveform.TabIndex = 14;
+            this.kOsc3Waveform.Thickness = 2;
+            this.kOsc3Waveform.Value = 1D;
             // 
-            // knob10
+            // kOsc3PW
             // 
-            this.knob10.Divisions = 10;
-            this.knob10.ForeColor = System.Drawing.Color.White;
-            this.knob10.HideLabels = false;
-            this.knob10.LabelText = "PULSE WIDTH";
-            this.knob10.LimitToDivisions = false;
-            this.knob10.Location = new System.Drawing.Point(247, 237);
-            this.knob10.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob10.Max = 100D;
-            this.knob10.Min = 0D;
-            this.knob10.Name = "knob10";
-            this.knob10.Size = new System.Drawing.Size(77, 77);
-            this.knob10.SweepAngle = 270;
-            this.knob10.TabIndex = 13;
-            this.knob10.Thickness = 2;
-            this.knob10.Value = 0D;
+            this.kOsc3PW.Divisions = 10;
+            this.kOsc3PW.ForeColor = System.Drawing.Color.White;
+            this.kOsc3PW.HideLabels = false;
+            this.kOsc3PW.LabelText = "PULSE WIDTH";
+            this.kOsc3PW.LimitToDivisions = false;
+            this.kOsc3PW.Location = new System.Drawing.Point(247, 242);
+            this.kOsc3PW.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc3PW.Max = 1D;
+            this.kOsc3PW.Min = -1D;
+            this.kOsc3PW.Name = "kOsc3PW";
+            this.kOsc3PW.Size = new System.Drawing.Size(77, 77);
+            this.kOsc3PW.SweepAngle = 270;
+            this.kOsc3PW.TabIndex = 13;
+            this.kOsc3PW.Thickness = 2;
+            this.kOsc3PW.Value = 0D;
             // 
-            // knob11
+            // kOsc3Octave
             // 
-            this.knob11.Divisions = 4;
-            this.knob11.ForeColor = System.Drawing.Color.White;
-            this.knob11.HideLabels = true;
-            this.knob11.LabelText = "OCTAVE";
-            this.knob11.LimitToDivisions = true;
-            this.knob11.Location = new System.Drawing.Point(84, 237);
-            this.knob11.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob11.Max = 4D;
-            this.knob11.Min = 0D;
-            this.knob11.Name = "knob11";
-            this.knob11.Size = new System.Drawing.Size(77, 77);
-            this.knob11.SweepAngle = 135;
-            this.knob11.TabIndex = 12;
-            this.knob11.Thickness = 2;
-            this.knob11.Value = 0D;
+            this.kOsc3Octave.Divisions = 4;
+            this.kOsc3Octave.ForeColor = System.Drawing.Color.White;
+            this.kOsc3Octave.HideLabels = true;
+            this.kOsc3Octave.LabelText = "OCTAVE";
+            this.kOsc3Octave.LimitToDivisions = true;
+            this.kOsc3Octave.Location = new System.Drawing.Point(84, 242);
+            this.kOsc3Octave.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc3Octave.Max = 4D;
+            this.kOsc3Octave.Min = 0D;
+            this.kOsc3Octave.Name = "kOsc3Octave";
+            this.kOsc3Octave.Size = new System.Drawing.Size(77, 77);
+            this.kOsc3Octave.SweepAngle = 135;
+            this.kOsc3Octave.TabIndex = 12;
+            this.kOsc3Octave.Thickness = 2;
+            this.kOsc3Octave.Value = 0D;
             // 
-            // knob12
+            // kOsc3Freq
             // 
-            this.knob12.Divisions = 10;
-            this.knob12.ForeColor = System.Drawing.Color.White;
-            this.knob12.HideLabels = false;
-            this.knob12.LabelText = "FREQUENCY";
-            this.knob12.LimitToDivisions = false;
-            this.knob12.Location = new System.Drawing.Point(10, 237);
-            this.knob12.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob12.Max = 100D;
-            this.knob12.Min = 0D;
-            this.knob12.Name = "knob12";
-            this.knob12.Size = new System.Drawing.Size(77, 77);
-            this.knob12.SweepAngle = 270;
-            this.knob12.TabIndex = 11;
-            this.knob12.Thickness = 2;
-            this.knob12.Value = 0D;
+            this.kOsc3Freq.Divisions = 10;
+            this.kOsc3Freq.ForeColor = System.Drawing.Color.White;
+            this.kOsc3Freq.HideLabels = false;
+            this.kOsc3Freq.LabelText = "FREQUENCY";
+            this.kOsc3Freq.LimitToDivisions = false;
+            this.kOsc3Freq.Location = new System.Drawing.Point(10, 242);
+            this.kOsc3Freq.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc3Freq.Max = 0.083333D;
+            this.kOsc3Freq.Min = -0.083333D;
+            this.kOsc3Freq.Name = "kOsc3Freq";
+            this.kOsc3Freq.Size = new System.Drawing.Size(77, 77);
+            this.kOsc3Freq.SweepAngle = 270;
+            this.kOsc3Freq.TabIndex = 11;
+            this.kOsc3Freq.Thickness = 2;
+            this.kOsc3Freq.Value = 0.01D;
             // 
             // panel3
             // 
@@ -330,59 +330,59 @@
             this.panel4.Size = new System.Drawing.Size(92, 436);
             this.panel4.TabIndex = 15;
             // 
-            // knob13
+            // kOsc1Mix
             // 
-            this.knob13.Divisions = 10;
-            this.knob13.ForeColor = System.Drawing.Color.White;
-            this.knob13.HideLabels = false;
-            this.knob13.LabelText = "OSC 1";
-            this.knob13.LimitToDivisions = false;
-            this.knob13.Location = new System.Drawing.Point(341, 15);
-            this.knob13.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob13.Max = 100D;
-            this.knob13.Min = 0D;
-            this.knob13.Name = "knob13";
-            this.knob13.Size = new System.Drawing.Size(77, 77);
-            this.knob13.SweepAngle = 270;
-            this.knob13.TabIndex = 16;
-            this.knob13.Thickness = 2;
-            this.knob13.Value = 0D;
+            this.kOsc1Mix.Divisions = 10;
+            this.kOsc1Mix.ForeColor = System.Drawing.Color.White;
+            this.kOsc1Mix.HideLabels = false;
+            this.kOsc1Mix.LabelText = "OSC 1";
+            this.kOsc1Mix.LimitToDivisions = false;
+            this.kOsc1Mix.Location = new System.Drawing.Point(340, 19);
+            this.kOsc1Mix.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc1Mix.Max = 1D;
+            this.kOsc1Mix.Min = 0D;
+            this.kOsc1Mix.Name = "kOsc1Mix";
+            this.kOsc1Mix.Size = new System.Drawing.Size(77, 77);
+            this.kOsc1Mix.SweepAngle = 270;
+            this.kOsc1Mix.TabIndex = 16;
+            this.kOsc1Mix.Thickness = 2;
+            this.kOsc1Mix.Value = 1D;
             // 
-            // knob14
+            // kOsc2Mix
             // 
-            this.knob14.Divisions = 10;
-            this.knob14.ForeColor = System.Drawing.Color.White;
-            this.knob14.HideLabels = false;
-            this.knob14.LabelText = "OSC 2";
-            this.knob14.LimitToDivisions = false;
-            this.knob14.Location = new System.Drawing.Point(340, 126);
-            this.knob14.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob14.Max = 100D;
-            this.knob14.Min = 0D;
-            this.knob14.Name = "knob14";
-            this.knob14.Size = new System.Drawing.Size(77, 77);
-            this.knob14.SweepAngle = 270;
-            this.knob14.TabIndex = 17;
-            this.knob14.Thickness = 2;
-            this.knob14.Value = 0D;
+            this.kOsc2Mix.Divisions = 10;
+            this.kOsc2Mix.ForeColor = System.Drawing.Color.White;
+            this.kOsc2Mix.HideLabels = false;
+            this.kOsc2Mix.LabelText = "OSC 2";
+            this.kOsc2Mix.LimitToDivisions = false;
+            this.kOsc2Mix.Location = new System.Drawing.Point(340, 131);
+            this.kOsc2Mix.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc2Mix.Max = 1D;
+            this.kOsc2Mix.Min = 0D;
+            this.kOsc2Mix.Name = "kOsc2Mix";
+            this.kOsc2Mix.Size = new System.Drawing.Size(77, 77);
+            this.kOsc2Mix.SweepAngle = 270;
+            this.kOsc2Mix.TabIndex = 17;
+            this.kOsc2Mix.Thickness = 2;
+            this.kOsc2Mix.Value = 1D;
             // 
-            // knob15
+            // kOsc3Mix
             // 
-            this.knob15.Divisions = 10;
-            this.knob15.ForeColor = System.Drawing.Color.White;
-            this.knob15.HideLabels = false;
-            this.knob15.LabelText = "OSC 3";
-            this.knob15.LimitToDivisions = false;
-            this.knob15.Location = new System.Drawing.Point(341, 237);
-            this.knob15.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob15.Max = 100D;
-            this.knob15.Min = 0D;
-            this.knob15.Name = "knob15";
-            this.knob15.Size = new System.Drawing.Size(77, 77);
-            this.knob15.SweepAngle = 270;
-            this.knob15.TabIndex = 18;
-            this.knob15.Thickness = 2;
-            this.knob15.Value = 0D;
+            this.kOsc3Mix.Divisions = 10;
+            this.kOsc3Mix.ForeColor = System.Drawing.Color.White;
+            this.kOsc3Mix.HideLabels = false;
+            this.kOsc3Mix.LabelText = "OSC 3";
+            this.kOsc3Mix.LimitToDivisions = false;
+            this.kOsc3Mix.Location = new System.Drawing.Point(341, 242);
+            this.kOsc3Mix.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kOsc3Mix.Max = 1D;
+            this.kOsc3Mix.Min = 0D;
+            this.kOsc3Mix.Name = "kOsc3Mix";
+            this.kOsc3Mix.Size = new System.Drawing.Size(77, 77);
+            this.kOsc3Mix.SweepAngle = 270;
+            this.kOsc3Mix.TabIndex = 18;
+            this.kOsc3Mix.Thickness = 2;
+            this.kOsc3Mix.Value = 1D;
             // 
             // panel5
             // 
@@ -405,261 +405,261 @@
             this.panel6.Size = new System.Drawing.Size(307, 105);
             this.panel6.TabIndex = 20;
             // 
-            // knob16
+            // kVcfType
             // 
-            this.knob16.BackColor = System.Drawing.Color.Navy;
-            this.knob16.Divisions = 4;
-            this.knob16.ForeColor = System.Drawing.Color.White;
-            this.knob16.HideLabels = true;
-            this.knob16.LabelText = "TYPE";
-            this.knob16.LimitToDivisions = true;
-            this.knob16.Location = new System.Drawing.Point(436, 15);
-            this.knob16.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob16.Max = 4D;
-            this.knob16.Min = 0D;
-            this.knob16.Name = "knob16";
-            this.knob16.Size = new System.Drawing.Size(77, 77);
-            this.knob16.SweepAngle = 135;
-            this.knob16.TabIndex = 21;
-            this.knob16.Thickness = 2;
-            this.knob16.Value = 0D;
+            this.kVcfType.BackColor = System.Drawing.Color.Navy;
+            this.kVcfType.Divisions = 4;
+            this.kVcfType.ForeColor = System.Drawing.Color.White;
+            this.kVcfType.HideLabels = true;
+            this.kVcfType.LabelText = "TYPE";
+            this.kVcfType.LimitToDivisions = true;
+            this.kVcfType.Location = new System.Drawing.Point(436, 20);
+            this.kVcfType.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kVcfType.Max = 4D;
+            this.kVcfType.Min = 0D;
+            this.kVcfType.Name = "kVcfType";
+            this.kVcfType.Size = new System.Drawing.Size(77, 77);
+            this.kVcfType.SweepAngle = 135;
+            this.kVcfType.TabIndex = 21;
+            this.kVcfType.Thickness = 2;
+            this.kVcfType.Value = 0D;
             // 
-            // knob17
+            // kVcfCutoff
             // 
-            this.knob17.BackColor = System.Drawing.Color.Navy;
-            this.knob17.Divisions = 10;
-            this.knob17.ForeColor = System.Drawing.Color.White;
-            this.knob17.HideLabels = false;
-            this.knob17.LabelText = "CUTOFF";
-            this.knob17.LimitToDivisions = false;
-            this.knob17.Location = new System.Drawing.Point(510, 15);
-            this.knob17.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob17.Max = 100D;
-            this.knob17.Min = 0D;
-            this.knob17.Name = "knob17";
-            this.knob17.Size = new System.Drawing.Size(77, 77);
-            this.knob17.SweepAngle = 270;
-            this.knob17.TabIndex = 22;
-            this.knob17.Thickness = 2;
-            this.knob17.Value = 20D;
+            this.kVcfCutoff.BackColor = System.Drawing.Color.Navy;
+            this.kVcfCutoff.Divisions = 10;
+            this.kVcfCutoff.ForeColor = System.Drawing.Color.White;
+            this.kVcfCutoff.HideLabels = false;
+            this.kVcfCutoff.LabelText = "CUTOFF";
+            this.kVcfCutoff.LimitToDivisions = false;
+            this.kVcfCutoff.Location = new System.Drawing.Point(510, 20);
+            this.kVcfCutoff.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kVcfCutoff.Max = 10D;
+            this.kVcfCutoff.Min = 0D;
+            this.kVcfCutoff.Name = "kVcfCutoff";
+            this.kVcfCutoff.Size = new System.Drawing.Size(77, 77);
+            this.kVcfCutoff.SweepAngle = 270;
+            this.kVcfCutoff.TabIndex = 22;
+            this.kVcfCutoff.Thickness = 2;
+            this.kVcfCutoff.Value = 10D;
             // 
-            // knob18
+            // kVcfResonance
             // 
-            this.knob18.BackColor = System.Drawing.Color.Navy;
-            this.knob18.Divisions = 10;
-            this.knob18.ForeColor = System.Drawing.Color.White;
-            this.knob18.HideLabels = false;
-            this.knob18.LabelText = "RESONANCE";
-            this.knob18.LimitToDivisions = false;
-            this.knob18.Location = new System.Drawing.Point(584, 15);
-            this.knob18.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob18.Max = 100D;
-            this.knob18.Min = 0D;
-            this.knob18.Name = "knob18";
-            this.knob18.Size = new System.Drawing.Size(77, 77);
-            this.knob18.SweepAngle = 270;
-            this.knob18.TabIndex = 23;
-            this.knob18.Thickness = 2;
-            this.knob18.Value = 70D;
+            this.kVcfResonance.BackColor = System.Drawing.Color.Navy;
+            this.kVcfResonance.Divisions = 10;
+            this.kVcfResonance.ForeColor = System.Drawing.Color.White;
+            this.kVcfResonance.HideLabels = false;
+            this.kVcfResonance.LabelText = "RESONANCE";
+            this.kVcfResonance.LimitToDivisions = false;
+            this.kVcfResonance.Location = new System.Drawing.Point(584, 20);
+            this.kVcfResonance.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kVcfResonance.Max = 1D;
+            this.kVcfResonance.Min = 0D;
+            this.kVcfResonance.Name = "kVcfResonance";
+            this.kVcfResonance.Size = new System.Drawing.Size(77, 77);
+            this.kVcfResonance.SweepAngle = 270;
+            this.kVcfResonance.TabIndex = 23;
+            this.kVcfResonance.Thickness = 2;
+            this.kVcfResonance.Value = 0D;
             // 
-            // knob19
+            // kVcfEnvelope
             // 
-            this.knob19.BackColor = System.Drawing.Color.Navy;
-            this.knob19.Divisions = 10;
-            this.knob19.ForeColor = System.Drawing.Color.White;
-            this.knob19.HideLabels = false;
-            this.knob19.LabelText = "ENVELOPE";
-            this.knob19.LimitToDivisions = false;
-            this.knob19.Location = new System.Drawing.Point(658, 14);
-            this.knob19.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob19.Max = 100D;
-            this.knob19.Min = 0D;
-            this.knob19.Name = "knob19";
-            this.knob19.Size = new System.Drawing.Size(77, 77);
-            this.knob19.SweepAngle = 270;
-            this.knob19.TabIndex = 24;
-            this.knob19.Thickness = 2;
-            this.knob19.Value = 0D;
+            this.kVcfEnvelope.BackColor = System.Drawing.Color.Navy;
+            this.kVcfEnvelope.Divisions = 10;
+            this.kVcfEnvelope.ForeColor = System.Drawing.Color.White;
+            this.kVcfEnvelope.HideLabels = false;
+            this.kVcfEnvelope.LabelText = "ENVELOPE";
+            this.kVcfEnvelope.LimitToDivisions = false;
+            this.kVcfEnvelope.Location = new System.Drawing.Point(658, 19);
+            this.kVcfEnvelope.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kVcfEnvelope.Max = 1D;
+            this.kVcfEnvelope.Min = 0D;
+            this.kVcfEnvelope.Name = "kVcfEnvelope";
+            this.kVcfEnvelope.Size = new System.Drawing.Size(77, 77);
+            this.kVcfEnvelope.SweepAngle = 270;
+            this.kVcfEnvelope.TabIndex = 24;
+            this.kVcfEnvelope.Thickness = 2;
+            this.kVcfEnvelope.Value = 0D;
             // 
-            // knob20
+            // kEnv1Release
             // 
-            this.knob20.Divisions = 10;
-            this.knob20.ForeColor = System.Drawing.Color.White;
-            this.knob20.HideLabels = false;
-            this.knob20.LabelText = "RELEASE";
-            this.knob20.LimitToDivisions = false;
-            this.knob20.Location = new System.Drawing.Point(659, 126);
-            this.knob20.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob20.Max = 100D;
-            this.knob20.Min = 0D;
-            this.knob20.Name = "knob20";
-            this.knob20.Size = new System.Drawing.Size(77, 77);
-            this.knob20.SweepAngle = 270;
-            this.knob20.TabIndex = 28;
-            this.knob20.Thickness = 2;
-            this.knob20.Value = 0D;
+            this.kEnv1Release.Divisions = 10;
+            this.kEnv1Release.ForeColor = System.Drawing.Color.White;
+            this.kEnv1Release.HideLabels = false;
+            this.kEnv1Release.LabelText = "RELEASE";
+            this.kEnv1Release.LimitToDivisions = false;
+            this.kEnv1Release.Location = new System.Drawing.Point(659, 131);
+            this.kEnv1Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv1Release.Max = 10D;
+            this.kEnv1Release.Min = 0D;
+            this.kEnv1Release.Name = "kEnv1Release";
+            this.kEnv1Release.Size = new System.Drawing.Size(77, 77);
+            this.kEnv1Release.SweepAngle = 270;
+            this.kEnv1Release.TabIndex = 28;
+            this.kEnv1Release.Thickness = 2;
+            this.kEnv1Release.Value = 0D;
             // 
-            // knob21
+            // kEnv1Sustain
             // 
-            this.knob21.Divisions = 10;
-            this.knob21.ForeColor = System.Drawing.Color.White;
-            this.knob21.HideLabels = false;
-            this.knob21.LabelText = "SUSTAIN";
-            this.knob21.LimitToDivisions = false;
-            this.knob21.Location = new System.Drawing.Point(585, 126);
-            this.knob21.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob21.Max = 100D;
-            this.knob21.Min = 0D;
-            this.knob21.Name = "knob21";
-            this.knob21.Size = new System.Drawing.Size(77, 77);
-            this.knob21.SweepAngle = 270;
-            this.knob21.TabIndex = 27;
-            this.knob21.Thickness = 2;
-            this.knob21.Value = 0D;
+            this.kEnv1Sustain.Divisions = 10;
+            this.kEnv1Sustain.ForeColor = System.Drawing.Color.White;
+            this.kEnv1Sustain.HideLabels = false;
+            this.kEnv1Sustain.LabelText = "SUSTAIN";
+            this.kEnv1Sustain.LimitToDivisions = false;
+            this.kEnv1Sustain.Location = new System.Drawing.Point(585, 131);
+            this.kEnv1Sustain.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv1Sustain.Max = 1D;
+            this.kEnv1Sustain.Min = 0D;
+            this.kEnv1Sustain.Name = "kEnv1Sustain";
+            this.kEnv1Sustain.Size = new System.Drawing.Size(77, 77);
+            this.kEnv1Sustain.SweepAngle = 270;
+            this.kEnv1Sustain.TabIndex = 27;
+            this.kEnv1Sustain.Thickness = 2;
+            this.kEnv1Sustain.Value = 0D;
             // 
-            // knob22
+            // kEnv1Decay
             // 
-            this.knob22.Divisions = 10;
-            this.knob22.ForeColor = System.Drawing.Color.White;
-            this.knob22.HideLabels = false;
-            this.knob22.LabelText = "DECAY";
-            this.knob22.LimitToDivisions = false;
-            this.knob22.Location = new System.Drawing.Point(510, 126);
-            this.knob22.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob22.Max = 100D;
-            this.knob22.Min = 0D;
-            this.knob22.Name = "knob22";
-            this.knob22.Size = new System.Drawing.Size(77, 77);
-            this.knob22.SweepAngle = 270;
-            this.knob22.TabIndex = 26;
-            this.knob22.Thickness = 2;
-            this.knob22.Value = 0D;
+            this.kEnv1Decay.Divisions = 10;
+            this.kEnv1Decay.ForeColor = System.Drawing.Color.White;
+            this.kEnv1Decay.HideLabels = false;
+            this.kEnv1Decay.LabelText = "DECAY";
+            this.kEnv1Decay.LimitToDivisions = false;
+            this.kEnv1Decay.Location = new System.Drawing.Point(510, 131);
+            this.kEnv1Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv1Decay.Max = 10D;
+            this.kEnv1Decay.Min = 0D;
+            this.kEnv1Decay.Name = "kEnv1Decay";
+            this.kEnv1Decay.Size = new System.Drawing.Size(77, 77);
+            this.kEnv1Decay.SweepAngle = 270;
+            this.kEnv1Decay.TabIndex = 26;
+            this.kEnv1Decay.Thickness = 2;
+            this.kEnv1Decay.Value = 0D;
             // 
-            // knob23
+            // kEnv1Attack
             // 
-            this.knob23.Divisions = 10;
-            this.knob23.ForeColor = System.Drawing.Color.White;
-            this.knob23.HideLabels = false;
-            this.knob23.LabelText = "ATTACK";
-            this.knob23.LimitToDivisions = false;
-            this.knob23.Location = new System.Drawing.Point(436, 126);
-            this.knob23.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob23.Max = 100D;
-            this.knob23.Min = 0D;
-            this.knob23.Name = "knob23";
-            this.knob23.Size = new System.Drawing.Size(77, 77);
-            this.knob23.SweepAngle = 270;
-            this.knob23.TabIndex = 25;
-            this.knob23.Thickness = 2;
-            this.knob23.Value = 0D;
+            this.kEnv1Attack.Divisions = 10;
+            this.kEnv1Attack.ForeColor = System.Drawing.Color.White;
+            this.kEnv1Attack.HideLabels = false;
+            this.kEnv1Attack.LabelText = "ATTACK";
+            this.kEnv1Attack.LimitToDivisions = false;
+            this.kEnv1Attack.Location = new System.Drawing.Point(436, 131);
+            this.kEnv1Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv1Attack.Max = 10D;
+            this.kEnv1Attack.Min = 0D;
+            this.kEnv1Attack.Name = "kEnv1Attack";
+            this.kEnv1Attack.Size = new System.Drawing.Size(77, 77);
+            this.kEnv1Attack.SweepAngle = 270;
+            this.kEnv1Attack.TabIndex = 25;
+            this.kEnv1Attack.Thickness = 2;
+            this.kEnv1Attack.Value = 0D;
             // 
-            // knob24
+            // kEnv2Release
             // 
-            this.knob24.Divisions = 10;
-            this.knob24.ForeColor = System.Drawing.Color.White;
-            this.knob24.HideLabels = false;
-            this.knob24.LabelText = "RELEASE";
-            this.knob24.LimitToDivisions = false;
-            this.knob24.Location = new System.Drawing.Point(658, 237);
-            this.knob24.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob24.Max = 100D;
-            this.knob24.Min = 0D;
-            this.knob24.Name = "knob24";
-            this.knob24.Size = new System.Drawing.Size(77, 77);
-            this.knob24.SweepAngle = 270;
-            this.knob24.TabIndex = 32;
-            this.knob24.Thickness = 2;
-            this.knob24.Value = 0D;
+            this.kEnv2Release.Divisions = 10;
+            this.kEnv2Release.ForeColor = System.Drawing.Color.White;
+            this.kEnv2Release.HideLabels = false;
+            this.kEnv2Release.LabelText = "RELEASE";
+            this.kEnv2Release.LimitToDivisions = false;
+            this.kEnv2Release.Location = new System.Drawing.Point(658, 242);
+            this.kEnv2Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv2Release.Max = 10D;
+            this.kEnv2Release.Min = 0D;
+            this.kEnv2Release.Name = "kEnv2Release";
+            this.kEnv2Release.Size = new System.Drawing.Size(77, 77);
+            this.kEnv2Release.SweepAngle = 270;
+            this.kEnv2Release.TabIndex = 32;
+            this.kEnv2Release.Thickness = 2;
+            this.kEnv2Release.Value = 4D;
             // 
-            // knob25
+            // kEnv2Sustain
             // 
-            this.knob25.Divisions = 10;
-            this.knob25.ForeColor = System.Drawing.Color.White;
-            this.knob25.HideLabels = false;
-            this.knob25.LabelText = "SUSTAIN";
-            this.knob25.LimitToDivisions = false;
-            this.knob25.Location = new System.Drawing.Point(584, 237);
-            this.knob25.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob25.Max = 100D;
-            this.knob25.Min = 0D;
-            this.knob25.Name = "knob25";
-            this.knob25.Size = new System.Drawing.Size(77, 77);
-            this.knob25.SweepAngle = 270;
-            this.knob25.TabIndex = 31;
-            this.knob25.Thickness = 2;
-            this.knob25.Value = 0D;
+            this.kEnv2Sustain.Divisions = 10;
+            this.kEnv2Sustain.ForeColor = System.Drawing.Color.White;
+            this.kEnv2Sustain.HideLabels = false;
+            this.kEnv2Sustain.LabelText = "SUSTAIN";
+            this.kEnv2Sustain.LimitToDivisions = false;
+            this.kEnv2Sustain.Location = new System.Drawing.Point(584, 242);
+            this.kEnv2Sustain.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv2Sustain.Max = 1D;
+            this.kEnv2Sustain.Min = 0D;
+            this.kEnv2Sustain.Name = "kEnv2Sustain";
+            this.kEnv2Sustain.Size = new System.Drawing.Size(77, 77);
+            this.kEnv2Sustain.SweepAngle = 270;
+            this.kEnv2Sustain.TabIndex = 31;
+            this.kEnv2Sustain.Thickness = 2;
+            this.kEnv2Sustain.Value = 0.7D;
             // 
-            // knob26
+            // kEnv2Decay
             // 
-            this.knob26.Divisions = 10;
-            this.knob26.ForeColor = System.Drawing.Color.White;
-            this.knob26.HideLabels = false;
-            this.knob26.LabelText = "DECAY";
-            this.knob26.LimitToDivisions = false;
-            this.knob26.Location = new System.Drawing.Point(510, 237);
-            this.knob26.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob26.Max = 100D;
-            this.knob26.Min = 0D;
-            this.knob26.Name = "knob26";
-            this.knob26.Size = new System.Drawing.Size(77, 77);
-            this.knob26.SweepAngle = 270;
-            this.knob26.TabIndex = 30;
-            this.knob26.Thickness = 2;
-            this.knob26.Value = 0D;
+            this.kEnv2Decay.Divisions = 10;
+            this.kEnv2Decay.ForeColor = System.Drawing.Color.White;
+            this.kEnv2Decay.HideLabels = false;
+            this.kEnv2Decay.LabelText = "DECAY";
+            this.kEnv2Decay.LimitToDivisions = false;
+            this.kEnv2Decay.Location = new System.Drawing.Point(510, 242);
+            this.kEnv2Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv2Decay.Max = 10D;
+            this.kEnv2Decay.Min = 0D;
+            this.kEnv2Decay.Name = "kEnv2Decay";
+            this.kEnv2Decay.Size = new System.Drawing.Size(77, 77);
+            this.kEnv2Decay.SweepAngle = 270;
+            this.kEnv2Decay.TabIndex = 30;
+            this.kEnv2Decay.Thickness = 2;
+            this.kEnv2Decay.Value = 0.3D;
             // 
-            // knob27
+            // kEnv2Attack
             // 
-            this.knob27.Divisions = 10;
-            this.knob27.ForeColor = System.Drawing.Color.White;
-            this.knob27.HideLabels = false;
-            this.knob27.LabelText = "ATTACK";
-            this.knob27.LimitToDivisions = false;
-            this.knob27.Location = new System.Drawing.Point(436, 237);
-            this.knob27.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob27.Max = 100D;
-            this.knob27.Min = 0D;
-            this.knob27.Name = "knob27";
-            this.knob27.Size = new System.Drawing.Size(77, 77);
-            this.knob27.SweepAngle = 270;
-            this.knob27.TabIndex = 29;
-            this.knob27.Thickness = 2;
-            this.knob27.Value = 0D;
+            this.kEnv2Attack.Divisions = 10;
+            this.kEnv2Attack.ForeColor = System.Drawing.Color.White;
+            this.kEnv2Attack.HideLabels = false;
+            this.kEnv2Attack.LabelText = "ATTACK";
+            this.kEnv2Attack.LimitToDivisions = false;
+            this.kEnv2Attack.Location = new System.Drawing.Point(436, 242);
+            this.kEnv2Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv2Attack.Max = 10D;
+            this.kEnv2Attack.Min = 0D;
+            this.kEnv2Attack.Name = "kEnv2Attack";
+            this.kEnv2Attack.Size = new System.Drawing.Size(77, 77);
+            this.kEnv2Attack.SweepAngle = 270;
+            this.kEnv2Attack.TabIndex = 29;
+            this.kEnv2Attack.Thickness = 2;
+            this.kEnv2Attack.Value = 0D;
             // 
-            // knob28
+            // kGlide
             // 
-            this.knob28.Divisions = 10;
-            this.knob28.ForeColor = System.Drawing.Color.White;
-            this.knob28.HideLabels = false;
-            this.knob28.LabelText = "GLIDE";
-            this.knob28.LimitToDivisions = false;
-            this.knob28.Location = new System.Drawing.Point(745, 12);
-            this.knob28.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob28.Max = 100D;
-            this.knob28.Min = 0D;
-            this.knob28.Name = "knob28";
-            this.knob28.Size = new System.Drawing.Size(77, 77);
-            this.knob28.SweepAngle = 270;
-            this.knob28.TabIndex = 33;
-            this.knob28.Thickness = 2;
-            this.knob28.Value = 0D;
+            this.kGlide.Divisions = 10;
+            this.kGlide.ForeColor = System.Drawing.Color.White;
+            this.kGlide.HideLabels = false;
+            this.kGlide.LabelText = "GLIDE";
+            this.kGlide.LimitToDivisions = false;
+            this.kGlide.Location = new System.Drawing.Point(745, 17);
+            this.kGlide.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kGlide.Max = 100D;
+            this.kGlide.Min = 0D;
+            this.kGlide.Name = "kGlide";
+            this.kGlide.Size = new System.Drawing.Size(77, 77);
+            this.kGlide.SweepAngle = 270;
+            this.kGlide.TabIndex = 33;
+            this.kGlide.Thickness = 2;
+            this.kGlide.Value = 0D;
             // 
-            // knob29
+            // kNoiseMix
             // 
-            this.knob29.Divisions = 10;
-            this.knob29.ForeColor = System.Drawing.Color.White;
-            this.knob29.HideLabels = false;
-            this.knob29.LabelText = "NOISE";
-            this.knob29.LimitToDivisions = false;
-            this.knob29.Location = new System.Drawing.Point(341, 347);
-            this.knob29.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob29.Max = 100D;
-            this.knob29.Min = 0D;
-            this.knob29.Name = "knob29";
-            this.knob29.Size = new System.Drawing.Size(77, 77);
-            this.knob29.SweepAngle = 270;
-            this.knob29.TabIndex = 34;
-            this.knob29.Thickness = 2;
-            this.knob29.Value = 0D;
+            this.kNoiseMix.Divisions = 10;
+            this.kNoiseMix.ForeColor = System.Drawing.Color.White;
+            this.kNoiseMix.HideLabels = false;
+            this.kNoiseMix.LabelText = "NOISE";
+            this.kNoiseMix.LimitToDivisions = false;
+            this.kNoiseMix.Location = new System.Drawing.Point(341, 352);
+            this.kNoiseMix.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kNoiseMix.Max = 1D;
+            this.kNoiseMix.Min = 0D;
+            this.kNoiseMix.Name = "kNoiseMix";
+            this.kNoiseMix.Size = new System.Drawing.Size(77, 77);
+            this.kNoiseMix.SweepAngle = 270;
+            this.kNoiseMix.TabIndex = 34;
+            this.kNoiseMix.Thickness = 2;
+            this.kNoiseMix.Value = 0D;
             // 
             // panel7
             // 
@@ -671,41 +671,41 @@
             this.panel7.Size = new System.Drawing.Size(160, 105);
             this.panel7.TabIndex = 35;
             // 
-            // knob30
+            // kLfo1Shape
             // 
-            this.knob30.Divisions = 4;
-            this.knob30.ForeColor = System.Drawing.Color.White;
-            this.knob30.HideLabels = true;
-            this.knob30.LabelText = "SHAPE";
-            this.knob30.LimitToDivisions = true;
-            this.knob30.Location = new System.Drawing.Point(86, 349);
-            this.knob30.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob30.Max = 4D;
-            this.knob30.Min = 0D;
-            this.knob30.Name = "knob30";
-            this.knob30.Size = new System.Drawing.Size(77, 77);
-            this.knob30.SweepAngle = 135;
-            this.knob30.TabIndex = 37;
-            this.knob30.Thickness = 2;
-            this.knob30.Value = 0D;
+            this.kLfo1Shape.Divisions = 4;
+            this.kLfo1Shape.ForeColor = System.Drawing.Color.White;
+            this.kLfo1Shape.HideLabels = true;
+            this.kLfo1Shape.LabelText = "SHAPE";
+            this.kLfo1Shape.LimitToDivisions = true;
+            this.kLfo1Shape.Location = new System.Drawing.Point(86, 354);
+            this.kLfo1Shape.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kLfo1Shape.Max = 4D;
+            this.kLfo1Shape.Min = 0D;
+            this.kLfo1Shape.Name = "kLfo1Shape";
+            this.kLfo1Shape.Size = new System.Drawing.Size(77, 77);
+            this.kLfo1Shape.SweepAngle = 135;
+            this.kLfo1Shape.TabIndex = 37;
+            this.kLfo1Shape.Thickness = 2;
+            this.kLfo1Shape.Value = 0D;
             // 
-            // knob31
+            // kLfo1Rate
             // 
-            this.knob31.Divisions = 10;
-            this.knob31.ForeColor = System.Drawing.Color.White;
-            this.knob31.HideLabels = false;
-            this.knob31.LabelText = "RATE";
-            this.knob31.LimitToDivisions = false;
-            this.knob31.Location = new System.Drawing.Point(12, 349);
-            this.knob31.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob31.Max = 100D;
-            this.knob31.Min = 0D;
-            this.knob31.Name = "knob31";
-            this.knob31.Size = new System.Drawing.Size(77, 77);
-            this.knob31.SweepAngle = 270;
-            this.knob31.TabIndex = 36;
-            this.knob31.Thickness = 2;
-            this.knob31.Value = 0D;
+            this.kLfo1Rate.Divisions = 10;
+            this.kLfo1Rate.ForeColor = System.Drawing.Color.White;
+            this.kLfo1Rate.HideLabels = false;
+            this.kLfo1Rate.LabelText = "RATE";
+            this.kLfo1Rate.LimitToDivisions = false;
+            this.kLfo1Rate.Location = new System.Drawing.Point(12, 354);
+            this.kLfo1Rate.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kLfo1Rate.Max = 100D;
+            this.kLfo1Rate.Min = 0D;
+            this.kLfo1Rate.Name = "kLfo1Rate";
+            this.kLfo1Rate.Size = new System.Drawing.Size(77, 77);
+            this.kLfo1Rate.SweepAngle = 270;
+            this.kLfo1Rate.TabIndex = 36;
+            this.kLfo1Rate.Thickness = 2;
+            this.kLfo1Rate.Value = 0D;
             // 
             // panel8
             // 
@@ -717,113 +717,113 @@
             this.panel8.Size = new System.Drawing.Size(160, 105);
             this.panel8.TabIndex = 38;
             // 
-            // knob32
+            // kLfo2Shape
             // 
-            this.knob32.Divisions = 4;
-            this.knob32.ForeColor = System.Drawing.Color.White;
-            this.knob32.HideLabels = true;
-            this.knob32.LabelText = "SHAPE";
-            this.knob32.LimitToDivisions = true;
-            this.knob32.Location = new System.Drawing.Point(249, 349);
-            this.knob32.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob32.Max = 4D;
-            this.knob32.Min = 0D;
-            this.knob32.Name = "knob32";
-            this.knob32.Size = new System.Drawing.Size(77, 77);
-            this.knob32.SweepAngle = 135;
-            this.knob32.TabIndex = 40;
-            this.knob32.Thickness = 2;
-            this.knob32.Value = 0D;
+            this.kLfo2Shape.Divisions = 4;
+            this.kLfo2Shape.ForeColor = System.Drawing.Color.White;
+            this.kLfo2Shape.HideLabels = true;
+            this.kLfo2Shape.LabelText = "SHAPE";
+            this.kLfo2Shape.LimitToDivisions = true;
+            this.kLfo2Shape.Location = new System.Drawing.Point(249, 354);
+            this.kLfo2Shape.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kLfo2Shape.Max = 4D;
+            this.kLfo2Shape.Min = 0D;
+            this.kLfo2Shape.Name = "kLfo2Shape";
+            this.kLfo2Shape.Size = new System.Drawing.Size(77, 77);
+            this.kLfo2Shape.SweepAngle = 135;
+            this.kLfo2Shape.TabIndex = 40;
+            this.kLfo2Shape.Thickness = 2;
+            this.kLfo2Shape.Value = 0D;
             // 
-            // knob33
+            // kLfo2Rate
             // 
-            this.knob33.Divisions = 10;
-            this.knob33.ForeColor = System.Drawing.Color.White;
-            this.knob33.HideLabels = false;
-            this.knob33.LabelText = "RATE";
-            this.knob33.LimitToDivisions = false;
-            this.knob33.Location = new System.Drawing.Point(175, 349);
-            this.knob33.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob33.Max = 5D;
-            this.knob33.Min = 0D;
-            this.knob33.Name = "knob33";
-            this.knob33.Size = new System.Drawing.Size(77, 77);
-            this.knob33.SweepAngle = 270;
-            this.knob33.TabIndex = 39;
-            this.knob33.Thickness = 2;
-            this.knob33.Value = 0D;
+            this.kLfo2Rate.Divisions = 10;
+            this.kLfo2Rate.ForeColor = System.Drawing.Color.White;
+            this.kLfo2Rate.HideLabels = false;
+            this.kLfo2Rate.LabelText = "RATE";
+            this.kLfo2Rate.LimitToDivisions = false;
+            this.kLfo2Rate.Location = new System.Drawing.Point(175, 354);
+            this.kLfo2Rate.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kLfo2Rate.Max = 5D;
+            this.kLfo2Rate.Min = 0D;
+            this.kLfo2Rate.Name = "kLfo2Rate";
+            this.kLfo2Rate.Size = new System.Drawing.Size(77, 77);
+            this.kLfo2Rate.SweepAngle = 270;
+            this.kLfo2Rate.TabIndex = 39;
+            this.kLfo2Rate.Thickness = 2;
+            this.kLfo2Rate.Value = 0D;
             // 
-            // knob34
+            // kEnv3Release
             // 
-            this.knob34.Divisions = 10;
-            this.knob34.ForeColor = System.Drawing.Color.White;
-            this.knob34.HideLabels = false;
-            this.knob34.LabelText = "RELEASE";
-            this.knob34.LimitToDivisions = false;
-            this.knob34.Location = new System.Drawing.Point(658, 347);
-            this.knob34.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob34.Max = 100D;
-            this.knob34.Min = 0D;
-            this.knob34.Name = "knob34";
-            this.knob34.Size = new System.Drawing.Size(77, 77);
-            this.knob34.SweepAngle = 270;
-            this.knob34.TabIndex = 45;
-            this.knob34.Thickness = 2;
-            this.knob34.Value = 0D;
+            this.kEnv3Release.Divisions = 10;
+            this.kEnv3Release.ForeColor = System.Drawing.Color.White;
+            this.kEnv3Release.HideLabels = false;
+            this.kEnv3Release.LabelText = "RELEASE";
+            this.kEnv3Release.LimitToDivisions = false;
+            this.kEnv3Release.Location = new System.Drawing.Point(658, 352);
+            this.kEnv3Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv3Release.Max = 10D;
+            this.kEnv3Release.Min = 0D;
+            this.kEnv3Release.Name = "kEnv3Release";
+            this.kEnv3Release.Size = new System.Drawing.Size(77, 77);
+            this.kEnv3Release.SweepAngle = 270;
+            this.kEnv3Release.TabIndex = 45;
+            this.kEnv3Release.Thickness = 2;
+            this.kEnv3Release.Value = 0D;
             // 
-            // knob35
+            // kEnv3Sustain
             // 
-            this.knob35.Divisions = 10;
-            this.knob35.ForeColor = System.Drawing.Color.White;
-            this.knob35.HideLabels = false;
-            this.knob35.LabelText = "SUSTAIN";
-            this.knob35.LimitToDivisions = false;
-            this.knob35.Location = new System.Drawing.Point(584, 347);
-            this.knob35.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob35.Max = 100D;
-            this.knob35.Min = 0D;
-            this.knob35.Name = "knob35";
-            this.knob35.Size = new System.Drawing.Size(77, 77);
-            this.knob35.SweepAngle = 270;
-            this.knob35.TabIndex = 44;
-            this.knob35.Thickness = 2;
-            this.knob35.Value = 0D;
+            this.kEnv3Sustain.Divisions = 10;
+            this.kEnv3Sustain.ForeColor = System.Drawing.Color.White;
+            this.kEnv3Sustain.HideLabels = false;
+            this.kEnv3Sustain.LabelText = "SUSTAIN";
+            this.kEnv3Sustain.LimitToDivisions = false;
+            this.kEnv3Sustain.Location = new System.Drawing.Point(584, 352);
+            this.kEnv3Sustain.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv3Sustain.Max = 1D;
+            this.kEnv3Sustain.Min = 0D;
+            this.kEnv3Sustain.Name = "kEnv3Sustain";
+            this.kEnv3Sustain.Size = new System.Drawing.Size(77, 77);
+            this.kEnv3Sustain.SweepAngle = 270;
+            this.kEnv3Sustain.TabIndex = 44;
+            this.kEnv3Sustain.Thickness = 2;
+            this.kEnv3Sustain.Value = 0D;
             // 
-            // knob36
+            // kEnv3Decay
             // 
-            this.knob36.Divisions = 10;
-            this.knob36.ForeColor = System.Drawing.Color.White;
-            this.knob36.HideLabels = false;
-            this.knob36.LabelText = "DECAY";
-            this.knob36.LimitToDivisions = false;
-            this.knob36.Location = new System.Drawing.Point(510, 347);
-            this.knob36.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob36.Max = 100D;
-            this.knob36.Min = 0D;
-            this.knob36.Name = "knob36";
-            this.knob36.Size = new System.Drawing.Size(77, 77);
-            this.knob36.SweepAngle = 270;
-            this.knob36.TabIndex = 43;
-            this.knob36.Thickness = 2;
-            this.knob36.Value = 0D;
+            this.kEnv3Decay.Divisions = 10;
+            this.kEnv3Decay.ForeColor = System.Drawing.Color.White;
+            this.kEnv3Decay.HideLabels = false;
+            this.kEnv3Decay.LabelText = "DECAY";
+            this.kEnv3Decay.LimitToDivisions = false;
+            this.kEnv3Decay.Location = new System.Drawing.Point(510, 352);
+            this.kEnv3Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv3Decay.Max = 10D;
+            this.kEnv3Decay.Min = 0D;
+            this.kEnv3Decay.Name = "kEnv3Decay";
+            this.kEnv3Decay.Size = new System.Drawing.Size(77, 77);
+            this.kEnv3Decay.SweepAngle = 270;
+            this.kEnv3Decay.TabIndex = 43;
+            this.kEnv3Decay.Thickness = 2;
+            this.kEnv3Decay.Value = 0D;
             // 
-            // knob37
+            // kEnv3Attack
             // 
-            this.knob37.Divisions = 10;
-            this.knob37.ForeColor = System.Drawing.Color.White;
-            this.knob37.HideLabels = false;
-            this.knob37.LabelText = "ATTACK";
-            this.knob37.LimitToDivisions = false;
-            this.knob37.Location = new System.Drawing.Point(436, 347);
-            this.knob37.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.knob37.Max = 100D;
-            this.knob37.Min = 0D;
-            this.knob37.Name = "knob37";
-            this.knob37.Size = new System.Drawing.Size(77, 77);
-            this.knob37.SweepAngle = 270;
-            this.knob37.TabIndex = 42;
-            this.knob37.Thickness = 2;
-            this.knob37.Value = 0D;
+            this.kEnv3Attack.Divisions = 10;
+            this.kEnv3Attack.ForeColor = System.Drawing.Color.White;
+            this.kEnv3Attack.HideLabels = false;
+            this.kEnv3Attack.LabelText = "ATTACK";
+            this.kEnv3Attack.LimitToDivisions = false;
+            this.kEnv3Attack.Location = new System.Drawing.Point(436, 352);
+            this.kEnv3Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEnv3Attack.Max = 10D;
+            this.kEnv3Attack.Min = 0D;
+            this.kEnv3Attack.Name = "kEnv3Attack";
+            this.kEnv3Attack.Size = new System.Drawing.Size(77, 77);
+            this.kEnv3Attack.SweepAngle = 270;
+            this.kEnv3Attack.TabIndex = 42;
+            this.kEnv3Attack.Thickness = 2;
+            this.kEnv3Attack.Value = 0D;
             // 
             // panel9
             // 
@@ -851,55 +851,54 @@
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(850, 450);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.knob34);
-            this.Controls.Add(this.knob35);
-            this.Controls.Add(this.knob36);
-            this.Controls.Add(this.knob37);
+            this.Controls.Add(this.kEnv3Release);
+            this.Controls.Add(this.kEnv3Sustain);
+            this.Controls.Add(this.kEnv3Decay);
+            this.Controls.Add(this.kEnv3Attack);
             this.Controls.Add(this.panel9);
-            this.Controls.Add(this.knob32);
-            this.Controls.Add(this.knob33);
+            this.Controls.Add(this.kLfo2Shape);
+            this.Controls.Add(this.kLfo2Rate);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.knob30);
-            this.Controls.Add(this.knob31);
+            this.Controls.Add(this.kLfo1Shape);
+            this.Controls.Add(this.kLfo1Rate);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.knob29);
-            this.Controls.Add(this.knob28);
-            this.Controls.Add(this.knob24);
-            this.Controls.Add(this.knob25);
-            this.Controls.Add(this.knob26);
-            this.Controls.Add(this.knob27);
-            this.Controls.Add(this.knob20);
-            this.Controls.Add(this.knob21);
-            this.Controls.Add(this.knob22);
-            this.Controls.Add(this.knob23);
-            this.Controls.Add(this.knob19);
-            this.Controls.Add(this.knob18);
-            this.Controls.Add(this.knob17);
-            this.Controls.Add(this.knob16);
+            this.Controls.Add(this.kNoiseMix);
+            this.Controls.Add(this.kGlide);
+            this.Controls.Add(this.kEnv2Release);
+            this.Controls.Add(this.kEnv2Sustain);
+            this.Controls.Add(this.kEnv2Decay);
+            this.Controls.Add(this.kEnv2Attack);
+            this.Controls.Add(this.kEnv1Release);
+            this.Controls.Add(this.kEnv1Sustain);
+            this.Controls.Add(this.kEnv1Decay);
+            this.Controls.Add(this.kEnv1Attack);
+            this.Controls.Add(this.kVcfEnvelope);
+            this.Controls.Add(this.kVcfResonance);
+            this.Controls.Add(this.kVcfCutoff);
+            this.Controls.Add(this.kVcfType);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.knob15);
-            this.Controls.Add(this.knob14);
-            this.Controls.Add(this.knob13);
+            this.Controls.Add(this.kOsc3Mix);
+            this.Controls.Add(this.kOsc2Mix);
+            this.Controls.Add(this.kOsc1Mix);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.knob9);
-            this.Controls.Add(this.knob10);
-            this.Controls.Add(this.knob11);
-            this.Controls.Add(this.knob12);
+            this.Controls.Add(this.kOsc3Waveform);
+            this.Controls.Add(this.kOsc3PW);
+            this.Controls.Add(this.kOsc3Octave);
+            this.Controls.Add(this.kOsc3Freq);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.knob5);
-            this.Controls.Add(this.knob6);
-            this.Controls.Add(this.knob7);
-            this.Controls.Add(this.knob8);
+            this.Controls.Add(this.kOsc2Waveform);
+            this.Controls.Add(this.kOsc2PW);
+            this.Controls.Add(this.kOsc2Octave);
+            this.Controls.Add(this.kOsc2Freq);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.knob4);
-            this.Controls.Add(this.knob3);
-            this.Controls.Add(this.knob2);
-            this.Controls.Add(this.knob1);
+            this.Controls.Add(this.kOsc1Waveform);
+            this.Controls.Add(this.kOsc1PW);
+            this.Controls.Add(this.kOsc1Octave);
+            this.Controls.Add(this.kOsc1Freq);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Shed Prophet";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -908,50 +907,50 @@
         #endregion
 
         private Controls.Panel panel1;
-        private Controls.Knob knob1;
-        private Controls.Knob knob2;
-        private Controls.Knob knob3;
-        private Controls.Knob knob4;
-        private Controls.Knob knob5;
-        private Controls.Knob knob6;
-        private Controls.Knob knob7;
-        private Controls.Knob knob8;
+        private Controls.Knob kOsc1Freq;
+        private Controls.Knob kOsc1Octave;
+        private Controls.Knob kOsc1PW;
+        private Controls.Knob kOsc1Waveform;
+        private Controls.Knob kOsc2Waveform;
+        private Controls.Knob kOsc2PW;
+        private Controls.Knob kOsc2Octave;
+        private Controls.Knob kOsc2Freq;
         private Controls.Panel panel2;
-        private Controls.Knob knob9;
-        private Controls.Knob knob10;
-        private Controls.Knob knob11;
-        private Controls.Knob knob12;
+        private Controls.Knob kOsc3Waveform;
+        private Controls.Knob kOsc3PW;
+        private Controls.Knob kOsc3Octave;
+        private Controls.Knob kOsc3Freq;
         private Controls.Panel panel3;
         private Controls.Panel panel4;
-        private Controls.Knob knob13;
-        private Controls.Knob knob14;
-        private Controls.Knob knob15;
+        private Controls.Knob kOsc1Mix;
+        private Controls.Knob kOsc2Mix;
+        private Controls.Knob kOsc3Mix;
         private Controls.Panel panel5;
         private Controls.Panel panel6;
-        private Controls.Knob knob16;
-        private Controls.Knob knob17;
-        private Controls.Knob knob18;
-        private Controls.Knob knob19;
-        private Controls.Knob knob20;
-        private Controls.Knob knob21;
-        private Controls.Knob knob22;
-        private Controls.Knob knob23;
-        private Controls.Knob knob24;
-        private Controls.Knob knob25;
-        private Controls.Knob knob26;
-        private Controls.Knob knob27;
-        private Controls.Knob knob28;
-        private Controls.Knob knob29;
+        private Controls.Knob kVcfType;
+        private Controls.Knob kVcfCutoff;
+        private Controls.Knob kVcfResonance;
+        private Controls.Knob kVcfEnvelope;
+        private Controls.Knob kEnv1Release;
+        private Controls.Knob kEnv1Sustain;
+        private Controls.Knob kEnv1Decay;
+        private Controls.Knob kEnv1Attack;
+        private Controls.Knob kEnv2Release;
+        private Controls.Knob kEnv2Sustain;
+        private Controls.Knob kEnv2Decay;
+        private Controls.Knob kEnv2Attack;
+        private Controls.Knob kGlide;
+        private Controls.Knob kNoiseMix;
         private Controls.Panel panel7;
-        private Controls.Knob knob30;
-        private Controls.Knob knob31;
+        private Controls.Knob kLfo1Shape;
+        private Controls.Knob kLfo1Rate;
         private Controls.Panel panel8;
-        private Controls.Knob knob32;
-        private Controls.Knob knob33;
-        private Controls.Knob knob34;
-        private Controls.Knob knob35;
-        private Controls.Knob knob36;
-        private Controls.Knob knob37;
+        private Controls.Knob kLfo2Shape;
+        private Controls.Knob kLfo2Rate;
+        private Controls.Knob kEnv3Release;
+        private Controls.Knob kEnv3Sustain;
+        private Controls.Knob kEnv3Decay;
+        private Controls.Knob kEnv3Attack;
         private Controls.Panel panel9;
         private PictureBox pictureBox1;
     }

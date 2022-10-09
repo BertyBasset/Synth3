@@ -68,7 +68,7 @@ public class Keyboard : iModule {
             TriggerOn?.Invoke(this, new EventArgs());
         }
     }
-    public float Glide { get;  set; } = 0;
+    public double Glide { get;  set; } = 0;
 
     private Note _Note = new Note();
     public Note Note {

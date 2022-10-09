@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Windows.Markup;
 
 namespace UI.Controls {
-    public partial class Knob : UserControl {
+    public partial class Knob : UserControl, iControl {
 
 
         int _oldIntValue = 0;
