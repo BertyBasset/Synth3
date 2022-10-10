@@ -19,12 +19,12 @@ public class LFO : iModule {
     #endregion
 
     #region Public Properties
-    private WaveForm _WaveForm = new WaveForm();
-    public WaveForm WaveForm {
-        get { return _WaveForm; }
+    private LFOWaveForm _Shape = new LFOWaveForm();
+    public LFOWaveForm Shape {
+        get { return _Shape; }
         set {
-            _WaveForm = value;
-            _Generator = _WaveForm.Generator;   // This is where we assign Waveform Specific Generator to private _Generator object
+            _Shape = value;
+            _Generator = _Shape.Generator;   // This is where we assign Waveform Specific Generator to private _Generator object
         }
     }
 
@@ -66,14 +66,14 @@ public class LFO : iModule {
 
         double value = 0f;
 
-        if (_WaveForm.Type == WaveformType.SH) {
+        if (_Shape.Type == LFOWaveformType.SH) {
             // Only update S+H value once per phase cycle
             if (oldPhase > _Phase) {
                 float i = (float)(int)r.NextInt64(-12, 12);
                 Value = i / 12 * _level * 10;
             }
         } else {
-            if (_WaveForm.Type == WaveformType.SawFalling)
+            if (_Shape.Type == LFOWaveformType.SawFalling)
                 value = _Generator.GenerateSample(_Phase, 0, delta, false);
             else
                 value = -_Generator.GenerateSample(_Phase, 0, delta, false);

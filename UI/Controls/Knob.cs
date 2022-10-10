@@ -25,10 +25,27 @@ namespace UI.Controls {
             Dot
         }
 
+        public String LabelMarker0 { 
+            get { return lbl0.Text; }
+            set { lbl0.Text = value; }
+        }
+
+        public String LabelMarker5 {
+            get { return lbl5.Text; }
+            set { lbl5.Text = value; }
+        }
+
+        public String LabelMarker10 {
+            get { return lbl10.Text; }
+            set { lbl10.Text = value; }
+        }
+
+
         public bool HideLabels {
             get { return !lbl0.Visible; }
             set {
                 lbl0.Visible = !value;
+                lbl5.Visible = !value;
                 lbl10.Visible = !value;
             }
         }
@@ -67,6 +84,7 @@ namespace UI.Controls {
                 Knob_Paint(this, null);
             }
         }
+
 
 
 
@@ -125,8 +143,8 @@ namespace UI.Controls {
             get { return _min; }
             set {
                 _min = value;
-                if (_min < -100)
-                    _min = -100;
+                if (_min < -500)
+                    _min = -500;
                 if (_min > 0)
                     _min = 0;
                 if (_value < _min)
@@ -143,8 +161,8 @@ namespace UI.Controls {
                 _max = value;
                 if (_max < 0)
                     _max = 0;
-                if (_max > 100)
-                    _max = 100;
+                if (_max > 500)
+                    _max = 500;
                 if (_value > _max)
                     _value = _max;
 
@@ -210,6 +228,11 @@ namespace UI.Controls {
             get { return _intValue; }
         }
 
+        private bool _hideticks;
+        public bool HideTicks { 
+            get { return _hideticks; }
+            set { _hideticks = value; }
+        }
 
 
         private int Percent {
@@ -253,7 +276,14 @@ namespace UI.Controls {
             var g = this.CreateGraphics();
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            g.Clear(BackColor);
+            if (BackgroundImage == null)
+                g.Clear(BackColor);
+            else
+                g.DrawImage(BackgroundImage, 0, 0);
+
+
+
+
 
             Pen pen = new Pen(new SolidBrush(ForeColor), _thickness);
 
@@ -286,25 +316,18 @@ namespace UI.Controls {
                 g.DrawLine(pen, pCentre, pPointer);
 
 
-            if (Divisions > 0) {
-                for (int i = 0; i <= Divisions; i++) {
-                    int  x = SweepAngle / Divisions * i;
+            if(!_hideticks) { 
+                if (Divisions > 0) {
+                    for (int i = 0; i <= Divisions; i++) {
+                        int x = SweepAngle / Divisions * i;
 
-                    Point p1 = new Point((int)(pCentre.X + (radius + 5) * Math.Sin((x+ anlgeStart) * Math.PI / 180)), (int)(pCentre.Y + (radius+5) * Math.Cos((x + anlgeStart) * Math.PI / 180)));
-                    Point p2 = new Point((int)(pCentre.X  + (radius + 9) * Math.Sin(( x + anlgeStart) * Math.PI / 180)), (int)(pCentre.Y + (radius + 9) * Math.Cos((x + anlgeStart) * Math.PI / 180)));
-                    g.DrawLine(new Pen(new SolidBrush(ForeColor), 1), p1, p2);
+                        Point p1 = new Point((int)(pCentre.X + (radius + 5) * Math.Sin((x + anlgeStart) * Math.PI / 180)), (int)(pCentre.Y + (radius + 5) * Math.Cos((x + anlgeStart) * Math.PI / 180)));
+                        Point p2 = new Point((int)(pCentre.X + (radius + 9) * Math.Sin((x + anlgeStart) * Math.PI / 180)), (int)(pCentre.Y + (radius + 9) * Math.Cos((x + anlgeStart) * Math.PI / 180)));
+                        g.DrawLine(new Pen(new SolidBrush(ForeColor), 1), p1, p2);
 
+                    }
                 }
-            
-            
-            
-            
-            
             }
-
-
-
-
         }
 
 

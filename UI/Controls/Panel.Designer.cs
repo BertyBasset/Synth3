@@ -31,7 +31,7 @@
             this.lblLabelText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLabelText.AutoSize = true;
-            this.lblLabelText.Location = new System.Drawing.Point(183, 0);
+            this.lblLabelText.Location = new System.Drawing.Point(183, -3);
             this.lblLabelText.Name = "lblLabelText";
             this.lblLabelText.Size = new System.Drawing.Size(38, 15);
             this.lblLabelText.TabIndex = 0;

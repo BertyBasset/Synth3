@@ -26,6 +26,7 @@
             this.lblLabelText = new System.Windows.Forms.Label();
             this.lbl0 = new System.Windows.Forms.Label();
             this.lbl10 = new System.Windows.Forms.Label();
+            this.lbl5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblLabelText
@@ -45,7 +46,7 @@
             this.lbl0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl0.AutoSize = true;
             this.lbl0.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl0.Location = new System.Drawing.Point(6, 123);
+            this.lbl0.Location = new System.Drawing.Point(3, 123);
             this.lbl0.Name = "lbl0";
             this.lbl0.Size = new System.Drawing.Size(10, 12);
             this.lbl0.TabIndex = 1;
@@ -57,17 +58,30 @@
             this.lbl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl10.AutoSize = true;
             this.lbl10.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl10.Location = new System.Drawing.Point(132, 123);
+            this.lbl10.Location = new System.Drawing.Point(134, 123);
             this.lbl10.Name = "lbl10";
             this.lbl10.Size = new System.Drawing.Size(15, 12);
             this.lbl10.TabIndex = 2;
             this.lbl10.Text = "10";
             this.lbl10.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
+            // lbl5
+            // 
+            this.lbl5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl5.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl5.Location = new System.Drawing.Point(34, -16);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(84, 26);
+            this.lbl5.TabIndex = 3;
+            this.lbl5.Text = "5";
+            this.lbl5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // Knob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl5);
             this.Controls.Add(this.lbl10);
             this.Controls.Add(this.lbl0);
             this.Controls.Add(this.lblLabelText);
@@ -82,5 +96,6 @@
         private Label lblLabelText;
         private Label lbl0;
         private Label lbl10;
+        private Label lbl5;
     }
 }

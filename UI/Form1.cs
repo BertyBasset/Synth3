@@ -23,6 +23,7 @@ using SynthEngine.Modules.Modulators;
 namespace UI;
 public partial class Form1 : Form {
 
+
     Synth.SynthEngine engine = new Synth.SynthEngine();
     ModWheel mw = new();
     Keyboard kbd = new();
@@ -47,7 +48,6 @@ public partial class Form1 : Form {
 
     public Form1() {
         InitializeComponent();
-
         InitSynth();
     }
 
@@ -130,9 +130,9 @@ public partial class Form1 : Form {
 
 
         ctls.Register(kLfo1Rate, lfo1, "Frequency");
-        ctls.Register(kLfo1Shape, lfo1, "WaveForm");
+        ctls.Register(kLfo1Shape, lfo1, "Shape");
         ctls.Register(kLfo2Rate, lfo2, "Frequency");
-        ctls.Register(kLfo2Shape, lfo2, "WaveForm");
+        ctls.Register(kLfo2Shape, lfo2, "Shape");
         ctls.Register(kVcfType, vcf, "FilterType");
         ctls.Register(kVcfCutoff, vcf, "Cutoff");
         ctls.Register(kVcfResonance, vcf, "Resonance");

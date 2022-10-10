@@ -17,9 +17,9 @@ public class VCO : iModule {
     #endregion
 
     #region Constructor
-    public VCO(WaveForm? waveForm = null) {
+    public VCO(VCOWaveForm? waveForm = null) {
         // Default to Sine if no waveform specifified
-        this.WaveForm = waveForm ?? WaveForm.GetByType(WaveformType.Sine);
+        this.WaveForm = waveForm ?? VCOWaveForm.GetByType(VCOWaveformType.Sine);
     }
     #endregion
 
@@ -37,8 +37,8 @@ public class VCO : iModule {
     public Duty Duty = new Duty();
 
 
-    private WaveForm _WaveForm = new WaveForm();
-    public WaveForm WaveForm {
+    private VCOWaveForm _WaveForm = new VCOWaveForm();
+    public VCOWaveForm WaveForm {
         get { return _WaveForm; }
         set {
             _WaveForm = value;
@@ -84,7 +84,7 @@ public class VCO : iModule {
 
     // When selecting a new waveform, all we need to do is swap in the relevant wave Generator object
     public void WaveFormSelectByID(int id) {
-        var w = WaveForm.GetByID(id);
+        var w = VCOWaveForm.GetByID(id);
 
         // Plug in a specific Generator for the wave type selected
         _Generator = w.Generator;
@@ -117,7 +117,7 @@ public class VCO : iModule {
 
 
 
-        if (_WaveForm.Type == WaveformType.SawFalling)
+        if (_WaveForm.Type == VCOWaveformType.SawFalling)
             Value = 1 - _Generator.GenerateSample(_Phase, Duty.GetDuty(), delta, isZeroCrossing);
         else
             Value = _Generator.GenerateSample(_Phase, Duty.GetDuty(), delta, isZeroCrossing);

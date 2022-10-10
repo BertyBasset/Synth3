@@ -28,8 +28,10 @@ internal class ControlHandler {
 
         } else if (type == typeof(int))
             pi.SetValue(ControlledObject, (int)Controller.Value);
-        else if (type == typeof(WaveForm))
-            pi.SetValue(ControlledObject, WaveForm.GetByType((WaveformType)Controller.Value));
+        else if (type == typeof(VCOWaveForm))
+            pi.SetValue(ControlledObject, VCOWaveForm.GetByType((VCOWaveformType)Controller.Value));
+        else if (type == typeof(LFOWaveForm))
+            pi.SetValue(ControlledObject, LFOWaveForm.GetByType((LFOWaveformType)Controller.Value));
         else if (type == typeof(eFilterType))
             pi.SetValue(ControlledObject, (eFilterType)Controller.Value);
         else
@@ -42,20 +44,23 @@ internal class ControlHandler {
         Controller.ValueChanged += (o, e) => {
             var pi = ControlledObject.GetType().GetProperty(ModuleBindingPropertyName);
 
-                Debug.Assert(pi != null);
+            Debug.Assert(pi != null);
             var type = pi.PropertyType;
 
             if (type.Name == "List`1") {
                 var target = pi.GetValue(ControlledObject, null);
-                Debug.Assert(target != null); Debug.Assert(index != null);
+                Debug.Assert(target != null);
+                Debug.Assert(index != null);
                 pi = target.GetType().GetProperties()
                     .First(p => p.GetIndexParameters().Length == 1 && p.GetIndexParameters()[0].ParameterType == typeof(int));
-                pi.SetValue(target, Controller.Value, new object[] { (int)index } );
+                pi.SetValue(target, Controller.Value, new object[] { (int)index });
 
             } else if (type == typeof(int))
                 pi.SetValue(ControlledObject, (int)Controller.Value);
-            else if (type == typeof(WaveForm))
-                pi.SetValue(ControlledObject, WaveForm.GetByType((WaveformType)Controller.Value));
+            else if (type == typeof(VCOWaveForm))
+                pi.SetValue(ControlledObject, VCOWaveForm.GetByType((VCOWaveformType)Controller.Value));
+            else if (type == typeof(LFOWaveForm))
+                pi.SetValue(ControlledObject, LFOWaveForm.GetByType((LFOWaveformType)Controller.Value));
             else if (type == typeof(eFilterType))
                 pi.SetValue(ControlledObject, (eFilterType)Controller.Value);
             else
