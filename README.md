@@ -12,4 +12,4 @@ PatchBay *
 
 
 
-* In Progress
+Items marked * are In Progress
