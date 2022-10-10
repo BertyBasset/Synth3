@@ -73,10 +73,20 @@ namespace Synth.Modules.Modifiers.Filters {
             }
 
             set {
+                // For Checby, this is Ripple, for BandPass and Notch it's bandwidth
+
                 _resonance = value;
                 if (_Filter.GetType() == typeof(Butterworth))
                     ((Butterworth)_Filter).Resonance = _resonance;
+                if (_Filter.GetType() == typeof(Chebyshev))
+                    ((Chebyshev)_Filter).RippleFactor = _resonance;
+                if (_Filter.GetType() == typeof(BandPass))
+                    ((BandPass)_Filter).Bandwidth = _resonance;
+                if (_Filter.GetType() == typeof(Notch))
+                    ((Notch)_Filter).Bandwidth = _resonance;
+
             }
+
         }
 
         // Chebushev only

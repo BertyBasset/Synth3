@@ -15,10 +15,11 @@ internal class RC : iFilter {
         if (Source == null)
             return;
 
-        double fc = Math.Pow(2, 5 * Cutoff + 4 * Modulator?.Value ?? 0 + 7);
+        // Assume Cutoff and Modulator 0 -> 1
 
+        double fc = Math.Min(Math.Pow(2, 5 * Cutoff + 4 * (Modulator?.Value ?? 0) + 7), 5000);
         double RC = 1.0 / (2 * Math.PI * fc);
-        double dt = 1.0 / 1 / timeIncrement;
+        double dt =  timeIncrement;
         double a = dt / (RC + dt);
 
         stages[0] = a * Source.Value + (1 - a) * stages[0];

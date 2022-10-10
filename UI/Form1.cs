@@ -1,15 +1,16 @@
 // To DO
-//.5 Labels for Waveform/Octave knobs
-// 1 Switches
-// 2 Easy way of binding controls to synth
-// 3 Hook up UI to Synth
+// .5  Set ripple on Cheb when selected - prob same with bandpass
+// Band and Notch sound rubbish
+// 1 Get Filters to work
+// 2 Rationalise CV stuff
+// 3 Switches
 // 4 Stop flickering when redrawing
 // 5 Smoother mouse operation
 // 6 Modulaiton MAtrix System
 // 7 Patch Save/REcall
 // 8 Effects Section
 // 9 Midi filter, show gate
-
+// 10 Show scope
 
 
 using Synth.IO;
@@ -157,12 +158,34 @@ public partial class Form1 : Form {
 
     private void FilterTypeChanged() {
         switch (kVcfType.Value) {
-            case 0: lblFilterType.Text = "Low Pass RC 1 pole"; break;
-            case 1: lblFilterType.Text = "Low Pass Butterworth 2 pole"; break;
-            case 2: lblFilterType.Text = "Low Pass Chebyshev 2 pole"; break;
-            case 3: lblFilterType.Text = "Low Pass Bessel 2 pole"; break;
-            case 4: lblFilterType.Text = "Band Pass"; break;
-            case 5: lblFilterType.Text = "Notch Pass"; break;
+            case 0: 
+                lblFilterType.Text = "Low Pass RC 1 pole"; 
+                kVcfResonance.LabelText = "n/a";
+                break;
+            case 1: 
+                lblFilterType.Text = "Low Pass Butterworth 2 pole";
+                kVcfResonance.LabelText = "RESONANCE";
+                break;
+            case 2: 
+                lblFilterType.Text = "Low Pass Chebyshev 2 pole"; 
+                kVcfResonance.LabelText = "RIPPLE";
+                vcf.RippleFactor = kVcfResonance.Value;
+                break;
+            case 3: 
+                lblFilterType.Text = "Low Pass Bessel 2 pole";
+                kVcfResonance.LabelText = "n/a";
+                break;
+            case 4: 
+                lblFilterType.Text = "Band Pass"; 
+                kVcfResonance.LabelText = "BANDWIDTH";
+                vcf.Bandwidth = kVcfResonance.Value;
+                break;
+            case 5: 
+                lblFilterType.Text = "Notch Pass"; 
+                kVcfResonance.LabelText = "BANDWIDTH";
+                vcf.Bandwidth = kVcfResonance.Value;
+                // Ideally need attenuation as well
+                break;
             default: break;
         }
     

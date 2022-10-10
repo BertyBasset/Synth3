@@ -25,13 +25,13 @@ public class Butterworth : iFilter {
         if (!double.IsFinite(prevPrevOut) || Math.Abs(prevPrevOut) > 1e2)
             prevPrevOut = 0;
 
-        double fc = Math.Min(Math.Pow(2, 5 * Cutoff + 4 * Modulator?.Value ?? 0 + 7), 20000);
+        double fc = Math.Min(Math.Pow(2, 5 * Cutoff + 4 * (Modulator?.Value ?? 0) + 7), 5000);
 
 
         double w0 = fc * 2 * Math.PI;
         double K = w0 / Math.Tan(w0 * timeIncrement / 2);
 
-        double Q = Resonance;
+        double Q = Resonance + 2 * .025;
 
         double b0 = 0;
         double b1 = 0;

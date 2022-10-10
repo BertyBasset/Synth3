@@ -512,14 +512,14 @@
             this.kVcfCutoff.LimitToDivisions = false;
             this.kVcfCutoff.Location = new System.Drawing.Point(510, 20);
             this.kVcfCutoff.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kVcfCutoff.Max = 10D;
+            this.kVcfCutoff.Max = 1D;
             this.kVcfCutoff.Min = 0D;
             this.kVcfCutoff.Name = "kVcfCutoff";
             this.kVcfCutoff.Size = new System.Drawing.Size(77, 77);
             this.kVcfCutoff.SweepAngle = 270;
             this.kVcfCutoff.TabIndex = 22;
             this.kVcfCutoff.Thickness = 2;
-            this.kVcfCutoff.Value = 10D;
+            this.kVcfCutoff.Value = 1D;
             // 
             // kVcfResonance
             // 
