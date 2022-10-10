@@ -71,6 +71,7 @@
             this.kEnv3Attack = new UI.Controls.Knob();
             this.panel9 = new UI.Controls.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblFilterType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +129,7 @@
             this.kOsc1Octave.SweepAngle = 137;
             this.kOsc1Octave.TabIndex = 2;
             this.kOsc1Octave.Thickness = 2;
-            this.kOsc1Octave.Value = 3D;
+            this.kOsc1Octave.Value = 0D;
             // 
             // kOsc1PW
             // 
@@ -143,8 +144,8 @@
             this.kOsc1PW.LimitToDivisions = false;
             this.kOsc1PW.Location = new System.Drawing.Point(247, 20);
             this.kOsc1PW.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kOsc1PW.Max = 1D;
-            this.kOsc1PW.Min = -1D;
+            this.kOsc1PW.Max = 0.9D;
+            this.kOsc1PW.Min = -0.9D;
             this.kOsc1PW.Name = "kOsc1PW";
             this.kOsc1PW.Size = new System.Drawing.Size(77, 77);
             this.kOsc1PW.SweepAngle = 270;
@@ -211,8 +212,8 @@
             this.kOsc2PW.LimitToDivisions = false;
             this.kOsc2PW.Location = new System.Drawing.Point(247, 131);
             this.kOsc2PW.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kOsc2PW.Max = 1D;
-            this.kOsc2PW.Min = -1D;
+            this.kOsc2PW.Max = 0.9D;
+            this.kOsc2PW.Min = -0.9D;
             this.kOsc2PW.Name = "kOsc2PW";
             this.kOsc2PW.Size = new System.Drawing.Size(77, 77);
             this.kOsc2PW.SweepAngle = 270;
@@ -312,8 +313,8 @@
             this.kOsc3PW.LimitToDivisions = false;
             this.kOsc3PW.Location = new System.Drawing.Point(247, 242);
             this.kOsc3PW.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kOsc3PW.Max = 1D;
-            this.kOsc3PW.Min = -1D;
+            this.kOsc3PW.Max = 0.9D;
+            this.kOsc3PW.Min = -0.9D;
             this.kOsc3PW.Name = "kOsc3PW";
             this.kOsc3PW.Size = new System.Drawing.Size(77, 77);
             this.kOsc3PW.SweepAngle = 270;
@@ -495,7 +496,7 @@
             this.kVcfType.SweepAngle = 180;
             this.kVcfType.TabIndex = 21;
             this.kVcfType.Thickness = 2;
-            this.kVcfType.Value = 0D;
+            this.kVcfType.Value = 1D;
             // 
             // kVcfCutoff
             // 
@@ -1003,12 +1004,26 @@
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
             // 
+            // lblFilterType
+            // 
+            this.lblFilterType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFilterType.AutoSize = true;
+            this.lblFilterType.ForeColor = System.Drawing.Color.White;
+            this.lblFilterType.Location = new System.Drawing.Point(459, 102);
+            this.lblFilterType.Name = "lblFilterType";
+            this.lblFilterType.Size = new System.Drawing.Size(156, 15);
+            this.lblFilterType.TabIndex = 50;
+            this.lblFilterType.Text = "Low Pass Butterworth 2 pole";
+            this.lblFilterType.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(850, 450);
+            this.ClientSize = new System.Drawing.Size(854, 450);
+            this.Controls.Add(this.lblFilterType);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.kEnv3Release);
             this.Controls.Add(this.kEnv3Sustain);
@@ -1060,6 +1075,7 @@
             this.Text = "Shed Prophet";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1112,5 +1128,6 @@
         private Controls.Knob kEnv3Attack;
         private Controls.Panel panel9;
         private PictureBox pictureBox1;
+        private Label lblFilterType;
     }
 }

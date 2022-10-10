@@ -19,6 +19,7 @@ using Synth.Modules.Modulators;
 using Synth.Modules.Sources;
 using Synth.Properties;
 using SynthEngine.Modules.Modulators;
+using SynthEngine.Modules.Sources;
 
 namespace UI;
 public partial class Form1 : Form {
@@ -30,6 +31,8 @@ public partial class Form1 : Form {
     VCO vco1 = new();
     VCO vco2 = new();
     VCO vco3 = new();
+    Noise noise = new();
+
     // Add noise module
     LFO lfo1 = new();           // These aren't connected anywhere
     LFO lfo2 = new();
@@ -49,6 +52,8 @@ public partial class Form1 : Form {
     public Form1() {
         InitializeComponent();
         InitSynth();
+
+        kVcfType.ValueChanged += (o, e) => FilterTypeChanged();
     }
 
     void InitSynth() {
@@ -70,10 +75,7 @@ public partial class Form1 : Form {
         m.Sources.Add(vco1);
         m.Sources.Add(vco2);
         m.Sources.Add(vco3);
-        // Add noise module
-        m.Levels[0] = 1;
-        m.Levels[1] = 1;
-        m.Levels[2] = 1;
+        m.Sources.Add(noise);
 
         env1.Keyboard = kbd;
 
@@ -93,7 +95,7 @@ public partial class Form1 : Form {
         engine.Modules.Add(vco1);
         engine.Modules.Add(vco2);
         engine.Modules.Add(vco3);
-        // Add Noise module
+        engine.Modules.Add(noise);
         engine.Modules.Add(lfo1);
         engine.Modules.Add(lfo2);
         engine.Modules.Add(m);
@@ -127,6 +129,7 @@ public partial class Form1 : Form {
         ctls.Register(kOsc1Mix, m, "Levels", 0);
         ctls.Register(kOsc2Mix, m, "Levels", 1);
         ctls.Register(kOsc3Mix, m, "Levels", 2);
+        ctls.Register(kNoiseMix, m, "Levels", 3);
 
 
         ctls.Register(kLfo1Rate, lfo1, "Frequency");
@@ -150,5 +153,18 @@ public partial class Form1 : Form {
         ctls.Register(kEnv3Sustain, env3, "Sustain");
         ctls.Register(kEnv3Release, env3, "Release");
         ctls.Register(kGlide, kbd, "Glide");
+    }
+
+    private void FilterTypeChanged() {
+        switch (kVcfType.Value) {
+            case 0: lblFilterType.Text = "Low Pass RC 1 pole"; break;
+            case 1: lblFilterType.Text = "Low Pass Butterworth 2 pole"; break;
+            case 2: lblFilterType.Text = "Low Pass Chebyshev 2 pole"; break;
+            case 3: lblFilterType.Text = "Low Pass Bessel 2 pole"; break;
+            case 4: lblFilterType.Text = "Band Pass"; break;
+            case 5: lblFilterType.Text = "Notch Pass"; break;
+            default: break;
+        }
+    
     }
 }
