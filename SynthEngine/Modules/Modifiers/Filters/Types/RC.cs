@@ -3,6 +3,7 @@ internal class RC : iFilter {
     #region Public Properties
     public iModule Source { get; set; } = new NullModule();
     public double Cutoff { get; set; }
+    public double ModAmount { get; set; }
     public iModule Modulator { get; set; } = new NullModule();
     #endregion
 
@@ -17,7 +18,7 @@ internal class RC : iFilter {
 
         // Assume Cutoff and Modulator 0 -> 1
 
-        double fc =  VCF.GetCutoffFrequency(Cutoff, Modulator);     // This now centrallised
+        double fc =  VCF.GetCutoffFrequency(Cutoff, Modulator, ModAmount);     // This now centrallised
         double RC = 1.0 / (2 * Math.PI * fc);   
         double dt =  timeIncrement;
         double a = dt / (RC + dt);

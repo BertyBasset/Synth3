@@ -70,7 +70,9 @@ public partial class Form1 : Form {
         env1.Keyboard = kbd;
 
         vcf.Source = m;
-        vcf.Modulator = mw;
+
+        //        vcf.Modulator = mw;
+        vcf.Modulator = env1;
 
         env2.Keyboard = kbd;
 
@@ -129,7 +131,7 @@ public partial class Form1 : Form {
         ctls.Register(kVcfCutoff, vcf, "Cutoff");
         ctls.Register(kVcfResonance, vcf, "Resonance");
         ctls.Register(kVcfResonance, vcf, "Bandwidth");
-
+        ctls.Register(kVcfEnvelope, vcf, "ModAmount");
 
 
         //ctls.Register(kVcfEnvelope, vcf.Modulator, "FilterType");     // Need Mod Amount Property
@@ -137,6 +139,7 @@ public partial class Form1 : Form {
         ctls.Register(kEnv1Decay, env1, "Decay");
         ctls.Register(kEnv1Sustain, env1, "Sustain");
         ctls.Register(kEnv1Release, env1, "Release");
+
         ctls.Register(kEnv2Attack, env2, "Attack");
         ctls.Register(kEnv2Decay, env2, "Decay");
         ctls.Register(kEnv2Sustain, env2, "Sustain");
@@ -180,6 +183,7 @@ public partial class Form1 : Form {
                 break;
             default: break;
         }
+        vcf.ModAmount = kVcfEnvelope.Value;
     
     }
 }

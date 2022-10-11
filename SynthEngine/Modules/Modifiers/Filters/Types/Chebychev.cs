@@ -5,6 +5,7 @@ internal class Chebyshev : iFilter {
     #region Public Properties
     public iModule Source { get; set; } = new NullModule();
     public double Cutoff { get; set; }
+    public double ModAmount { get; set; }
     public iModule Modulator { get; set; } = new NullModule();
 
     private double _rippleFactor;
@@ -34,7 +35,7 @@ internal class Chebyshev : iFilter {
         if (!double.IsFinite(prevPrevOut) || Math.Abs(prevPrevOut) > 1e2)
             prevPrevOut = 0;
 
-        double fc = VCF.GetCutoffFrequency(Cutoff, Modulator);     // This now centrallised
+        double fc = VCF.GetCutoffFrequency(Cutoff, Modulator, ModAmount);     // This now centrallised
         double w0 = fc * 2 * Math.PI;
         double K = w0 / Math.Tan(w0 * timeIncrement / 2);
 

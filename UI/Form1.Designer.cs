@@ -519,7 +519,7 @@
             this.kVcfCutoff.SweepAngle = 270;
             this.kVcfCutoff.TabIndex = 22;
             this.kVcfCutoff.Thickness = 2;
-            this.kVcfCutoff.Value = 1D;
+            this.kVcfCutoff.Value = 0D;
             // 
             // kVcfResonance
             // 
@@ -542,7 +542,7 @@
             this.kVcfResonance.SweepAngle = 270;
             this.kVcfResonance.TabIndex = 23;
             this.kVcfResonance.Thickness = 2;
-            this.kVcfResonance.Value = 0D;
+            this.kVcfResonance.Value = 1D;
             // 
             // kVcfEnvelope
             // 
@@ -565,7 +565,7 @@
             this.kVcfEnvelope.SweepAngle = 270;
             this.kVcfEnvelope.TabIndex = 24;
             this.kVcfEnvelope.Thickness = 2;
-            this.kVcfEnvelope.Value = 0D;
+            this.kVcfEnvelope.Value = 1D;
             // 
             // kEnv1Release
             // 
@@ -580,14 +580,14 @@
             this.kEnv1Release.LimitToDivisions = false;
             this.kEnv1Release.Location = new System.Drawing.Point(659, 131);
             this.kEnv1Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEnv1Release.Max = 10D;
+            this.kEnv1Release.Max = 5D;
             this.kEnv1Release.Min = 0D;
             this.kEnv1Release.Name = "kEnv1Release";
             this.kEnv1Release.Size = new System.Drawing.Size(77, 77);
             this.kEnv1Release.SweepAngle = 270;
             this.kEnv1Release.TabIndex = 28;
             this.kEnv1Release.Thickness = 2;
-            this.kEnv1Release.Value = 0D;
+            this.kEnv1Release.Value = 2D;
             // 
             // kEnv1Sustain
             // 
@@ -609,7 +609,7 @@
             this.kEnv1Sustain.SweepAngle = 270;
             this.kEnv1Sustain.TabIndex = 27;
             this.kEnv1Sustain.Thickness = 2;
-            this.kEnv1Sustain.Value = 0D;
+            this.kEnv1Sustain.Value = 0.6D;
             // 
             // kEnv1Decay
             // 
@@ -624,14 +624,14 @@
             this.kEnv1Decay.LimitToDivisions = false;
             this.kEnv1Decay.Location = new System.Drawing.Point(510, 131);
             this.kEnv1Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEnv1Decay.Max = 10D;
+            this.kEnv1Decay.Max = 5D;
             this.kEnv1Decay.Min = 0D;
             this.kEnv1Decay.Name = "kEnv1Decay";
             this.kEnv1Decay.Size = new System.Drawing.Size(77, 77);
             this.kEnv1Decay.SweepAngle = 270;
             this.kEnv1Decay.TabIndex = 26;
             this.kEnv1Decay.Thickness = 2;
-            this.kEnv1Decay.Value = 0D;
+            this.kEnv1Decay.Value = 0.5D;
             // 
             // kEnv1Attack
             // 
@@ -646,7 +646,7 @@
             this.kEnv1Attack.LimitToDivisions = false;
             this.kEnv1Attack.Location = new System.Drawing.Point(436, 131);
             this.kEnv1Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEnv1Attack.Max = 10D;
+            this.kEnv1Attack.Max = 5D;
             this.kEnv1Attack.Min = 0D;
             this.kEnv1Attack.Name = "kEnv1Attack";
             this.kEnv1Attack.Size = new System.Drawing.Size(77, 77);
@@ -668,7 +668,7 @@
             this.kEnv2Release.LimitToDivisions = false;
             this.kEnv2Release.Location = new System.Drawing.Point(658, 242);
             this.kEnv2Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEnv2Release.Max = 10D;
+            this.kEnv2Release.Max = 5D;
             this.kEnv2Release.Min = 0D;
             this.kEnv2Release.Name = "kEnv2Release";
             this.kEnv2Release.Size = new System.Drawing.Size(77, 77);
@@ -712,7 +712,7 @@
             this.kEnv2Decay.LimitToDivisions = false;
             this.kEnv2Decay.Location = new System.Drawing.Point(510, 242);
             this.kEnv2Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEnv2Decay.Max = 10D;
+            this.kEnv2Decay.Max = 5D;
             this.kEnv2Decay.Min = 0D;
             this.kEnv2Decay.Name = "kEnv2Decay";
             this.kEnv2Decay.Size = new System.Drawing.Size(77, 77);
@@ -734,7 +734,7 @@
             this.kEnv2Attack.LimitToDivisions = false;
             this.kEnv2Attack.Location = new System.Drawing.Point(436, 242);
             this.kEnv2Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEnv2Attack.Max = 10D;
+            this.kEnv2Attack.Max = 5D;
             this.kEnv2Attack.Min = 0D;
             this.kEnv2Attack.Name = "kEnv2Attack";
             this.kEnv2Attack.Size = new System.Drawing.Size(77, 77);
@@ -763,7 +763,7 @@
             this.kGlide.SweepAngle = 270;
             this.kGlide.TabIndex = 33;
             this.kGlide.Thickness = 2;
-            this.kGlide.Value = 0D;
+            this.kGlide.Value = 50D;
             // 
             // kNoiseMix
             // 
@@ -790,7 +790,7 @@
             // panel7
             // 
             this.panel7.CornerRadius = 10;
-            this.panel7.LabelText = "LFO 1";
+            this.panel7.LabelText = "LFO 1 - to patchbay";
             this.panel7.LineWidth = 2;
             this.panel7.Location = new System.Drawing.Point(6, 333);
             this.panel7.Name = "panel7";
@@ -845,7 +845,7 @@
             // panel8
             // 
             this.panel8.CornerRadius = 10;
-            this.panel8.LabelText = "LFO 2";
+            this.panel8.LabelText = "LFO 2 - to patchbay";
             this.panel8.LineWidth = 2;
             this.panel8.Location = new System.Drawing.Point(169, 333);
             this.panel8.Name = "panel8";
@@ -910,7 +910,7 @@
             this.kEnv3Release.LimitToDivisions = false;
             this.kEnv3Release.Location = new System.Drawing.Point(658, 352);
             this.kEnv3Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEnv3Release.Max = 10D;
+            this.kEnv3Release.Max = 5D;
             this.kEnv3Release.Min = 0D;
             this.kEnv3Release.Name = "kEnv3Release";
             this.kEnv3Release.Size = new System.Drawing.Size(77, 77);
@@ -954,7 +954,7 @@
             this.kEnv3Decay.LimitToDivisions = false;
             this.kEnv3Decay.Location = new System.Drawing.Point(510, 352);
             this.kEnv3Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEnv3Decay.Max = 10D;
+            this.kEnv3Decay.Max = 5D;
             this.kEnv3Decay.Min = 0D;
             this.kEnv3Decay.Name = "kEnv3Decay";
             this.kEnv3Decay.Size = new System.Drawing.Size(77, 77);
@@ -976,7 +976,7 @@
             this.kEnv3Attack.LimitToDivisions = false;
             this.kEnv3Attack.Location = new System.Drawing.Point(436, 352);
             this.kEnv3Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEnv3Attack.Max = 10D;
+            this.kEnv3Attack.Max = 5D;
             this.kEnv3Attack.Min = 0D;
             this.kEnv3Attack.Name = "kEnv3Attack";
             this.kEnv3Attack.Size = new System.Drawing.Size(77, 77);
@@ -988,7 +988,7 @@
             // panel9
             // 
             this.panel9.CornerRadius = 10;
-            this.panel9.LabelText = "ENV 3";
+            this.panel9.LabelText = "ENV 3 - to patchbay";
             this.panel9.LineWidth = 2;
             this.panel9.Location = new System.Drawing.Point(432, 334);
             this.panel9.Name = "panel9";

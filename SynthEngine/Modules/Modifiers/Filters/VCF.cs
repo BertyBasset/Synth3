@@ -39,6 +39,18 @@ namespace Synth.Modules.Modifiers.Filters {
                 _Filter.Cutoff = _cutoff; }
         }
 
+
+
+        private double _modamount;
+        public double ModAmount {
+            get { return _modamount; }
+            set {
+                _modamount = value;
+                _Filter.ModAmount = _modamount;
+            }
+        }
+
+
         private iModule? _modulator;
         public iModule? Modulator {
             get { return _modulator; }
@@ -168,8 +180,8 @@ namespace Synth.Modules.Modifiers.Filters {
         #endregion
 
         #region Static Public Methods
-        public static double GetCutoffFrequency(double CV, iModule? Modulator) {
-            return Math.Min(Math.Pow(2, 5 * CV+ 4 * (Modulator?.Value ?? 0) + 7), 5000);
+        public static double GetCutoffFrequency(double CV, iModule? Modulator, double ModAmount) {
+            return Math.Min(Math.Pow(2, 5 * CV+ 4 * ((Modulator?.Value ?? 0)*ModAmount) + 7), 5000);
         }
 
 

@@ -4,6 +4,7 @@ internal class Bessel : iFilter {
     #region Public Properties
     public iModule Source { get; set; } = new NullModule();
     public double Cutoff { get; set; }
+    public double ModAmount { get; set; }
     public iModule Modulator { get; set; } = new NullModule();
     #endregion
 
@@ -19,7 +20,7 @@ internal class Bessel : iFilter {
         if (Source == null)
             return;
 
-        double fc = VCF.GetCutoffFrequency(Cutoff, Modulator);     // This now centrallised
+        double fc = VCF.GetCutoffFrequency(Cutoff, Modulator, ModAmount);     // This now centrallised
 
         double w0 = fc * 2 * Math.PI;
         double K = w0 / Math.Tan(w0 * timeIncrement / 2);
