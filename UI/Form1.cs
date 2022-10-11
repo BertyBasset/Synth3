@@ -68,7 +68,9 @@ public partial class Form1 : Form {
         controlMap.Add(77, kEnv1Release);
         mc.ControllerValueChanged += (o, e) => {
             const double MAX_RANGE = 128;
-;
+            if (!controlMap.ContainsKey(e.ControllerID))
+                return;         // Unhandled Controller
+
 
             var knob = controlMap[e.ControllerID];
 
