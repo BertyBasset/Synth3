@@ -4,6 +4,10 @@ using Synth.Modules;
 
 namespace Synth;
 public class SynthEngine : WaveProvider32 {
+    const int UPDATE_GRAPH_EVERY_X_MILLISECONDS = 100;
+    public event EventHandler<List<double>>? GraphUpdated;
+
+
     #region Private Properties
     //private DirectSoundOut? waveOut;
     private NAudio.Wave.WaveOut? waveOut;
@@ -12,6 +16,11 @@ public class SynthEngine : WaveProvider32 {
     int _SampleRate;
     int _Channels;
     #endregion
+
+
+    DateTime graphLastUpdated = DateTime.Now;
+    List<double> graphData = new List<double>();
+
 
 
     #region Stop/Start
@@ -65,6 +74,18 @@ public class SynthEngine : WaveProvider32 {
             double currentSample = (Volume * wave);
             buffer[n + offset] = (float)currentSample;
         }
+
+        if (DateTime.Now - graphLastUpdated > TimeSpan.FromMilliseconds(UPDATE_GRAPH_EVERY_X_MILLISECONDS)) {
+            graphData = new List<double>(2000);
+            for (int i = 0; i < sampleCount; i++)
+                graphData.Add(buffer[i + offset]);
+            GraphUpdated?.Invoke(this, graphData);
+
+
+            graphLastUpdated =DateTime.Now;
+        }
+
+
         return sampleCount;
     }
     #endregion

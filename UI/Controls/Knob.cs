@@ -32,7 +32,15 @@ namespace UI.Controls {
 
         public String LabelMarker5 {
             get { return lbl5.Text; }
-            set { lbl5.Text = value; }
+            set { 
+                lbl5.Text = value;
+                if (lbl5.Text == "")
+                    lbl5.Visible = false;
+                else {
+                    if (!HideLabels)
+                        lbl5.Visible = true;
+                }
+            }
         }
 
         public String LabelMarker10 {

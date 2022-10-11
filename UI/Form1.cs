@@ -1,24 +1,25 @@
 // To DO
-// 1 Midi filter, show gate
-// 2 Show scope
+// 1 Show scope - done - but have frequency markers maybe
+// 2 Midi filter, show gate
 // 3 Effects Section
-
 
 // 4 Switches
 // 5 Stop flickering when redrawing
 // 6 Smoother mouse operation
+
+// Version 4
 // 7 Modulaiton MAtrix System
 // 8 Patch Save/REcall
 // 9 Rationalise CV stuff (not sure if needed, but revisit anyway.
+
+// Version 5
 // 10. Polyphony !
 
 
 using Synth.IO;
 using Synth.Modules.Modifiers;
-using Synth.Modules.Modifiers.Filters;
 using Synth.Modules.Modulators;
 using Synth.Modules.Sources;
-using Synth.Properties;
 using SynthEngine.Modules.Modulators;
 using SynthEngine.Modules.Sources;
 using UI.Controls;
@@ -36,7 +37,6 @@ public partial class Form1 : Form {
     VCO vco3 = new();
     Noise noise = new();
 
-    // Add noise module
     LFO lfo1 = new();           // These aren't connected anywhere
     LFO lfo2 = new();
 
@@ -57,7 +57,11 @@ public partial class Form1 : Form {
         InitSynth();
 
         kVcfType.ValueChanged += (o, e) => FilterTypeChanged();
-
+        cmdViewWave.Click += (o, e) => { 
+            var viewer = new frmWaveViewer(engine);
+            viewer.Show();
+        };
+        
 
         
         

@@ -1,14 +1,6 @@
 ﻿namespace Synth.Modules;
 internal class NullModule : iModule {
-    public double Value {
-        get { 
-            return 0; 
-        }
-        set { 
-            int a = 2;
-        }
-    
-    }
+    public double Value { get; set; }
 
     void iModule.Tick(double TimeIncrement) {
         throw new NotImplementedException();
