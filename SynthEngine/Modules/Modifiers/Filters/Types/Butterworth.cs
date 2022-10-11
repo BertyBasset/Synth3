@@ -25,7 +25,7 @@ public class Butterworth : iFilter {
         if (!double.IsFinite(prevPrevOut) || Math.Abs(prevPrevOut) > 1e2)
             prevPrevOut = 0;
 
-        double fc = Math.Min(Math.Pow(2, 5 * Cutoff + 4 * (Modulator?.Value ?? 0) + 7), 5000);
+        double fc = VCF.GetCutoffFrequency(Cutoff, Modulator);     // This now centrallised
 
 
         double w0 = fc * 2 * Math.PI;

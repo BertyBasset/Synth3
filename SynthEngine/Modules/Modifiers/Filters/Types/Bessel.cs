@@ -19,7 +19,7 @@ internal class Bessel : iFilter {
         if (Source == null)
             return;
 
-        double fc = Math.Min(Math.Pow(2, 5 * Cutoff + 4 * Modulator?.Value ?? 0 + 7), 5000);
+        double fc = VCF.GetCutoffFrequency(Cutoff, Modulator);     // This now centrallised
 
         double w0 = fc * 2 * Math.PI;
         double K = w0 / Math.Tan(w0 * timeIncrement / 2);

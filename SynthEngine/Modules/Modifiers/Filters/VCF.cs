@@ -59,9 +59,9 @@ namespace Synth.Modules.Modifiers.Filters {
             set {
                 _bandwidth = value;
                 if (_Filter.GetType() == typeof(BandPass))
-                    ((BandPass)_Filter).Bandwidth = _bandwidth;
+                    ((BandPass)_Filter).Bandwidth = _bandwidth * 1000;
                 else if (_Filter.GetType() == typeof(Notch))
-                    ((Notch)_Filter).Bandwidth = _bandwidth;
+                    ((Notch)_Filter).Bandwidth = _bandwidth * 4000;         // Better having a wide noth to hear stuff
             }
         }
 
@@ -103,8 +103,8 @@ namespace Synth.Modules.Modifiers.Filters {
             }
         }
 
-        // Notch only
-        private double _attenuation;
+        // Notch only  -  We don't have UI control so har code to something that sounds ok
+        private double _attenuation = .1;
         public double Attenuation {
             get {
                 return _attenuation;
@@ -166,5 +166,14 @@ namespace Synth.Modules.Modifiers.Filters {
             _Filter.Tick(TimeIncrement);
         }
         #endregion
+
+        #region Static Public Methods
+        public static double GetCutoffFrequency(double CV, iModule? Modulator) {
+            return Math.Min(Math.Pow(2, 5 * CV+ 4 * (Modulator?.Value ?? 0) + 7), 5000);
+        }
+
+
+        #endregion
+
     }
 }

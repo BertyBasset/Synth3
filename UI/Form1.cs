@@ -59,19 +59,8 @@ public partial class Form1 : Form {
 
     void InitSynth() {
         vco1.Frequency.Keyboard = kbd;
-        vco1.WaveFormSelectByID(1);
-        //vco1.Frequency.pi
-
-
         vco2.Frequency.Keyboard = kbd;
-        vco2.Frequency.FineTune = .01;
-        vco2.Frequency.Octave = -1;
-        vco2.WaveFormSelectByID(2);
-
         vco3.Frequency.Keyboard = kbd;
-        vco3.Frequency.FineTune = -.01;
-        vco3.Frequency.Octave = -1;
-        vco3.WaveFormSelectByID(3);
 
         m.Sources.Add(vco1);
         m.Sources.Add(vco2);
@@ -81,7 +70,6 @@ public partial class Form1 : Form {
         env1.Keyboard = kbd;
 
         vcf.Source = m;
-        vcf.FilterType = VCF.eFilterType.Butterworth;
         vcf.Modulator = mw;
 
         env2.Keyboard = kbd;
@@ -140,6 +128,10 @@ public partial class Form1 : Form {
         ctls.Register(kVcfType, vcf, "FilterType");
         ctls.Register(kVcfCutoff, vcf, "Cutoff");
         ctls.Register(kVcfResonance, vcf, "Resonance");
+        ctls.Register(kVcfResonance, vcf, "Bandwidth");
+
+
+
         //ctls.Register(kVcfEnvelope, vcf.Modulator, "FilterType");     // Need Mod Amount Property
         ctls.Register(kEnv1Attack, env1, "Attack");
         ctls.Register(kEnv1Decay, env1, "Decay");

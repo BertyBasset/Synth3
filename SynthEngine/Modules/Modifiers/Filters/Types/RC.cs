@@ -17,8 +17,8 @@ internal class RC : iFilter {
 
         // Assume Cutoff and Modulator 0 -> 1
 
-        double fc = Math.Min(Math.Pow(2, 5 * Cutoff + 4 * (Modulator?.Value ?? 0) + 7), 5000);
-        double RC = 1.0 / (2 * Math.PI * fc);
+        double fc =  VCF.GetCutoffFrequency(Cutoff, Modulator);     // This now centrallised
+        double RC = 1.0 / (2 * Math.PI * fc);   
         double dt =  timeIncrement;
         double a = dt / (RC + dt);
 
