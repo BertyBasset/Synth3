@@ -19,10 +19,11 @@ internal class Midi {
     public int CurrentModWheel = 0;
     public int CurrentPitchWheel = 0;
 
-    public event EventHandler? NoteChanged;
-    public event EventHandler? KeyStateChanged;
-    public event EventHandler? PitchWheelChanged;
-    public event EventHandler? ModWheelChanged;
+    public event EventHandler<Note>? NoteChanged;
+    public event EventHandler<KeyState>? KeyStateChanged;
+    public event EventHandler<int>? PitchWheelChanged;
+    public event EventHandler<int>? ModWheelChanged;
+    public event EventHandler<ControllerEventArgs>? ControllerValueChanged;
 
 
 
@@ -43,20 +44,19 @@ internal class Midi {
 
     void _KeyStateChanged() {
         Debug.Assert(KeyStateChanged != null);
-        KeyStateChanged?.Invoke(this, new EventArgs());
+        KeyStateChanged?.Invoke(this, CurrentKeyState);
     }
 
     void _NoteChanged() {
-        Debug.Assert(NoteChanged != null);
-        NoteChanged?.Invoke(this, new EventArgs());
+        NoteChanged?.Invoke(this, CurrentNote);
     }
 
     void _PitchWheelChanged() {
-        PitchWheelChanged?.Invoke(this, new EventArgs());
+        PitchWheelChanged?.Invoke(this, CurrentPitchWheel);
     }
 
     void _ModWheelChanged() {
-        ModWheelChanged?.Invoke(this, new EventArgs());
+        ModWheelChanged?.Invoke(this, CurrentModWheel);
     }
 
     private void ErrorReceived(object? sender, MidiInMessageEventArgs e) {
@@ -111,9 +111,20 @@ internal class Midi {
                 if (c.Controller == MidiController.Modulation) {
                     CurrentModWheel = c.ControllerValue;
                     _ModWheelChanged();
+                } else {
+                    ControllerValueChanged?.Invoke(this, new ControllerEventArgs((int)c.Controller, c.ControllerValue));
                 }
                 break;
         }
     }
 }
 
+public class ControllerEventArgs {
+    public ControllerEventArgs(int ControllerID, int Value) {
+        this.ControllerID = ControllerID;
+        this.Value = Value;
+    }
+
+    public int ControllerID;
+    public int Value;
+}

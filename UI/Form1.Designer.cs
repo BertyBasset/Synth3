@@ -556,7 +556,7 @@
             this.kVcfEnvelope.LabelMarker5 = "5";
             this.kVcfEnvelope.LabelText = "ENVELOPE";
             this.kVcfEnvelope.LimitToDivisions = false;
-            this.kVcfEnvelope.Location = new System.Drawing.Point(658, 19);
+            this.kVcfEnvelope.Location = new System.Drawing.Point(658, 20);
             this.kVcfEnvelope.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kVcfEnvelope.Max = 1D;
             this.kVcfEnvelope.Min = 0D;

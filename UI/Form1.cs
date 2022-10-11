@@ -1,16 +1,15 @@
 // To DO
-// .5  Set ripple on Cheb when selected - prob same with bandpass
-// Band and Notch sound rubbish
-// 1 Get Filters to work
-// 2 Rationalise CV stuff
-// 3 Switches
-// 4 Stop flickering when redrawing
-// 5 Smoother mouse operation
-// 6 Modulaiton MAtrix System
-// 7 Patch Save/REcall
-// 8 Effects Section
-// 9 Midi filter, show gate
-// 10 Show scope
+// 1 Effects Section
+// 2 Midi filter, show gate
+// 3 Show scope
+
+// 4 Switches
+// 5 Stop flickering when redrawing
+// 6 Smoother mouse operation
+// 7 Modulaiton MAtrix System
+// 8 Patch Save/REcall
+// 9 Rationalise CV stuff (not sure if needed, but revisit anyway.
+
 
 
 using Synth.IO;
@@ -21,6 +20,7 @@ using Synth.Modules.Sources;
 using Synth.Properties;
 using SynthEngine.Modules.Modulators;
 using SynthEngine.Modules.Sources;
+using UI.Controls;
 
 namespace UI;
 public partial class Form1 : Form {
@@ -28,6 +28,7 @@ public partial class Form1 : Form {
 
     Synth.SynthEngine engine = new Synth.SynthEngine();
     ModWheel mw = new();
+    MidiControllers mc = new();         // Provides event handler when a Midi Controller changes value
     Keyboard kbd = new();
     VCO vco1 = new();
     VCO vco2 = new();
@@ -55,6 +56,32 @@ public partial class Form1 : Form {
         InitSynth();
 
         kVcfType.ValueChanged += (o, e) => FilterTypeChanged();
+
+
+        
+        
+        Dictionary<int, Knob> controlMap = new();
+        controlMap.Add(74, kVcfType);
+        controlMap.Add(75, kVcfCutoff);
+        controlMap.Add(76, kVcfResonance);
+        controlMap.Add(77, kEnv1Release);
+        mc.ControllerValueChanged += (o, e) => {
+            const double MAX_RANGE = 128;
+;
+
+            var knob = controlMap[e.ControllerID];
+
+            if (knob.LimitToDivisions) {
+                var newValue = Math.Round(((double)e.Value / MAX_RANGE) * (double)(knob.Max - knob.Min) + knob.Min);
+                if (knob.Value != newValue)
+                    knob.Value = newValue;
+            } else {
+                knob.Value = ((double)e.Value / MAX_RANGE) * (double)(knob.Max - knob.Min) + knob.Min;
+            }
+
+
+        };
+
     }
 
     void InitSynth() {
@@ -153,32 +180,33 @@ public partial class Form1 : Form {
 
     private void FilterTypeChanged() {
         switch (kVcfType.Value) {
-            case 0: 
-                lblFilterType.Text = "Low Pass RC 1 pole"; 
-                kVcfResonance.LabelText = "n/a";
+            case 0:
+                lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Low Pass RC 1 pole"));
+                kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "n/a"));
                 break;
-            case 1: 
-                lblFilterType.Text = "Low Pass Butterworth 2 pole";
-                kVcfResonance.LabelText = "RESONANCE";
+            case 1:
+                lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Low Pass Butterworth 2 pole"));
+                kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "RESONANCE"));
                 break;
-            case 2: 
-                lblFilterType.Text = "Low Pass Chebyshev 2 pole"; 
-                kVcfResonance.LabelText = "RIPPLE";
+            case 2:
+                lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Low Pass Chebyshev 2 pole"));
+                kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "RIPPLE"));
                 vcf.RippleFactor = kVcfResonance.Value;
                 break;
-            case 3: 
-                lblFilterType.Text = "Low Pass Bessel 2 pole";
-                kVcfResonance.LabelText = "n/a";
+            case 3:
+                lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Low Pass Bessel 2 pole"));
+                kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "n/a"));
                 break;
-            case 4: 
-                lblFilterType.Text = "Band Pass"; 
-                kVcfResonance.LabelText = "BANDWIDTH";
+            case 4:
+                lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Band Pass"));
+                kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "BANDWIDTH"));
                 vcf.Bandwidth = kVcfResonance.Value;
                 break;
-            case 5: 
-                lblFilterType.Text = "Notch Pass"; 
-                kVcfResonance.LabelText = "BANDWIDTH";
+            case 5:
+                lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Notch Pass"));
+                kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "BANDWIDTH"));
                 vcf.Bandwidth = kVcfResonance.Value;
+
                 // Ideally need attenuation as well
                 break;
             default: break;
@@ -187,3 +215,7 @@ public partial class Form1 : Form {
     
     }
 }
+
+
+
+

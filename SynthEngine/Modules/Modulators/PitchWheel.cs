@@ -8,7 +8,8 @@ public class PitchWheel : iModule {
     private Midi midi = Midi.Instance;
 
     public PitchWheel() {
-        midi.PitchWheelChanged += (o, e) => Value = ((midi.CurrentPitchWheel - 8192f) / 4096 / 12) * MathF.Pow(2, 1 / 12);
+        midi.PitchWheelChanged += (o, CurrentValue) => 
+        Value = ((CurrentValue - 8192f) / 4096 / 12) * MathF.Pow(2, 1 / 12);
     }
 
     public double Value{get; set;}

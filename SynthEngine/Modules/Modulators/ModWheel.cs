@@ -8,7 +8,8 @@ public class ModWheel : iModule {
 
     public ModWheel() {
         // ModWheel 0 - 127
-        midi.ModWheelChanged += (o, e) => Value = midi.CurrentModWheel / 127f;
+        midi.ModWheelChanged += (o, CurrentValue)
+            => Value = CurrentValue / 127f;
     }
 
     public double Value { get; set; }

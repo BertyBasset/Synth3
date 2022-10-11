@@ -1,6 +1,7 @@
 ﻿using Synth.Modules;
 using Synth.Properties;
 using SynthEngine.Modules.IO;
+using static SynthEngine.Modules.IO.Midi;
 
 namespace Synth.IO;
 
@@ -36,16 +37,16 @@ public class Keyboard : iModule {
         midi.KeyStateChanged += Midi_KeyStateChanged;
     }
 
-    private void Midi_KeyStateChanged(object? sender, EventArgs e) {
-        if (midi.CurrentKeyState == Midi.KeyState.Up) {
+    private void Midi_KeyStateChanged(object? sender, KeyState CurrentKeyState) {
+        if (CurrentKeyState == Midi.KeyState.Up) {
             KeyUp = true;
         } else {
             KeyDown = true;        
         }
     }
 
-    private void Midi_NoteChanged(object? sender, EventArgs e) {
-        Note = midi.CurrentNote;
+    private void Midi_NoteChanged(object? sender, Note CurrentNote) {
+        Note = CurrentNote;
     }
     #endregion
 
