@@ -1,7 +1,8 @@
 // To DO
-// 1 Effects Section
-// 2 Midi filter, show gate
-// 3 Show scope
+// 1 Midi filter, show gate
+// 2 Show scope
+// 3 Effects Section
+
 
 // 4 Switches
 // 5 Stop flickering when redrawing
@@ -9,7 +10,7 @@
 // 7 Modulaiton MAtrix System
 // 8 Patch Save/REcall
 // 9 Rationalise CV stuff (not sure if needed, but revisit anyway.
-
+// 10. Polyphony !
 
 
 using Synth.IO;
