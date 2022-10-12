@@ -77,6 +77,9 @@
             this.lblMidiChannel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboMidiChannel = new System.Windows.Forms.ComboBox();
+            this.ledGate = new UI.Controls.Led();
+            this.ledLfo1 = new UI.Controls.Led();
+            this.ledLfo2 = new UI.Controls.Led();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -869,7 +872,7 @@
             this.kLfo1Rate.LimitToDivisions = false;
             this.kLfo1Rate.Location = new System.Drawing.Point(12, 354);
             this.kLfo1Rate.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kLfo1Rate.Max = 100D;
+            this.kLfo1Rate.Max = 1D;
             this.kLfo1Rate.Min = 0D;
             this.kLfo1Rate.Name = "kLfo1Rate";
             this.kLfo1Rate.Size = new System.Drawing.Size(77, 77);
@@ -926,7 +929,7 @@
             this.kLfo2Rate.LimitToDivisions = false;
             this.kLfo2Rate.Location = new System.Drawing.Point(175, 354);
             this.kLfo2Rate.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kLfo2Rate.Max = 5D;
+            this.kLfo2Rate.Max = 1D;
             this.kLfo2Rate.Min = 0D;
             this.kLfo2Rate.Name = "kLfo2Rate";
             this.kLfo2Rate.Size = new System.Drawing.Size(77, 77);
@@ -1124,12 +1127,42 @@
             this.cboMidiChannel.Size = new System.Drawing.Size(46, 23);
             this.cboMidiChannel.TabIndex = 55;
             // 
+            // ledGate
+            // 
+            this.ledGate.LedColor = System.Drawing.Color.Red;
+            this.ledGate.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledGate.Location = new System.Drawing.Point(781, 125);
+            this.ledGate.Name = "ledGate";
+            this.ledGate.Size = new System.Drawing.Size(15, 15);
+            this.ledGate.TabIndex = 56;
+            // 
+            // ledLfo1
+            // 
+            this.ledLfo1.LedColor = System.Drawing.Color.Red;
+            this.ledLfo1.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledLfo1.Location = new System.Drawing.Point(69, 350);
+            this.ledLfo1.Name = "ledLfo1";
+            this.ledLfo1.Size = new System.Drawing.Size(15, 15);
+            this.ledLfo1.TabIndex = 57;
+            // 
+            // ledLfo2
+            // 
+            this.ledLfo2.LedColor = System.Drawing.Color.Red;
+            this.ledLfo2.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledLfo2.Location = new System.Drawing.Point(231, 350);
+            this.ledLfo2.Name = "ledLfo2";
+            this.ledLfo2.Size = new System.Drawing.Size(15, 15);
+            this.ledLfo2.TabIndex = 58;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(877, 450);
+            this.Controls.Add(this.ledLfo2);
+            this.Controls.Add(this.ledLfo1);
+            this.Controls.Add(this.ledGate);
             this.Controls.Add(this.cboMidiChannel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblMidiChannel);
@@ -1246,5 +1279,8 @@
         private Label lblMidiChannel;
         private Label label2;
         private ComboBox cboMidiChannel;
+        private Controls.Led ledGate;
+        private Controls.Led ledLfo1;
+        private Controls.Led ledLfo2;
     }
 }

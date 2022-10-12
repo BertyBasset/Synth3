@@ -1,10 +1,14 @@
 ﻿using Synth.IO;
 using Synth.Modules.Sources.Generators;
 using Synth.Properties;
+using SynthEngine.Modules.IO;
 
 namespace Synth.Modules.Modulators;
 
 public class LFO : iModule {
+    public event EventHandler<bool>? ClockTick;
+
+
     #region Private Properties
     double _level = 0f;
     bool _Gate = false;                 // If Gate high, we're in delay phase, incrementing level
@@ -58,11 +62,30 @@ public class LFO : iModule {
     public double Value { get; set; }
 
     // This is the *-*-* MEATY *-*-* bit
+
+
+
+    bool InFirstHalf = true;
     public void Tick(double timeIncrement) {
         // Advance Phase Accumulator acording to timeIncrement and current frequency
         double delta = timeIncrement * Frequency * 360f;
         _Phase += delta;
         _Phase = _Phase % 360;
+
+
+        // Generate clock event - twice per cycle
+        if (_Phase < 180) {
+            if (!InFirstHalf) {
+                ClockTick?.Invoke(this, true);
+                InFirstHalf = true;
+            }
+        } else {
+            if (InFirstHalf) {
+                ClockTick?.Invoke(this, false);
+                InFirstHalf = false;
+            }
+        }
+
 
         double value = 0f;
 

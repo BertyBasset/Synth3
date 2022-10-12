@@ -102,7 +102,12 @@ public partial class Form1 : Form {
             mw.MidiChannel = midiChannel;
             mc.MidiChannel = midiChannel;
         };
-      
+
+        kbd.TriggerOn += (o, e) => ledGate.LedState = Led.Enums.LedState.On;
+        kbd.TriggerOff += (o, e) => ledGate.LedState = Led.Enums.LedState.Off;
+
+        lfo1.ClockTick += (o, e) => ledLfo1.LedState = e ? Led.Enums.LedState.On : Led.Enums.LedState.Off;
+        lfo2.ClockTick += (o, e) => ledLfo2.LedState = e ? Led.Enums.LedState.On : Led.Enums.LedState.Off;
 
 
     }
