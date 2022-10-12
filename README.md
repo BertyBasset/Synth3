@@ -1,7 +1,7 @@
 # Synth3
 
 
-![Synth Screengrab](https://raw.githubusercontent.com/BertyBasset/Synth3/master/UI/SP1.png?token=GHSAT0AAAAAABXY3WEFPLY5FSRR34KKEQGSY2FXZIA)
+![Synth Screengrab](https://raw.githubusercontent.com/BertyBasset/Synth3/master/UI/SP1.png?token=GHSAT0AAAAAABXY3WEFPRKNC25QWOHBMGCEY2G45IA)
 
 Tidied version.
 
