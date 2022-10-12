@@ -10,9 +10,6 @@ namespace Synth.IO;
 
 public class Keyboard : iModule {
     private Midi midi = Midi.Instance;
-    
-
-
 
 
     #region Public Events
@@ -37,16 +34,19 @@ public class Keyboard : iModule {
         midi.KeyStateChanged += Midi_KeyStateChanged;
     }
 
-    private void Midi_KeyStateChanged(object? sender, KeyState CurrentKeyState) {
-        if (CurrentKeyState == Midi.KeyState.Up) {
-            KeyUp = true;
-        } else {
-            KeyDown = true;        
+    private void Midi_KeyStateChanged(object? sender, MidiKeyEventArgs e) {
+        if (_midichannel == null || _midichannel == e.MidiChannelID) {
+            if (e.KeyState == Midi.KeyState.Up) {
+                KeyUp = true;
+            } else {
+                KeyDown = true;
+            }
         }
     }
 
-    private void Midi_NoteChanged(object? sender, Note CurrentNote) {
-        Note = CurrentNote;
+    private void Midi_NoteChanged(object? sender, MidiNoteEventArgs e) {
+        if (_midichannel == null || _midichannel == e.MidiChannelID) 
+            Note = e.Note;
     }
     #endregion
 
@@ -79,6 +79,17 @@ public class Keyboard : iModule {
             _newNoteFreq = _Note.Frequency;
         }
     }
+
+    private int? _midichannel = 1;
+    public int? MidiChannel {
+        get { return _midichannel; }
+        set {
+            if (value < 1 || value > 16)
+                throw new ArgumentOutOfRangeException("Midi Channel must be 1-16, or left as NULL");
+            _midichannel = value; 
+        }
+    }
+
     #endregion
 
     #region iModule Members

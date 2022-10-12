@@ -74,6 +74,9 @@
             this.lblFilterType = new System.Windows.Forms.Label();
             this.cmdViewWave = new System.Windows.Forms.Button();
             this.cmdInit = new System.Windows.Forms.Button();
+            this.lblMidiChannel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboMidiChannel = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -256,7 +259,7 @@
             // 
             // kOsc2Freq
             // 
-            this.kOsc2Freq.Default = -0.01D;
+            this.kOsc2Freq.Default = 0D;
             this.kOsc2Freq.Divisions = 10;
             this.kOsc2Freq.ForeColor = System.Drawing.Color.White;
             this.kOsc2Freq.HideLabels = false;
@@ -1037,7 +1040,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(745, 388);
+            this.pictureBox1.Location = new System.Drawing.Point(759, 388);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(103, 50);
             this.pictureBox1.TabIndex = 46;
@@ -1058,7 +1061,7 @@
             // 
             // cmdViewWave
             // 
-            this.cmdViewWave.Location = new System.Drawing.Point(753, 113);
+            this.cmdViewWave.Location = new System.Drawing.Point(766, 190);
             this.cmdViewWave.Name = "cmdViewWave";
             this.cmdViewWave.Size = new System.Drawing.Size(84, 28);
             this.cmdViewWave.TabIndex = 51;
@@ -1067,19 +1070,69 @@
             // 
             // cmdInit
             // 
-            this.cmdInit.Location = new System.Drawing.Point(753, 147);
+            this.cmdInit.Location = new System.Drawing.Point(766, 224);
             this.cmdInit.Name = "cmdInit";
             this.cmdInit.Size = new System.Drawing.Size(84, 28);
             this.cmdInit.TabIndex = 52;
             this.cmdInit.Text = "Init Patch";
             this.cmdInit.UseVisualStyleBackColor = true;
             // 
+            // lblMidiChannel
+            // 
+            this.lblMidiChannel.AutoSize = true;
+            this.lblMidiChannel.ForeColor = System.Drawing.Color.White;
+            this.lblMidiChannel.Location = new System.Drawing.Point(740, 102);
+            this.lblMidiChannel.Name = "lblMidiChannel";
+            this.lblMidiChannel.Size = new System.Drawing.Size(81, 15);
+            this.lblMidiChannel.TabIndex = 53;
+            this.lblMidiChannel.Text = "Midi Channel:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(741, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 15);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "GATE";
+            // 
+            // cboMidiChannel
+            // 
+            this.cboMidiChannel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMidiChannel.FormattingEnabled = true;
+            this.cboMidiChannel.Items.AddRange(new object[] {
+            "All",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16"});
+            this.cboMidiChannel.Location = new System.Drawing.Point(821, 98);
+            this.cboMidiChannel.Name = "cboMidiChannel";
+            this.cboMidiChannel.Size = new System.Drawing.Size(46, 23);
+            this.cboMidiChannel.TabIndex = 55;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(854, 450);
+            this.ClientSize = new System.Drawing.Size(877, 450);
+            this.Controls.Add(this.cboMidiChannel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblMidiChannel);
             this.Controls.Add(this.cmdInit);
             this.Controls.Add(this.cmdViewWave);
             this.Controls.Add(this.lblFilterType);
@@ -1190,5 +1243,8 @@
         private Label lblFilterType;
         private Button cmdViewWave;
         private Button cmdInit;
+        private Label lblMidiChannel;
+        private Label label2;
+        private ComboBox cboMidiChannel;
     }
 }

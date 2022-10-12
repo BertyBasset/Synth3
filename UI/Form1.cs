@@ -1,5 +1,5 @@
 // To DO
-// 1 Midi filter, show gate
+// 1 Show gate and lfo clocks
 // 2 Effects Section
 
 // 3 Switches
@@ -95,6 +95,16 @@ public partial class Form1 : Form {
         this.Activated += (o, e) => Patch.Load(this);
 
         cmdInit.Click += CmdInit_Click;
+        cboMidiChannel.SelectedIndex = 0;
+        cboMidiChannel.SelectedIndexChanged += (o, e) => {
+            int? midiChannel = cboMidiChannel.SelectedIndex <= 0 ? null : cboMidiChannel.SelectedIndex;
+            kbd.MidiChannel = midiChannel;
+            mw.MidiChannel = midiChannel;
+            mc.MidiChannel = midiChannel;
+        };
+      
+
+
     }
 
     void InitSynth() {

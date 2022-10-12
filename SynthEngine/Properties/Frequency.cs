@@ -112,6 +112,10 @@ public class Frequency {
     #region Public Methods
     //  Modulation Frequency scaling is 1.0 per octave
     public double GetFrequency() {
+        if(PitchWheel != null)
+            PitchWheel.MidiChannel = Keyboard?.MidiChannel;
+
+
         // NB     / 2 because of stereo interleaving
         // This is final frequency used for driving Phase Accumulator
 
@@ -122,7 +126,7 @@ public class Frequency {
             PreModFrequency = Keyboard.Value;
 
 
-        PreModFrequency = PreModFrequency * Math.Pow(2, PitchWheel.Value);    // Adjust Octave
+        PreModFrequency = PreModFrequency * Math.Pow(2, PitchWheel?.Value??0);    // Adjust Octave
 
 
         PreModFrequency = PreModFrequency * Math.Pow(2, _Octave);    // Adjust Octave

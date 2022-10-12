@@ -2,10 +2,11 @@
 using Synth.Properties;
 using System.Diagnostics;
 using System.Threading;
+using static SynthEngine.Modules.IO.Midi;
 
 namespace SynthEngine.Modules.IO;
 
-internal class Midi {
+public class Midi {
 
     public enum KeyState {
         Up,
@@ -19,11 +20,11 @@ internal class Midi {
     public int CurrentModWheel = 0;
     public int CurrentPitchWheel = 0;
 
-    public event EventHandler<Note>? NoteChanged;
-    public event EventHandler<KeyState>? KeyStateChanged;
-    public event EventHandler<int>? PitchWheelChanged;
-    public event EventHandler<int>? ModWheelChanged;
-    public event EventHandler<ControllerEventArgs>? ControllerValueChanged;
+    public event EventHandler<MidiNoteEventArgs>? NoteChanged;
+    public event EventHandler<MidiKeyEventArgs>? KeyStateChanged;
+    public event EventHandler<MidiWheelEventArgs>? PitchWheelChanged;
+    public event EventHandler<MidiWheelEventArgs>? ModWheelChanged;
+    public event EventHandler<MidiControllerEventArgs>? ControllerValueChanged;
 
 
 
@@ -42,22 +43,6 @@ internal class Midi {
         }
     }
 
-    void _KeyStateChanged() {
-        Debug.Assert(KeyStateChanged != null);
-        KeyStateChanged?.Invoke(this, CurrentKeyState);
-    }
-
-    void _NoteChanged() {
-        NoteChanged?.Invoke(this, CurrentNote);
-    }
-
-    void _PitchWheelChanged() {
-        PitchWheelChanged?.Invoke(this, CurrentPitchWheel);
-    }
-
-    void _ModWheelChanged() {
-        ModWheelChanged?.Invoke(this, CurrentModWheel);
-    }
 
     private void ErrorReceived(object? sender, MidiInMessageEventArgs e) {
         // DO NOTHING!
@@ -82,8 +67,8 @@ internal class Midi {
                 CurrentNote = Note.GetByID(n.NoteNumber - 20);
                 CurrentKeyState = KeyState.Down;
                 PlayedNotes.Add(CurrentNote.Desc);
-                _NoteChanged();
-                _KeyStateChanged();
+                NoteChanged?.Invoke(this, new MidiNoteEventArgs(e.MidiEvent.Channel, CurrentNote));
+                KeyStateChanged?.Invoke(this, new MidiKeyEventArgs(e.MidiEvent.Channel, CurrentKeyState));
                 break;
 
             case MidiCommandCode.NoteOff:
@@ -94,7 +79,7 @@ internal class Midi {
 
                 if (PlayedNotes.Count == 0) {
                     CurrentKeyState = KeyState.Up;
-                    _KeyStateChanged();
+                    KeyStateChanged?.Invoke(this, new MidiKeyEventArgs(e.MidiEvent.Channel, CurrentKeyState));
                 }
                 break;
 
@@ -102,7 +87,7 @@ internal class Midi {
                 var p = (PitchWheelChangeEvent)e.MidiEvent;
 
                 CurrentPitchWheel = p.Pitch;
-                _PitchWheelChanged();
+                PitchWheelChanged?.Invoke(this, new MidiWheelEventArgs(e.MidiEvent.Channel, CurrentPitchWheel));
                 break;
 
             case MidiCommandCode.ControlChange:
@@ -110,21 +95,54 @@ internal class Midi {
 
                 if (c.Controller == MidiController.Modulation) {
                     CurrentModWheel = c.ControllerValue;
-                    _ModWheelChanged();
+                    ModWheelChanged?.Invoke(this, new MidiWheelEventArgs(e.MidiEvent.Channel, CurrentModWheel));
                 } else {
-                    ControllerValueChanged?.Invoke(this, new ControllerEventArgs((int)c.Controller, c.ControllerValue));
+                    ControllerValueChanged?.Invoke(this, new MidiControllerEventArgs(e.MidiEvent.Channel, (int)c.Controller, c.ControllerValue));
                 }
                 break;
         }
     }
 }
 
-public class ControllerEventArgs {
-    public ControllerEventArgs(int ControllerID, int Value) {
+public class MidiControllerEventArgs {
+    public MidiControllerEventArgs(int MidiChannelID, int ControllerID, int Value) {
+        this.MidiChannelID = MidiChannelID;
         this.ControllerID = ControllerID;
         this.Value = Value;
     }
 
+    public int MidiChannelID;
     public int ControllerID;
     public int Value;
 }
+
+public class MidiNoteEventArgs {
+    public MidiNoteEventArgs(int MidiChannelID, Note Note) {
+        this.MidiChannelID = MidiChannelID;
+        this.Note = Note;
+    }
+
+    public int MidiChannelID;
+    public Note Note;
+}
+
+public class MidiKeyEventArgs {
+    public MidiKeyEventArgs(int MidiChannelID, KeyState KeyState) {
+        this.MidiChannelID = MidiChannelID;
+        this.KeyState = KeyState;
+    }
+
+    public int MidiChannelID;
+    public KeyState KeyState;
+}
+
+public class MidiWheelEventArgs {
+    public MidiWheelEventArgs(int MidiChannelID, int Value) {
+        this.MidiChannelID = MidiChannelID;
+        this.Value = Value;
+    }
+
+    public int MidiChannelID;
+    public int Value;
+}
+
