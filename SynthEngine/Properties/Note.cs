@@ -132,6 +132,19 @@ public class Note {
         notes.Add(new Note() { ID = 87, Desc = "B8" });
         notes.Add(new Note() { ID = 88, Desc = "C8" });
 
+        notes.Add(new Note() { ID = 89, Desc = "C♯8/D♭8" });
+        notes.Add(new Note() { ID = 90, Desc = "D8" });
+        notes.Add(new Note() { ID = 91, Desc = "D♯8E♭8" });
+        notes.Add(new Note() { ID = 92, Desc = "E8" });
+        notes.Add(new Note() { ID = 93, Desc = "F7" });
+        notes.Add(new Note() { ID = 94, Desc = "F♯8G♭8" });
+        notes.Add(new Note() { ID = 95, Desc = "G8" });
+        notes.Add(new Note() { ID = 96, Desc = "G♯8A♭8" });
+        notes.Add(new Note() { ID = 97, Desc = "A9" });
+        notes.Add(new Note() { ID = 98, Desc = "A♯9B♭9" });
+        notes.Add(new Note() { ID = 99, Desc = "B9" });
+        notes.Add(new Note() { ID =100, Desc = "C9" });
+
         // Set frequencies taking fixed frequency of 440Hz for A4
         var A4f = 440;       // Fix this frequency
         var A4ID = 49;       // ID from list above

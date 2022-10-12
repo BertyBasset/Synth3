@@ -73,6 +73,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFilterType = new System.Windows.Forms.Label();
             this.cmdViewWave = new System.Windows.Forms.Button();
+            this.cmdInit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -336,7 +337,7 @@
             // kOsc3Octave
             // 
             this.kOsc3Octave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc3Octave.BackgroundImage")));
-            this.kOsc3Octave.Default = 0D;
+            this.kOsc3Octave.Default = 1D;
             this.kOsc3Octave.Divisions = 3;
             this.kOsc3Octave.ForeColor = System.Drawing.Color.White;
             this.kOsc3Octave.HideLabels = true;
@@ -355,7 +356,7 @@
             this.kOsc3Octave.SweepAngle = 137;
             this.kOsc3Octave.TabIndex = 12;
             this.kOsc3Octave.Thickness = 2;
-            this.kOsc3Octave.Value = 0D;
+            this.kOsc3Octave.Value = 1D;
             // 
             // kOsc3Freq
             // 
@@ -1064,12 +1065,22 @@
             this.cmdViewWave.Text = "View Wave";
             this.cmdViewWave.UseVisualStyleBackColor = true;
             // 
+            // cmdInit
+            // 
+            this.cmdInit.Location = new System.Drawing.Point(753, 147);
+            this.cmdInit.Name = "cmdInit";
+            this.cmdInit.Size = new System.Drawing.Size(84, 28);
+            this.cmdInit.TabIndex = 52;
+            this.cmdInit.Text = "Init Patch";
+            this.cmdInit.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(854, 450);
+            this.Controls.Add(this.cmdInit);
             this.Controls.Add(this.cmdViewWave);
             this.Controls.Add(this.lblFilterType);
             this.Controls.Add(this.pictureBox1);
@@ -1178,5 +1189,6 @@
         private PictureBox pictureBox1;
         private Label lblFilterType;
         private Button cmdViewWave;
+        private Button cmdInit;
     }
 }

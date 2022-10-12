@@ -1,24 +1,22 @@
 // To DO
-// .5 Save current/ Reset
-// 1 Show scope - done - but have frequency markers maybe
-// 2 Midi filter, show gate
-// 3 Effects Section
+// 1 Midi filter, show gate
+// 2 Effects Section
 
-// 4 Switches
-// 5 Stop flickering when redrawing
-// 6 Smoother mouse operation
+// 3 Switches
+// 4 Stop flickering when redrawing
+// 5 Smoother mouse operation
 
 
 // Then we leave for a month !!
 
 
 // Version 4
-// 7 Modulaiton MAtrix System
-// 8 Patch Save/REcall
-// 9 Rationalise CV stuff (not sure if needed, but revisit anyway.
+// 6 Modulaiton MAtrix System
+// 7 Patch Save/REcall
+// 8 Rationalise CV stuff (not sure if needed, but revisit anyway.
 
 // Version 5
-// 10. Polyphony !
+// 9. Polyphony !
 
 
 using Synth.IO;
@@ -70,7 +68,7 @@ public partial class Form1 : Form {
         
 
         
-        
+        // Midi Controller Event Handler
         Dictionary<int, Knob> controlMap = new();
         controlMap.Add(74, kVcfType);
         controlMap.Add(75, kVcfCutoff);
@@ -91,10 +89,12 @@ public partial class Form1 : Form {
             } else {
                 knob.Value = ((double)e.Value / MAX_RANGE) * (double)(knob.Max - knob.Min) + knob.Min;
             }
-
-
         };
 
+        this.FormClosing += (o, e) => Patch.Save(this);
+        this.Activated += (o, e) => Patch.Load(this);
+
+        cmdInit.Click += CmdInit_Click;
     }
 
     void InitSynth() {
@@ -225,8 +225,15 @@ public partial class Form1 : Form {
             default: break;
         }
         vcf.ModAmount = kVcfEnvelope.Value;
-    
     }
+
+    private void CmdInit_Click(object? sender, EventArgs e) {
+        var knobs = this.Controls.OfType<Knob>();
+        foreach (var k in knobs)
+            k.Init();
+    }
+
+
 }
 
 

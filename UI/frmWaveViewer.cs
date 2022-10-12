@@ -5,7 +5,13 @@ namespace UI;
 public partial class frmWaveViewer : Form {
     private Synth.SynthEngine? _synthEngine;
 
+    Font fMarkers;
+    Brush bMarkers;
     public frmWaveViewer(Synth.SynthEngine SynthEngine) {
+        fMarkers = new Font("Arial", 8);
+        bMarkers = new SolidBrush(Color.Cyan);
+
+
         try {
             Debug.Assert(SynthEngine != null);
             _synthEngine = SynthEngine;
@@ -13,30 +19,43 @@ public partial class frmWaveViewer : Form {
             InitializeComponent();
 
             SynthEngine.GraphUpdated += (o, e) => {
-                DrawGraph(e);
-                DrawSpectrum(e);
-
+                Draw(e);
             };
         } catch (Exception) { }
     }
 
-    private void DrawGraph(List<double> data) {
+    private void Draw(List<double> e) {
+        Bitmap b = new Bitmap(this.Width, this.Height);
+        Graphics g = Graphics.FromImage(b);
+
+        if(chkWave.Checked)
+            DrawGraph(g, e);
+        if(chkSpectrum.Checked)
+            DrawSpectrum(g, e);
+
+        // Copy to screen
+        picGraph.Image = b;
+    }
+
+
+    private void DrawGraph(Graphics g, List<double> data) {
         // Array of Doubles passed in
 
         var p = new Pen(Color.Lime);
 
         Point[] points = new Point[data.Count];
         for (int i = 0; i < data.Count; i++) {
-            points[i] = new Point(i * picGraph.Width / data.Count, (int)(data[i] * picGraph.Height * .6f + picGraph.Height / 2));
+            points[i] = new Point(i * picGraph.Width / data.Count * 2, (int)(data[i] * picGraph.Height * .6f + picGraph.Height / 2));
         }
+
         if (!this.Visible)
             return;
-        Graphics g = picGraph.CreateGraphics();
+
         g.Clear(Color.Black);
         g.DrawLines(p, points);
     }
 
-    private async void DrawSpectrum(List<double> data) {
+    private async void DrawSpectrum(Graphics g, List<double> data) {
         var s = await Task.Run(() => GetSpectrum(data.ToArray()));
 
         double maxCoeff = s.MaxBy(x => x);
@@ -51,9 +70,28 @@ public partial class frmWaveViewer : Form {
         if (!this.Visible)
             return;
 
-        Graphics g = picGraph.CreateGraphics();
         g.DrawLines(p, spectrum);
 
+        int freq = 500;
+        for (int i = 0; i < picGraph.Width; i += (int)((double)picGraph.Width / 9.5)) {
+            if (i == 0)
+                continue;
+
+            var label = $"{(freq < 1000 ? freq : ((int)(freq / 100)) / 10.0)}{(freq < 1000 ? "Hz" : "kHz")}";
+            StringFormat sf = new StringFormat();
+            sf.LineAlignment = StringAlignment.Center;
+            sf.Alignment = StringAlignment.Center;
+            g.DrawString(label, fMarkers, bMarkers, (float)i, (float)8, sf);
+            
+            
+            g.DrawLine(p, i, 15, i, 20);
+
+            freq += 500;
+        }
+
+
+        // 6500Hz = Total Width
+        // 500Hz = 
 
     }
 
