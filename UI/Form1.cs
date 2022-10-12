@@ -1,4 +1,5 @@
 // To DO
+// .5 Save current/ Reset
 // 1 Show scope - done - but have frequency markers maybe
 // 2 Midi filter, show gate
 // 3 Effects Section
@@ -6,6 +7,10 @@
 // 4 Switches
 // 5 Stop flickering when redrawing
 // 6 Smoother mouse operation
+
+
+// Then we leave for a month !!
+
 
 // Version 4
 // 7 Modulaiton MAtrix System
@@ -22,6 +27,7 @@ using Synth.Modules.Modulators;
 using Synth.Modules.Sources;
 using SynthEngine.Modules.Modulators;
 using SynthEngine.Modules.Sources;
+using UI.Code;
 using UI.Controls;
 
 namespace UI;

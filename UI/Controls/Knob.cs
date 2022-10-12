@@ -201,6 +201,23 @@ namespace UI.Controls {
             }
         }
 
+        private double _default;
+        public double Default { 
+            get { return _default; }
+            set {
+                _default = value;
+                if (_default < _min)
+                    _default = _min;
+                if (_default > _max)
+                    _default = _max;
+            }
+        }
+
+        public void Init() {
+            Value = _default;
+        }
+
+
         private double _value = 0;
         public double Value {
             get { return _value; }
