@@ -95,11 +95,14 @@
             // 
             // kOsc1Freq
             // 
+            this.kOsc1Freq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc1Freq.BackgroundImage")));
+            this.kOsc1Freq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kOsc1Freq.Default = 0D;
             this.kOsc1Freq.Divisions = 10;
             this.kOsc1Freq.ForeColor = System.Drawing.Color.White;
             this.kOsc1Freq.HideLabels = false;
-            this.kOsc1Freq.HideTicks = false;
+            this.kOsc1Freq.HideOutine = true;
+            this.kOsc1Freq.HideTicks = true;
             this.kOsc1Freq.LabelMarker0 = "-1";
             this.kOsc1Freq.LabelMarker10 = "+1";
             this.kOsc1Freq.LabelMarker5 = "0";
@@ -124,6 +127,7 @@
             this.kOsc1Octave.Divisions = 3;
             this.kOsc1Octave.ForeColor = System.Drawing.Color.White;
             this.kOsc1Octave.HideLabels = true;
+            this.kOsc1Octave.HideOutine = false;
             this.kOsc1Octave.HideTicks = true;
             this.kOsc1Octave.LabelMarker0 = "0";
             this.kOsc1Octave.LabelMarker10 = "10";
@@ -143,11 +147,13 @@
             // 
             // kOsc1PW
             // 
+            this.kOsc1PW.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc1PW.BackgroundImage")));
             this.kOsc1PW.Default = 0D;
             this.kOsc1PW.Divisions = 10;
             this.kOsc1PW.ForeColor = System.Drawing.Color.White;
             this.kOsc1PW.HideLabels = false;
-            this.kOsc1PW.HideTicks = false;
+            this.kOsc1PW.HideOutine = false;
+            this.kOsc1PW.HideTicks = true;
             this.kOsc1PW.LabelMarker0 = "0";
             this.kOsc1PW.LabelMarker10 = "10";
             this.kOsc1PW.LabelMarker5 = "";
@@ -171,6 +177,7 @@
             this.kOsc1Waveform.Divisions = 4;
             this.kOsc1Waveform.ForeColor = System.Drawing.Color.White;
             this.kOsc1Waveform.HideLabels = true;
+            this.kOsc1Waveform.HideOutine = false;
             this.kOsc1Waveform.HideTicks = true;
             this.kOsc1Waveform.LabelMarker0 = "0";
             this.kOsc1Waveform.LabelMarker10 = "10";
@@ -195,6 +202,7 @@
             this.kOsc2Waveform.Divisions = 4;
             this.kOsc2Waveform.ForeColor = System.Drawing.Color.White;
             this.kOsc2Waveform.HideLabels = true;
+            this.kOsc2Waveform.HideOutine = false;
             this.kOsc2Waveform.HideTicks = true;
             this.kOsc2Waveform.LabelMarker0 = "0";
             this.kOsc2Waveform.LabelMarker10 = "10";
@@ -214,11 +222,13 @@
             // 
             // kOsc2PW
             // 
+            this.kOsc2PW.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc2PW.BackgroundImage")));
             this.kOsc2PW.Default = 0D;
             this.kOsc2PW.Divisions = 10;
             this.kOsc2PW.ForeColor = System.Drawing.Color.White;
             this.kOsc2PW.HideLabels = false;
-            this.kOsc2PW.HideTicks = false;
+            this.kOsc2PW.HideOutine = false;
+            this.kOsc2PW.HideTicks = true;
             this.kOsc2PW.LabelMarker0 = "0";
             this.kOsc2PW.LabelMarker10 = "10";
             this.kOsc2PW.LabelMarker5 = "";
@@ -243,6 +253,7 @@
             this.kOsc2Octave.Divisions = 3;
             this.kOsc2Octave.ForeColor = System.Drawing.Color.White;
             this.kOsc2Octave.HideLabels = true;
+            this.kOsc2Octave.HideOutine = false;
             this.kOsc2Octave.HideTicks = true;
             this.kOsc2Octave.LabelMarker0 = "0";
             this.kOsc2Octave.LabelMarker10 = "10";
@@ -262,11 +273,13 @@
             // 
             // kOsc2Freq
             // 
+            this.kOsc2Freq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc2Freq.BackgroundImage")));
             this.kOsc2Freq.Default = 0D;
             this.kOsc2Freq.Divisions = 10;
             this.kOsc2Freq.ForeColor = System.Drawing.Color.White;
             this.kOsc2Freq.HideLabels = false;
-            this.kOsc2Freq.HideTicks = false;
+            this.kOsc2Freq.HideOutine = false;
+            this.kOsc2Freq.HideTicks = true;
             this.kOsc2Freq.LabelMarker0 = "0";
             this.kOsc2Freq.LabelMarker10 = "10";
             this.kOsc2Freq.LabelMarker5 = "5";
@@ -300,6 +313,7 @@
             this.kOsc3Waveform.Divisions = 4;
             this.kOsc3Waveform.ForeColor = System.Drawing.Color.White;
             this.kOsc3Waveform.HideLabels = true;
+            this.kOsc3Waveform.HideOutine = false;
             this.kOsc3Waveform.HideTicks = true;
             this.kOsc3Waveform.LabelMarker0 = "0";
             this.kOsc3Waveform.LabelMarker10 = "10";
@@ -319,11 +333,13 @@
             // 
             // kOsc3PW
             // 
+            this.kOsc3PW.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc3PW.BackgroundImage")));
             this.kOsc3PW.Default = 0D;
             this.kOsc3PW.Divisions = 10;
             this.kOsc3PW.ForeColor = System.Drawing.Color.White;
             this.kOsc3PW.HideLabels = false;
-            this.kOsc3PW.HideTicks = false;
+            this.kOsc3PW.HideOutine = false;
+            this.kOsc3PW.HideTicks = true;
             this.kOsc3PW.LabelMarker0 = "0";
             this.kOsc3PW.LabelMarker10 = "10";
             this.kOsc3PW.LabelMarker5 = "";
@@ -347,6 +363,7 @@
             this.kOsc3Octave.Divisions = 3;
             this.kOsc3Octave.ForeColor = System.Drawing.Color.White;
             this.kOsc3Octave.HideLabels = true;
+            this.kOsc3Octave.HideOutine = false;
             this.kOsc3Octave.HideTicks = true;
             this.kOsc3Octave.LabelMarker0 = "0";
             this.kOsc3Octave.LabelMarker10 = "10";
@@ -366,11 +383,13 @@
             // 
             // kOsc3Freq
             // 
+            this.kOsc3Freq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc3Freq.BackgroundImage")));
             this.kOsc3Freq.Default = 0.01D;
             this.kOsc3Freq.Divisions = 10;
             this.kOsc3Freq.ForeColor = System.Drawing.Color.White;
             this.kOsc3Freq.HideLabels = false;
-            this.kOsc3Freq.HideTicks = false;
+            this.kOsc3Freq.HideOutine = false;
+            this.kOsc3Freq.HideTicks = true;
             this.kOsc3Freq.LabelMarker0 = "0";
             this.kOsc3Freq.LabelMarker10 = "10";
             this.kOsc3Freq.LabelMarker5 = "5";
@@ -409,11 +428,13 @@
             // 
             // kOsc1Mix
             // 
+            this.kOsc1Mix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc1Mix.BackgroundImage")));
             this.kOsc1Mix.Default = 1D;
             this.kOsc1Mix.Divisions = 10;
             this.kOsc1Mix.ForeColor = System.Drawing.Color.White;
             this.kOsc1Mix.HideLabels = false;
-            this.kOsc1Mix.HideTicks = false;
+            this.kOsc1Mix.HideOutine = false;
+            this.kOsc1Mix.HideTicks = true;
             this.kOsc1Mix.LabelMarker0 = "0";
             this.kOsc1Mix.LabelMarker10 = "10";
             this.kOsc1Mix.LabelMarker5 = "";
@@ -432,11 +453,13 @@
             // 
             // kOsc2Mix
             // 
+            this.kOsc2Mix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc2Mix.BackgroundImage")));
             this.kOsc2Mix.Default = 1D;
             this.kOsc2Mix.Divisions = 10;
             this.kOsc2Mix.ForeColor = System.Drawing.Color.White;
             this.kOsc2Mix.HideLabels = false;
-            this.kOsc2Mix.HideTicks = false;
+            this.kOsc2Mix.HideOutine = false;
+            this.kOsc2Mix.HideTicks = true;
             this.kOsc2Mix.LabelMarker0 = "0";
             this.kOsc2Mix.LabelMarker10 = "10";
             this.kOsc2Mix.LabelMarker5 = "";
@@ -455,11 +478,13 @@
             // 
             // kOsc3Mix
             // 
+            this.kOsc3Mix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc3Mix.BackgroundImage")));
             this.kOsc3Mix.Default = 1D;
             this.kOsc3Mix.Divisions = 10;
             this.kOsc3Mix.ForeColor = System.Drawing.Color.White;
             this.kOsc3Mix.HideLabels = false;
-            this.kOsc3Mix.HideTicks = false;
+            this.kOsc3Mix.HideOutine = false;
+            this.kOsc3Mix.HideTicks = true;
             this.kOsc3Mix.LabelMarker0 = "0";
             this.kOsc3Mix.LabelMarker10 = "10";
             this.kOsc3Mix.LabelMarker5 = "";
@@ -505,6 +530,7 @@
             this.kVcfType.Divisions = 5;
             this.kVcfType.ForeColor = System.Drawing.Color.White;
             this.kVcfType.HideLabels = true;
+            this.kVcfType.HideOutine = false;
             this.kVcfType.HideTicks = true;
             this.kVcfType.LabelMarker0 = "0";
             this.kVcfType.LabelMarker10 = "10";
@@ -525,11 +551,13 @@
             // kVcfCutoff
             // 
             this.kVcfCutoff.BackColor = System.Drawing.Color.Navy;
+            this.kVcfCutoff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kVcfCutoff.BackgroundImage")));
             this.kVcfCutoff.Default = 0D;
             this.kVcfCutoff.Divisions = 10;
             this.kVcfCutoff.ForeColor = System.Drawing.Color.White;
             this.kVcfCutoff.HideLabels = false;
-            this.kVcfCutoff.HideTicks = false;
+            this.kVcfCutoff.HideOutine = true;
+            this.kVcfCutoff.HideTicks = true;
             this.kVcfCutoff.LabelMarker0 = "0";
             this.kVcfCutoff.LabelMarker10 = "10";
             this.kVcfCutoff.LabelMarker5 = "";
@@ -549,11 +577,13 @@
             // kVcfResonance
             // 
             this.kVcfResonance.BackColor = System.Drawing.Color.Navy;
+            this.kVcfResonance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kVcfResonance.BackgroundImage")));
             this.kVcfResonance.Default = 1D;
             this.kVcfResonance.Divisions = 10;
             this.kVcfResonance.ForeColor = System.Drawing.Color.White;
             this.kVcfResonance.HideLabels = false;
-            this.kVcfResonance.HideTicks = false;
+            this.kVcfResonance.HideOutine = true;
+            this.kVcfResonance.HideTicks = true;
             this.kVcfResonance.LabelMarker0 = "0";
             this.kVcfResonance.LabelMarker10 = "10";
             this.kVcfResonance.LabelMarker5 = "";
@@ -573,11 +603,13 @@
             // kVcfEnvelope
             // 
             this.kVcfEnvelope.BackColor = System.Drawing.Color.Navy;
+            this.kVcfEnvelope.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kVcfEnvelope.BackgroundImage")));
             this.kVcfEnvelope.Default = 1D;
             this.kVcfEnvelope.Divisions = 10;
             this.kVcfEnvelope.ForeColor = System.Drawing.Color.White;
             this.kVcfEnvelope.HideLabels = false;
-            this.kVcfEnvelope.HideTicks = false;
+            this.kVcfEnvelope.HideOutine = true;
+            this.kVcfEnvelope.HideTicks = true;
             this.kVcfEnvelope.LabelMarker0 = "0";
             this.kVcfEnvelope.LabelMarker10 = "10";
             this.kVcfEnvelope.LabelMarker5 = "";
@@ -596,11 +628,13 @@
             // 
             // kEnv1Release
             // 
+            this.kEnv1Release.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv1Release.BackgroundImage")));
             this.kEnv1Release.Default = 2D;
             this.kEnv1Release.Divisions = 10;
             this.kEnv1Release.ForeColor = System.Drawing.Color.White;
             this.kEnv1Release.HideLabels = false;
-            this.kEnv1Release.HideTicks = false;
+            this.kEnv1Release.HideOutine = true;
+            this.kEnv1Release.HideTicks = true;
             this.kEnv1Release.LabelMarker0 = "0";
             this.kEnv1Release.LabelMarker10 = "10";
             this.kEnv1Release.LabelMarker5 = "";
@@ -619,11 +653,13 @@
             // 
             // kEnv1Sustain
             // 
+            this.kEnv1Sustain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv1Sustain.BackgroundImage")));
             this.kEnv1Sustain.Default = 0.6D;
             this.kEnv1Sustain.Divisions = 10;
             this.kEnv1Sustain.ForeColor = System.Drawing.Color.White;
             this.kEnv1Sustain.HideLabels = false;
-            this.kEnv1Sustain.HideTicks = false;
+            this.kEnv1Sustain.HideOutine = true;
+            this.kEnv1Sustain.HideTicks = true;
             this.kEnv1Sustain.LabelMarker0 = "0";
             this.kEnv1Sustain.LabelMarker10 = "10";
             this.kEnv1Sustain.LabelMarker5 = "";
@@ -642,11 +678,13 @@
             // 
             // kEnv1Decay
             // 
+            this.kEnv1Decay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv1Decay.BackgroundImage")));
             this.kEnv1Decay.Default = 0.5D;
             this.kEnv1Decay.Divisions = 10;
             this.kEnv1Decay.ForeColor = System.Drawing.Color.White;
             this.kEnv1Decay.HideLabels = false;
-            this.kEnv1Decay.HideTicks = false;
+            this.kEnv1Decay.HideOutine = true;
+            this.kEnv1Decay.HideTicks = true;
             this.kEnv1Decay.LabelMarker0 = "0";
             this.kEnv1Decay.LabelMarker10 = "10";
             this.kEnv1Decay.LabelMarker5 = "";
@@ -665,11 +703,13 @@
             // 
             // kEnv1Attack
             // 
+            this.kEnv1Attack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv1Attack.BackgroundImage")));
             this.kEnv1Attack.Default = 0D;
             this.kEnv1Attack.Divisions = 10;
             this.kEnv1Attack.ForeColor = System.Drawing.Color.White;
             this.kEnv1Attack.HideLabels = false;
-            this.kEnv1Attack.HideTicks = false;
+            this.kEnv1Attack.HideOutine = true;
+            this.kEnv1Attack.HideTicks = true;
             this.kEnv1Attack.LabelMarker0 = "0";
             this.kEnv1Attack.LabelMarker10 = "10";
             this.kEnv1Attack.LabelMarker5 = "";
@@ -688,11 +728,13 @@
             // 
             // kEnv2Release
             // 
+            this.kEnv2Release.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv2Release.BackgroundImage")));
             this.kEnv2Release.Default = 4D;
             this.kEnv2Release.Divisions = 10;
             this.kEnv2Release.ForeColor = System.Drawing.Color.White;
             this.kEnv2Release.HideLabels = false;
-            this.kEnv2Release.HideTicks = false;
+            this.kEnv2Release.HideOutine = true;
+            this.kEnv2Release.HideTicks = true;
             this.kEnv2Release.LabelMarker0 = "0";
             this.kEnv2Release.LabelMarker10 = "10";
             this.kEnv2Release.LabelMarker5 = "";
@@ -711,11 +753,13 @@
             // 
             // kEnv2Sustain
             // 
+            this.kEnv2Sustain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv2Sustain.BackgroundImage")));
             this.kEnv2Sustain.Default = 0.7D;
             this.kEnv2Sustain.Divisions = 10;
             this.kEnv2Sustain.ForeColor = System.Drawing.Color.White;
             this.kEnv2Sustain.HideLabels = false;
-            this.kEnv2Sustain.HideTicks = false;
+            this.kEnv2Sustain.HideOutine = true;
+            this.kEnv2Sustain.HideTicks = true;
             this.kEnv2Sustain.LabelMarker0 = "0";
             this.kEnv2Sustain.LabelMarker10 = "10";
             this.kEnv2Sustain.LabelMarker5 = "";
@@ -734,11 +778,13 @@
             // 
             // kEnv2Decay
             // 
+            this.kEnv2Decay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv2Decay.BackgroundImage")));
             this.kEnv2Decay.Default = 0.3D;
             this.kEnv2Decay.Divisions = 10;
             this.kEnv2Decay.ForeColor = System.Drawing.Color.White;
             this.kEnv2Decay.HideLabels = false;
-            this.kEnv2Decay.HideTicks = false;
+            this.kEnv2Decay.HideOutine = true;
+            this.kEnv2Decay.HideTicks = true;
             this.kEnv2Decay.LabelMarker0 = "0";
             this.kEnv2Decay.LabelMarker10 = "10";
             this.kEnv2Decay.LabelMarker5 = "";
@@ -757,11 +803,13 @@
             // 
             // kEnv2Attack
             // 
+            this.kEnv2Attack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv2Attack.BackgroundImage")));
             this.kEnv2Attack.Default = 0D;
             this.kEnv2Attack.Divisions = 10;
             this.kEnv2Attack.ForeColor = System.Drawing.Color.White;
             this.kEnv2Attack.HideLabels = false;
-            this.kEnv2Attack.HideTicks = false;
+            this.kEnv2Attack.HideOutine = true;
+            this.kEnv2Attack.HideTicks = true;
             this.kEnv2Attack.LabelMarker0 = "0";
             this.kEnv2Attack.LabelMarker10 = "10";
             this.kEnv2Attack.LabelMarker5 = "";
@@ -780,11 +828,13 @@
             // 
             // kGlide
             // 
+            this.kGlide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kGlide.BackgroundImage")));
             this.kGlide.Default = 50D;
             this.kGlide.Divisions = 10;
             this.kGlide.ForeColor = System.Drawing.Color.White;
             this.kGlide.HideLabels = false;
-            this.kGlide.HideTicks = false;
+            this.kGlide.HideOutine = true;
+            this.kGlide.HideTicks = true;
             this.kGlide.LabelMarker0 = "0";
             this.kGlide.LabelMarker10 = "10";
             this.kGlide.LabelMarker5 = "";
@@ -803,11 +853,13 @@
             // 
             // kNoiseMix
             // 
+            this.kNoiseMix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kNoiseMix.BackgroundImage")));
             this.kNoiseMix.Default = 0D;
             this.kNoiseMix.Divisions = 10;
             this.kNoiseMix.ForeColor = System.Drawing.Color.White;
             this.kNoiseMix.HideLabels = false;
-            this.kNoiseMix.HideTicks = false;
+            this.kNoiseMix.HideOutine = false;
+            this.kNoiseMix.HideTicks = true;
             this.kNoiseMix.LabelMarker0 = "0";
             this.kNoiseMix.LabelMarker10 = "10";
             this.kNoiseMix.LabelMarker5 = "";
@@ -841,6 +893,7 @@
             this.kLfo1Shape.Divisions = 5;
             this.kLfo1Shape.ForeColor = System.Drawing.Color.White;
             this.kLfo1Shape.HideLabels = true;
+            this.kLfo1Shape.HideOutine = false;
             this.kLfo1Shape.HideTicks = true;
             this.kLfo1Shape.LabelMarker0 = "0";
             this.kLfo1Shape.LabelMarker10 = "10";
@@ -860,11 +913,13 @@
             // 
             // kLfo1Rate
             // 
+            this.kLfo1Rate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kLfo1Rate.BackgroundImage")));
             this.kLfo1Rate.Default = 0D;
             this.kLfo1Rate.Divisions = 10;
             this.kLfo1Rate.ForeColor = System.Drawing.Color.White;
             this.kLfo1Rate.HideLabels = false;
-            this.kLfo1Rate.HideTicks = false;
+            this.kLfo1Rate.HideOutine = false;
+            this.kLfo1Rate.HideTicks = true;
             this.kLfo1Rate.LabelMarker0 = "0";
             this.kLfo1Rate.LabelMarker10 = "10";
             this.kLfo1Rate.LabelMarker5 = "";
@@ -898,6 +953,7 @@
             this.kLfo2Shape.Divisions = 5;
             this.kLfo2Shape.ForeColor = System.Drawing.Color.White;
             this.kLfo2Shape.HideLabels = true;
+            this.kLfo2Shape.HideOutine = false;
             this.kLfo2Shape.HideTicks = true;
             this.kLfo2Shape.LabelMarker0 = "0";
             this.kLfo2Shape.LabelMarker10 = "10";
@@ -917,11 +973,13 @@
             // 
             // kLfo2Rate
             // 
+            this.kLfo2Rate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kLfo2Rate.BackgroundImage")));
             this.kLfo2Rate.Default = 0D;
             this.kLfo2Rate.Divisions = 10;
             this.kLfo2Rate.ForeColor = System.Drawing.Color.White;
             this.kLfo2Rate.HideLabels = false;
-            this.kLfo2Rate.HideTicks = false;
+            this.kLfo2Rate.HideOutine = false;
+            this.kLfo2Rate.HideTicks = true;
             this.kLfo2Rate.LabelMarker0 = "0";
             this.kLfo2Rate.LabelMarker10 = "10";
             this.kLfo2Rate.LabelMarker5 = "";
@@ -940,11 +998,13 @@
             // 
             // kEnv3Release
             // 
+            this.kEnv3Release.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv3Release.BackgroundImage")));
             this.kEnv3Release.Default = 0D;
             this.kEnv3Release.Divisions = 10;
             this.kEnv3Release.ForeColor = System.Drawing.Color.White;
             this.kEnv3Release.HideLabels = false;
-            this.kEnv3Release.HideTicks = false;
+            this.kEnv3Release.HideOutine = true;
+            this.kEnv3Release.HideTicks = true;
             this.kEnv3Release.LabelMarker0 = "0";
             this.kEnv3Release.LabelMarker10 = "10";
             this.kEnv3Release.LabelMarker5 = "";
@@ -963,11 +1023,13 @@
             // 
             // kEnv3Sustain
             // 
+            this.kEnv3Sustain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv3Sustain.BackgroundImage")));
             this.kEnv3Sustain.Default = 0D;
             this.kEnv3Sustain.Divisions = 10;
             this.kEnv3Sustain.ForeColor = System.Drawing.Color.White;
             this.kEnv3Sustain.HideLabels = false;
-            this.kEnv3Sustain.HideTicks = false;
+            this.kEnv3Sustain.HideOutine = true;
+            this.kEnv3Sustain.HideTicks = true;
             this.kEnv3Sustain.LabelMarker0 = "0";
             this.kEnv3Sustain.LabelMarker10 = "10";
             this.kEnv3Sustain.LabelMarker5 = "";
@@ -986,11 +1048,13 @@
             // 
             // kEnv3Decay
             // 
+            this.kEnv3Decay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv3Decay.BackgroundImage")));
             this.kEnv3Decay.Default = 0D;
             this.kEnv3Decay.Divisions = 10;
             this.kEnv3Decay.ForeColor = System.Drawing.Color.White;
             this.kEnv3Decay.HideLabels = false;
-            this.kEnv3Decay.HideTicks = false;
+            this.kEnv3Decay.HideOutine = true;
+            this.kEnv3Decay.HideTicks = true;
             this.kEnv3Decay.LabelMarker0 = "0";
             this.kEnv3Decay.LabelMarker10 = "10";
             this.kEnv3Decay.LabelMarker5 = "";
@@ -1009,11 +1073,13 @@
             // 
             // kEnv3Attack
             // 
+            this.kEnv3Attack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv3Attack.BackgroundImage")));
             this.kEnv3Attack.Default = 0D;
             this.kEnv3Attack.Divisions = 10;
             this.kEnv3Attack.ForeColor = System.Drawing.Color.White;
             this.kEnv3Attack.HideLabels = false;
-            this.kEnv3Attack.HideTicks = false;
+            this.kEnv3Attack.HideOutine = true;
+            this.kEnv3Attack.HideTicks = true;
             this.kEnv3Attack.LabelMarker0 = "0";
             this.kEnv3Attack.LabelMarker10 = "10";
             this.kEnv3Attack.LabelMarker5 = "";
@@ -1129,7 +1195,7 @@
             // 
             // ledGate
             // 
-            this.ledGate.LedColor = System.Drawing.Color.Red;
+            this.ledGate.LedColor = System.Drawing.Color.Lime;
             this.ledGate.LedState = UI.Controls.Led.Enums.LedState.Off;
             this.ledGate.Location = new System.Drawing.Point(781, 125);
             this.ledGate.Name = "ledGate";
@@ -1138,7 +1204,7 @@
             // 
             // ledLfo1
             // 
-            this.ledLfo1.LedColor = System.Drawing.Color.Red;
+            this.ledLfo1.LedColor = System.Drawing.Color.Lime;
             this.ledLfo1.LedState = UI.Controls.Led.Enums.LedState.Off;
             this.ledLfo1.Location = new System.Drawing.Point(69, 350);
             this.ledLfo1.Name = "ledLfo1";
@@ -1147,7 +1213,7 @@
             // 
             // ledLfo2
             // 
-            this.ledLfo2.LedColor = System.Drawing.Color.Red;
+            this.ledLfo2.LedColor = System.Drawing.Color.Lime;
             this.ledLfo2.LedState = UI.Controls.Led.Enums.LedState.Off;
             this.ledLfo2.Location = new System.Drawing.Point(231, 350);
             this.ledLfo2.Name = "ledLfo2";

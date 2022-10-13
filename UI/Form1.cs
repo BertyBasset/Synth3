@@ -1,22 +1,19 @@
 // To DO
-// 1 Show gate and lfo clocks
+// 1 Smoother mouse operation
 // 2 Effects Section
-
 // 3 Switches
-// 4 Stop flickering when redrawing
-// 5 Smoother mouse operation
 
 
 // Then we leave for a month !!
 
 
 // Version 4
-// 6 Modulaiton MAtrix System
-// 7 Patch Save/REcall
-// 8 Rationalise CV stuff (not sure if needed, but revisit anyway.
+// 5 Modulaiton MAtrix System
+// 6 Patch Save/REcall
+// 7 Rationalise CV stuff (not sure if needed, but revisit anyway.
 
 // Version 5
-// 9. Polyphony !
+// 8. Polyphony !
 
 
 using Synth.IO;

@@ -253,10 +253,18 @@ namespace UI.Controls {
             get { return _intValue; }
         }
 
+        // use if we are doing the ticks on background image, or if we don't want ticks
         private bool _hideticks;
         public bool HideTicks { 
             get { return _hideticks; }
             set { _hideticks = value; }
+        }
+
+        // use if we are doing the knob outline on background image
+        private bool _hideoutline;
+        public bool HideOutine {
+            get { return _hideoutline; }
+            set { _hideoutline = value; }
         }
 
 
@@ -297,7 +305,6 @@ namespace UI.Controls {
 
         void DrawKnob() {
 
-
             var g = this.CreateGraphics();
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
@@ -330,13 +337,13 @@ namespace UI.Controls {
             else
                 pPointer = new Point((int)(pCentre.X / 2 + (radius - 4) * Math.Sin((anlgeStart + a) * Math.PI / 180)), (int)(pCentre.Y + (radius -4) * Math.Cos((anlgeStart + a) * Math.PI / 180)));
 
-
-            g.DrawEllipse(pen, new Rectangle(new Point(_margin, _margin-4), new Size(this.Width - _margin*2, this.Height - _margin*2)));
+            if(!_hideoutline)
+                g.DrawEllipse(pen, new Rectangle(new Point(_margin, _margin-4), new Size(this.Width - _margin*2, this.Height - _margin*2)));
 
 
 
             if(MarkerStyle == MarkerStyleEnum.Dot)
-                g.FillEllipse(new SolidBrush(ForeColor), new Rectangle(pPointer.X -5, pPointer.Y - 5, 8, 8));
+                g.FillEllipse(new SolidBrush(ForeColor), new Rectangle(pPointer.X + 16 , pPointer.Y-4 , 7, 7));
             else
                 g.DrawLine(pen, pCentre, pPointer);
 
