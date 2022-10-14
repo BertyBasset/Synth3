@@ -11,11 +11,11 @@ using System.Windows.Markup;
 
 namespace UI.Controls {
     public partial class Knob : UserControl, iControl {
+        public event EventHandler<polar> PolarChanged;
 
 
-        int _oldIntValue = 0;
 
-
+        #region EventHandlers, enums and Public Methods
         // Event with Value prop
         public event EventHandler<double>? ValueChanged;
         public event EventHandler<int>? IntValueChanged;
@@ -24,7 +24,13 @@ namespace UI.Controls {
             Line = 0,
             Dot
         }
+        public void Init() {
+            Value = _default;
+            _v = Value;
+        }
+        #endregion
 
+        #region Display Properties
         public String LabelMarker0 { 
             get { return lbl0.Text; }
             set { lbl0.Text = value; }
@@ -67,15 +73,6 @@ namespace UI.Controls {
             }
         }
 
-        private bool _limitToDivisions;
-        public bool LimitToDivisions {
-            get { return _limitToDivisions; }
-            set {
-                _limitToDivisions = value;
-            }
-        }
-
-
         private int _sweepAngle = 270;
         public int SweepAngle {
             get { return _sweepAngle; }
@@ -88,13 +85,9 @@ namespace UI.Controls {
                 if (_sweepAngle > 360)
                     _sweepAngle = 360;
 
-
                 Knob_Paint(this, null);
             }
         }
-
-
-
 
         private int _divisions;
         public int Divisions {
@@ -145,6 +138,29 @@ namespace UI.Controls {
             }
         }
 
+        // use if we are doing the ticks on background image, or if we don't want ticks
+        private bool _hideticks;
+        public bool HideTicks {
+            get { return _hideticks; }
+            set { _hideticks = value; }
+        }
+
+        // use if we are doing the knob outline on background image
+        private bool _hideoutline;
+        public bool HideOutine {
+            get { return _hideoutline; }
+            set { _hideoutline = value; }
+        }
+        #endregion
+
+        #region Value and Behaviour Properties
+        private bool _limitToDivisions;
+        public bool LimitToDivisions {
+            get { return _limitToDivisions; }
+            set {
+                _limitToDivisions = value;
+            }
+        }
 
         private double _min = 0;
         public double Min {
@@ -177,7 +193,6 @@ namespace UI.Controls {
                 Knob_Paint(this, null);
             }
         }
-
 
         private double __v;
         private double _v {
@@ -213,11 +228,7 @@ namespace UI.Controls {
             }
         }
 
-        public void Init() {
-            Value = _default;
-        }
-
-
+        private int _oldIntValue = 0;
         private double _value = 0;
         public double Value {
             get { return _value; }
@@ -236,15 +247,12 @@ namespace UI.Controls {
                     _oldIntValue = _intValue;
                 }
 
-
-
                 Knob_Paint(this, null);
 
                 // Raise Value Changed Event
                 if (ValueChanged != null) {
                     ValueChanged(this, _value);
                 }
-
             }
         }
 
@@ -253,52 +261,72 @@ namespace UI.Controls {
             get { return _intValue; }
         }
 
-        // use if we are doing the ticks on background image, or if we don't want ticks
-        private bool _hideticks;
-        public bool HideTicks { 
-            get { return _hideticks; }
-            set { _hideticks = value; }
-        }
-
-        // use if we are doing the knob outline on background image
-        private bool _hideoutline;
-        public bool HideOutine {
-            get { return _hideoutline; }
-            set { _hideoutline = value; }
-        }
-
-
         private int Percent {
             get { 
                 // Percent Value compared to range (Max - Min)
                 return (int)((_value - _min) / (_max - _min) * 100);
             }
         }
+        #endregion
 
-
-
-
-        bool mouseDown = false;
-        Point startPos;
+        #region Constructor
         public Knob() {
             InitializeComponent();
             this.Paint += Knob_Paint;
             this.Resize += (o, e) => DrawKnob();
             this.ForeColorChanged += (o, e) => lblLabelText.ForeColor = ForeColor;
 
+            MouseEvents();
+        }
+        #endregion
+
+        #region Mouse Events
+        bool mouseDown = false;
+        Point startPos;
+        double startValue;
+
+        // Note _v is value were are setting. It goes through further processing to get to Value,
+        // but we can effectively treat _v as Value
+
+        private void MouseEvents() {
             // Knob Move events
-            this.MouseDown += (o, e) => { mouseDown = true; startPos = new Point(e.X, e.Y); };
+            this.MouseDown += (o, e) => { mouseDown = true; startPos = new Point(e.X, e.Y); startValue = _v; };
             this.MouseUp += (o, e) => mouseDown = false;
             this.MouseMove += (o, e) => {
                 if (mouseDown) {
                     var currenPos = new Point(e.X, e.Y);
 
-                    var change = currenPos.Y - startPos.Y;
-                    _v = _v- (Max- Min)* change/1000 ;
+                    
+                    //           \  225deg 
+                    //               \           ->  positive on this
+                    //                   x           side of diagonal    -45deg to 135deg
+                    //   negative on this    \
+                    //   side of diagonal        \ 45deg
+
+                    var r = Math.Pow(Math.Pow(currenPos.Y - startPos.Y, 2) + Math.Pow(currenPos.X - startPos.X, 2), .5);
+                    var ang = ((Math.Atan2((currenPos.Y - startPos.Y), (currenPos.X - startPos.X)) * 180.0 / Math.PI) + 720)%360;
+
+
+                     
+                    if (ang >= 45 && ang < 225)
+                        r = -r;
+
+
+                    //PolarChanged?.Invoke(this, new polar() { ang = (int)ang, r = (int)r });
+
+                    
+                    _v = startValue +  (Max - Min) * r/100;
+                    
+                    // Need to do better for LimitToDivision 
+                    
+
+
                 }
             };
         }
+        #endregion
 
+        #region Draw Knob
         private void Knob_Paint(object? sender, PaintEventArgs? e) {
             DrawKnob();
         }
@@ -314,11 +342,7 @@ namespace UI.Controls {
                 g.DrawImage(BackgroundImage, 0, 0);
 
 
-
-
-
             Pen pen = new Pen(new SolidBrush(ForeColor), _thickness);
-
 
 
             int radius = this.Width / 2 - _margin;
@@ -361,9 +385,12 @@ namespace UI.Controls {
                 }
             }
         }
+        #endregion
+    }
 
-
-
-
+    public class polar {
+        public double r;
+        public double ang;
+    
     }
 }

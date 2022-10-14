@@ -107,6 +107,13 @@ public partial class Form1 : Form {
         lfo2.ClockTick += (o, e) => ledLfo2.LedState = e ? Led.Enums.LedState.On : Led.Enums.LedState.Off;
 
 
+
+        //kVcfCutoff.PolarChanged += KVcfCutoff_PolarChanged;
+
+    }
+
+    private void KVcfCutoff_PolarChanged(object? sender, polar e) {
+        label1.Text = $"r: {e.r.ToString()}, ang: {e.ang.ToString()}";
     }
 
     void InitSynth() {
