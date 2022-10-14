@@ -290,7 +290,7 @@ namespace UI.Controls {
 
         private void MouseEvents() {
             // Knob Move events
-            this.MouseDown += (o, e) => { mouseDown = true; startPos = new Point(e.X, e.Y); startValue = _v; };
+            this.MouseDown += (o, e) => { mouseDown = true; startPos = new Point(e.X, e.Y); startValue = Value; };
             this.MouseUp += (o, e) => mouseDown = false;
             this.MouseMove += (o, e) => {
                 if (mouseDown) {
@@ -314,13 +314,13 @@ namespace UI.Controls {
 
                     //PolarChanged?.Invoke(this, new polar() { ang = (int)ang, r = (int)r });
 
-                    
-                    _v = startValue +  (Max - Min) * r/100;
-                    
-                    // Need to do better for LimitToDivision 
-                    
+                    if(!LimitToDivisions)
+                        _v = startValue +  (Max - Min) * r/100;
+                    else
+                        _v = _v + (Max - Min) * r / 100;
 
 
+                    // Improve discrete steps
                 }
             };
         }
