@@ -11,14 +11,11 @@ using System.Windows.Markup;
 
 namespace UI.Controls {
     public partial class Knob : UserControl, iControl {
-        public event EventHandler<polar> PolarChanged;
-
 
 
         #region EventHandlers, enums and Public Methods
         // Event with Value prop
         public event EventHandler<double>? ValueChanged;
-        public event EventHandler<int>? IntValueChanged;
 
         public enum MarkerStyleEnum {
             Line = 0,
@@ -26,7 +23,6 @@ namespace UI.Controls {
         }
         public void Init() {
             Value = _default;
-            _v = Value;
         }
         #endregion
 
@@ -154,11 +150,11 @@ namespace UI.Controls {
         #endregion
 
         #region Value and Behaviour Properties
-        private bool _limitToDivisions;
-        public bool LimitToDivisions {
-            get { return _limitToDivisions; }
+        private bool _limitToInteger;
+        public bool LimitToInteger {
+            get { return _limitToInteger; }
             set {
-                _limitToDivisions = value;
+                _limitToInteger = value;
             }
         }
 
@@ -171,8 +167,8 @@ namespace UI.Controls {
                     _min = -500;
                 if (_min > 0)
                     _min = 0;
-                if (_value < _min)
-                    _value = _min;
+                if (_v < _min)
+                    _v= _min;
 
                 Knob_Paint(this, null);
             }
@@ -187,35 +183,14 @@ namespace UI.Controls {
                     _max = 0;
                 if (_max > 500)
                     _max = 500;
-                if (_value > _max)
-                    _value = _max;
+                if (_v > _max)
+                    _v= _max;
 
                 Knob_Paint(this, null);
             }
         }
 
-        private double __v;
-        private double _v {
-            get { return __v; }
-            set {
-                __v = value;
-
-                if (!LimitToDivisions)
-                    Value = __v;
-                else {
-                    var newValue = (Math.Round(__v / Divisions));
-                    if (newValue < Min)
-                        newValue = Min;
-                    if (newValue > Max)
-                        newValue = Max;
-
-
-                    if (newValue != Value)
-                        Value = newValue;
-                }
-            }
-        }
-
+ 
         private double _default;
         public double Default { 
             get { return _default; }
@@ -228,31 +203,41 @@ namespace UI.Controls {
             }
         }
 
-        private int _oldIntValue = 0;
-        private double _value = 0;
-        public double Value {
-            get { return _value; }
-            set {
-                _value = value;
-                if (_value < _min)
-                    _value = _min;
-                if (_value > _max)
-                    _value = _max;
 
-                _intValue = (int)Math.Round(_value);
-                if (_intValue != _oldIntValue) {
-                    if (IntValueChanged != null) {
-                        IntValueChanged(this, _intValue);
-                    }
-                    _oldIntValue = _intValue;
-                }
+        public double Value { 
+            get { return _v; }
+            set {
+                if (LimitToInteger)
+                    _v = Math.Round(value);
+                else
+                    _v = value;
 
                 Knob_Paint(this, null);
 
-                // Raise Value Changed Event
+                //Raise Value Changed Event
                 if (ValueChanged != null) {
-                    ValueChanged(this, _value);
+                    ValueChanged(this, _v);
                 }
+            }
+
+        }
+
+
+
+
+        private double __v;
+        public double _v {
+            get { return __v; }
+            set {
+                __v = value;
+                if (_v < _min)
+                    _v = _min;
+                if (_v > _max)
+                    _v = _max;
+
+
+
+               // }
             }
         }
 
@@ -264,7 +249,7 @@ namespace UI.Controls {
         private int Percent {
             get { 
                 // Percent Value compared to range (Max - Min)
-                return (int)((_value - _min) / (_max - _min) * 100);
+                return (int)((_v - _min) / (_max - _min) * 100);
             }
         }
         #endregion
@@ -314,10 +299,7 @@ namespace UI.Controls {
 
                     //PolarChanged?.Invoke(this, new polar() { ang = (int)ang, r = (int)r });
 
-                    if(!LimitToDivisions)
-                        _v = startValue +  (Max - Min) * r/100;
-                    else
-                        _v = _v + (Max - Min) * r / 100;
+                     Value = startValue +  (Max - Min) * r/100;
 
 
                     // Improve discrete steps
@@ -388,9 +370,4 @@ namespace UI.Controls {
         #endregion
     }
 
-    public class polar {
-        public double r;
-        public double ang;
-    
-    }
 }

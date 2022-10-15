@@ -107,7 +107,7 @@
             this.kOsc1Freq.LabelMarker10 = "+1";
             this.kOsc1Freq.LabelMarker5 = "0";
             this.kOsc1Freq.LabelText = "FREQUENCY";
-            this.kOsc1Freq.LimitToDivisions = false;
+            this.kOsc1Freq.LimitToInteger = false;
             this.kOsc1Freq.Location = new System.Drawing.Point(10, 20);
             this.kOsc1Freq.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc1Freq.Max = 0.083333D;
@@ -133,7 +133,7 @@
             this.kOsc1Octave.LabelMarker10 = "10";
             this.kOsc1Octave.LabelMarker5 = "5";
             this.kOsc1Octave.LabelText = "OCTAVE";
-            this.kOsc1Octave.LimitToDivisions = true;
+            this.kOsc1Octave.LimitToInteger = true;
             this.kOsc1Octave.Location = new System.Drawing.Point(84, 20);
             this.kOsc1Octave.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc1Octave.Max = 3D;
@@ -158,7 +158,7 @@
             this.kOsc1PW.LabelMarker10 = "10";
             this.kOsc1PW.LabelMarker5 = "";
             this.kOsc1PW.LabelText = "PULSE WIDTH";
-            this.kOsc1PW.LimitToDivisions = false;
+            this.kOsc1PW.LimitToInteger = false;
             this.kOsc1PW.Location = new System.Drawing.Point(247, 20);
             this.kOsc1PW.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc1PW.Max = 0.9D;
@@ -183,7 +183,7 @@
             this.kOsc1Waveform.LabelMarker10 = "10";
             this.kOsc1Waveform.LabelMarker5 = "5";
             this.kOsc1Waveform.LabelText = "WAVEFORM";
-            this.kOsc1Waveform.LimitToDivisions = true;
+            this.kOsc1Waveform.LimitToInteger = true;
             this.kOsc1Waveform.Location = new System.Drawing.Point(174, 20);
             this.kOsc1Waveform.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc1Waveform.Max = 4D;
@@ -208,7 +208,7 @@
             this.kOsc2Waveform.LabelMarker10 = "10";
             this.kOsc2Waveform.LabelMarker5 = "5";
             this.kOsc2Waveform.LabelText = "WAVEFORM";
-            this.kOsc2Waveform.LimitToDivisions = true;
+            this.kOsc2Waveform.LimitToInteger = true;
             this.kOsc2Waveform.Location = new System.Drawing.Point(174, 131);
             this.kOsc2Waveform.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc2Waveform.Max = 4D;
@@ -233,7 +233,7 @@
             this.kOsc2PW.LabelMarker10 = "10";
             this.kOsc2PW.LabelMarker5 = "";
             this.kOsc2PW.LabelText = "PULSE WIDTH";
-            this.kOsc2PW.LimitToDivisions = false;
+            this.kOsc2PW.LimitToInteger = false;
             this.kOsc2PW.Location = new System.Drawing.Point(247, 131);
             this.kOsc2PW.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc2PW.Max = 0.9D;
@@ -259,7 +259,7 @@
             this.kOsc2Octave.LabelMarker10 = "10";
             this.kOsc2Octave.LabelMarker5 = "5";
             this.kOsc2Octave.LabelText = "OCTAVE";
-            this.kOsc2Octave.LimitToDivisions = true;
+            this.kOsc2Octave.LimitToInteger = true;
             this.kOsc2Octave.Location = new System.Drawing.Point(84, 131);
             this.kOsc2Octave.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc2Octave.Max = 3D;
@@ -284,7 +284,7 @@
             this.kOsc2Freq.LabelMarker10 = "10";
             this.kOsc2Freq.LabelMarker5 = "5";
             this.kOsc2Freq.LabelText = "FREQUENCY";
-            this.kOsc2Freq.LimitToDivisions = false;
+            this.kOsc2Freq.LimitToInteger = false;
             this.kOsc2Freq.Location = new System.Drawing.Point(10, 131);
             this.kOsc2Freq.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc2Freq.Max = 0.083333D;
@@ -319,7 +319,7 @@
             this.kOsc3Waveform.LabelMarker10 = "10";
             this.kOsc3Waveform.LabelMarker5 = "5";
             this.kOsc3Waveform.LabelText = "WAVEFORM";
-            this.kOsc3Waveform.LimitToDivisions = true;
+            this.kOsc3Waveform.LimitToInteger = true;
             this.kOsc3Waveform.Location = new System.Drawing.Point(174, 242);
             this.kOsc3Waveform.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc3Waveform.Max = 4D;
@@ -344,7 +344,7 @@
             this.kOsc3PW.LabelMarker10 = "10";
             this.kOsc3PW.LabelMarker5 = "";
             this.kOsc3PW.LabelText = "PULSE WIDTH";
-            this.kOsc3PW.LimitToDivisions = false;
+            this.kOsc3PW.LimitToInteger = false;
             this.kOsc3PW.Location = new System.Drawing.Point(247, 242);
             this.kOsc3PW.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc3PW.Max = 0.9D;
@@ -369,7 +369,7 @@
             this.kOsc3Octave.LabelMarker10 = "10";
             this.kOsc3Octave.LabelMarker5 = "5";
             this.kOsc3Octave.LabelText = "OCTAVE";
-            this.kOsc3Octave.LimitToDivisions = true;
+            this.kOsc3Octave.LimitToInteger = true;
             this.kOsc3Octave.Location = new System.Drawing.Point(84, 242);
             this.kOsc3Octave.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc3Octave.Max = 3D;
@@ -394,7 +394,7 @@
             this.kOsc3Freq.LabelMarker10 = "10";
             this.kOsc3Freq.LabelMarker5 = "5";
             this.kOsc3Freq.LabelText = "FREQUENCY";
-            this.kOsc3Freq.LimitToDivisions = false;
+            this.kOsc3Freq.LimitToInteger = false;
             this.kOsc3Freq.Location = new System.Drawing.Point(10, 242);
             this.kOsc3Freq.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc3Freq.Max = 0.083333D;
@@ -439,7 +439,7 @@
             this.kOsc1Mix.LabelMarker10 = "10";
             this.kOsc1Mix.LabelMarker5 = "";
             this.kOsc1Mix.LabelText = "OSC 1";
-            this.kOsc1Mix.LimitToDivisions = false;
+            this.kOsc1Mix.LimitToInteger = false;
             this.kOsc1Mix.Location = new System.Drawing.Point(340, 19);
             this.kOsc1Mix.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc1Mix.Max = 1D;
@@ -464,7 +464,7 @@
             this.kOsc2Mix.LabelMarker10 = "10";
             this.kOsc2Mix.LabelMarker5 = "";
             this.kOsc2Mix.LabelText = "OSC 2";
-            this.kOsc2Mix.LimitToDivisions = false;
+            this.kOsc2Mix.LimitToInteger = false;
             this.kOsc2Mix.Location = new System.Drawing.Point(340, 131);
             this.kOsc2Mix.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc2Mix.Max = 1D;
@@ -489,7 +489,7 @@
             this.kOsc3Mix.LabelMarker10 = "10";
             this.kOsc3Mix.LabelMarker5 = "";
             this.kOsc3Mix.LabelText = "OSC 3";
-            this.kOsc3Mix.LimitToDivisions = false;
+            this.kOsc3Mix.LimitToInteger = false;
             this.kOsc3Mix.Location = new System.Drawing.Point(341, 242);
             this.kOsc3Mix.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kOsc3Mix.Max = 1D;
@@ -536,7 +536,7 @@
             this.kVcfType.LabelMarker10 = "10";
             this.kVcfType.LabelMarker5 = "5";
             this.kVcfType.LabelText = "TYPE";
-            this.kVcfType.LimitToDivisions = true;
+            this.kVcfType.LimitToInteger = true;
             this.kVcfType.Location = new System.Drawing.Point(436, 20);
             this.kVcfType.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kVcfType.Max = 5D;
@@ -562,7 +562,7 @@
             this.kVcfCutoff.LabelMarker10 = "10";
             this.kVcfCutoff.LabelMarker5 = "";
             this.kVcfCutoff.LabelText = "CUTOFF";
-            this.kVcfCutoff.LimitToDivisions = false;
+            this.kVcfCutoff.LimitToInteger = false;
             this.kVcfCutoff.Location = new System.Drawing.Point(510, 20);
             this.kVcfCutoff.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kVcfCutoff.Max = 1D;
@@ -588,7 +588,7 @@
             this.kVcfResonance.LabelMarker10 = "10";
             this.kVcfResonance.LabelMarker5 = "";
             this.kVcfResonance.LabelText = "RESONANCE";
-            this.kVcfResonance.LimitToDivisions = false;
+            this.kVcfResonance.LimitToInteger = false;
             this.kVcfResonance.Location = new System.Drawing.Point(584, 20);
             this.kVcfResonance.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kVcfResonance.Max = 1D;
@@ -614,7 +614,7 @@
             this.kVcfEnvelope.LabelMarker10 = "10";
             this.kVcfEnvelope.LabelMarker5 = "";
             this.kVcfEnvelope.LabelText = "ENVELOPE";
-            this.kVcfEnvelope.LimitToDivisions = false;
+            this.kVcfEnvelope.LimitToInteger = false;
             this.kVcfEnvelope.Location = new System.Drawing.Point(658, 20);
             this.kVcfEnvelope.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kVcfEnvelope.Max = 1D;
@@ -639,7 +639,7 @@
             this.kEnv1Release.LabelMarker10 = "10";
             this.kEnv1Release.LabelMarker5 = "";
             this.kEnv1Release.LabelText = "RELEASE";
-            this.kEnv1Release.LimitToDivisions = false;
+            this.kEnv1Release.LimitToInteger = false;
             this.kEnv1Release.Location = new System.Drawing.Point(659, 131);
             this.kEnv1Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv1Release.Max = 5D;
@@ -664,7 +664,7 @@
             this.kEnv1Sustain.LabelMarker10 = "10";
             this.kEnv1Sustain.LabelMarker5 = "";
             this.kEnv1Sustain.LabelText = "SUSTAIN";
-            this.kEnv1Sustain.LimitToDivisions = false;
+            this.kEnv1Sustain.LimitToInteger = false;
             this.kEnv1Sustain.Location = new System.Drawing.Point(585, 131);
             this.kEnv1Sustain.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv1Sustain.Max = 1D;
@@ -689,7 +689,7 @@
             this.kEnv1Decay.LabelMarker10 = "10";
             this.kEnv1Decay.LabelMarker5 = "";
             this.kEnv1Decay.LabelText = "DECAY";
-            this.kEnv1Decay.LimitToDivisions = false;
+            this.kEnv1Decay.LimitToInteger = false;
             this.kEnv1Decay.Location = new System.Drawing.Point(510, 131);
             this.kEnv1Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv1Decay.Max = 5D;
@@ -714,7 +714,7 @@
             this.kEnv1Attack.LabelMarker10 = "10";
             this.kEnv1Attack.LabelMarker5 = "";
             this.kEnv1Attack.LabelText = "ATTACK";
-            this.kEnv1Attack.LimitToDivisions = false;
+            this.kEnv1Attack.LimitToInteger = false;
             this.kEnv1Attack.Location = new System.Drawing.Point(436, 131);
             this.kEnv1Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv1Attack.Max = 5D;
@@ -739,7 +739,7 @@
             this.kEnv2Release.LabelMarker10 = "10";
             this.kEnv2Release.LabelMarker5 = "";
             this.kEnv2Release.LabelText = "RELEASE";
-            this.kEnv2Release.LimitToDivisions = false;
+            this.kEnv2Release.LimitToInteger = false;
             this.kEnv2Release.Location = new System.Drawing.Point(658, 242);
             this.kEnv2Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv2Release.Max = 5D;
@@ -764,7 +764,7 @@
             this.kEnv2Sustain.LabelMarker10 = "10";
             this.kEnv2Sustain.LabelMarker5 = "";
             this.kEnv2Sustain.LabelText = "SUSTAIN";
-            this.kEnv2Sustain.LimitToDivisions = false;
+            this.kEnv2Sustain.LimitToInteger = false;
             this.kEnv2Sustain.Location = new System.Drawing.Point(584, 242);
             this.kEnv2Sustain.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv2Sustain.Max = 1D;
@@ -789,7 +789,7 @@
             this.kEnv2Decay.LabelMarker10 = "10";
             this.kEnv2Decay.LabelMarker5 = "";
             this.kEnv2Decay.LabelText = "DECAY";
-            this.kEnv2Decay.LimitToDivisions = false;
+            this.kEnv2Decay.LimitToInteger = false;
             this.kEnv2Decay.Location = new System.Drawing.Point(510, 242);
             this.kEnv2Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv2Decay.Max = 5D;
@@ -814,7 +814,7 @@
             this.kEnv2Attack.LabelMarker10 = "10";
             this.kEnv2Attack.LabelMarker5 = "";
             this.kEnv2Attack.LabelText = "ATTACK";
-            this.kEnv2Attack.LimitToDivisions = false;
+            this.kEnv2Attack.LimitToInteger = false;
             this.kEnv2Attack.Location = new System.Drawing.Point(436, 242);
             this.kEnv2Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv2Attack.Max = 5D;
@@ -839,7 +839,7 @@
             this.kGlide.LabelMarker10 = "10";
             this.kGlide.LabelMarker5 = "";
             this.kGlide.LabelText = "GLIDE";
-            this.kGlide.LimitToDivisions = false;
+            this.kGlide.LimitToInteger = false;
             this.kGlide.Location = new System.Drawing.Point(755, 17);
             this.kGlide.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kGlide.Max = 500D;
@@ -864,7 +864,7 @@
             this.kNoiseMix.LabelMarker10 = "10";
             this.kNoiseMix.LabelMarker5 = "";
             this.kNoiseMix.LabelText = "NOISE";
-            this.kNoiseMix.LimitToDivisions = false;
+            this.kNoiseMix.LimitToInteger = false;
             this.kNoiseMix.Location = new System.Drawing.Point(341, 352);
             this.kNoiseMix.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kNoiseMix.Max = 1D;
@@ -899,7 +899,7 @@
             this.kLfo1Shape.LabelMarker10 = "10";
             this.kLfo1Shape.LabelMarker5 = "5";
             this.kLfo1Shape.LabelText = "SHAPE";
-            this.kLfo1Shape.LimitToDivisions = true;
+            this.kLfo1Shape.LimitToInteger = true;
             this.kLfo1Shape.Location = new System.Drawing.Point(86, 354);
             this.kLfo1Shape.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kLfo1Shape.Max = 5D;
@@ -924,7 +924,7 @@
             this.kLfo1Rate.LabelMarker10 = "10";
             this.kLfo1Rate.LabelMarker5 = "";
             this.kLfo1Rate.LabelText = "RATE";
-            this.kLfo1Rate.LimitToDivisions = false;
+            this.kLfo1Rate.LimitToInteger = false;
             this.kLfo1Rate.Location = new System.Drawing.Point(12, 354);
             this.kLfo1Rate.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kLfo1Rate.Max = 1D;
@@ -959,7 +959,7 @@
             this.kLfo2Shape.LabelMarker10 = "10";
             this.kLfo2Shape.LabelMarker5 = "5";
             this.kLfo2Shape.LabelText = "SHAPE";
-            this.kLfo2Shape.LimitToDivisions = true;
+            this.kLfo2Shape.LimitToInteger = true;
             this.kLfo2Shape.Location = new System.Drawing.Point(249, 354);
             this.kLfo2Shape.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kLfo2Shape.Max = 5D;
@@ -984,7 +984,7 @@
             this.kLfo2Rate.LabelMarker10 = "10";
             this.kLfo2Rate.LabelMarker5 = "";
             this.kLfo2Rate.LabelText = "RATE";
-            this.kLfo2Rate.LimitToDivisions = false;
+            this.kLfo2Rate.LimitToInteger = false;
             this.kLfo2Rate.Location = new System.Drawing.Point(175, 354);
             this.kLfo2Rate.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kLfo2Rate.Max = 1D;
@@ -1009,7 +1009,7 @@
             this.kEnv3Release.LabelMarker10 = "10";
             this.kEnv3Release.LabelMarker5 = "";
             this.kEnv3Release.LabelText = "RELEASE";
-            this.kEnv3Release.LimitToDivisions = false;
+            this.kEnv3Release.LimitToInteger = false;
             this.kEnv3Release.Location = new System.Drawing.Point(658, 352);
             this.kEnv3Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv3Release.Max = 5D;
@@ -1034,7 +1034,7 @@
             this.kEnv3Sustain.LabelMarker10 = "10";
             this.kEnv3Sustain.LabelMarker5 = "";
             this.kEnv3Sustain.LabelText = "SUSTAIN";
-            this.kEnv3Sustain.LimitToDivisions = false;
+            this.kEnv3Sustain.LimitToInteger = false;
             this.kEnv3Sustain.Location = new System.Drawing.Point(584, 352);
             this.kEnv3Sustain.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv3Sustain.Max = 1D;
@@ -1059,7 +1059,7 @@
             this.kEnv3Decay.LabelMarker10 = "10";
             this.kEnv3Decay.LabelMarker5 = "";
             this.kEnv3Decay.LabelText = "DECAY";
-            this.kEnv3Decay.LimitToDivisions = false;
+            this.kEnv3Decay.LimitToInteger = false;
             this.kEnv3Decay.Location = new System.Drawing.Point(510, 352);
             this.kEnv3Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv3Decay.Max = 5D;
@@ -1084,7 +1084,7 @@
             this.kEnv3Attack.LabelMarker10 = "10";
             this.kEnv3Attack.LabelMarker5 = "";
             this.kEnv3Attack.LabelText = "ATTACK";
-            this.kEnv3Attack.LimitToDivisions = false;
+            this.kEnv3Attack.LimitToInteger = false;
             this.kEnv3Attack.Location = new System.Drawing.Point(436, 352);
             this.kEnv3Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv3Attack.Max = 5D;

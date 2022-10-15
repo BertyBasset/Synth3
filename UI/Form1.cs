@@ -79,7 +79,7 @@ public partial class Form1 : Form {
 
             var knob = controlMap[e.ControllerID];
 
-            if (knob.LimitToDivisions) {
+            if (knob.LimitToInteger) {
                 var newValue = Math.Round(((double)e.Value / MAX_RANGE) * (double)(knob.Max - knob.Min) + knob.Min);
                 if (knob.Value != newValue)
                     knob.Value = newValue;
@@ -108,13 +108,10 @@ public partial class Form1 : Form {
 
 
 
-        //kVcfCutoff.PolarChanged += KVcfCutoff_PolarChanged;
 
     }
 
-    private void KVcfCutoff_PolarChanged(object? sender, polar e) {
-        label1.Text = $"r: {e.r.ToString()}, ang: {e.ang.ToString()}";
-    }
+
 
     void InitSynth() {
         vco1.Frequency.Keyboard = kbd;
