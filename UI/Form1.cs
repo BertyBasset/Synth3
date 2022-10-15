@@ -67,6 +67,7 @@ public partial class Form1 : Form {
         
         // Midi Controller Event Handler
         Dictionary<int, Knob> controlMap = new();
+        controlMap.Add(1, kVcfEnvelope);
         controlMap.Add(74, kVcfType);
         controlMap.Add(75, kVcfCutoff);
         controlMap.Add(76, kVcfResonance);

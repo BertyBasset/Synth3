@@ -96,6 +96,7 @@ public class Midi {
                 if (c.Controller == MidiController.Modulation) {
                     CurrentModWheel = c.ControllerValue;
                     ModWheelChanged?.Invoke(this, new MidiWheelEventArgs(e.MidiEvent.Channel, CurrentModWheel));
+                    ControllerValueChanged?.Invoke(this, new MidiControllerEventArgs(e.MidiEvent.Channel, (int)c.Controller, c.ControllerValue));
                 } else {
                     ControllerValueChanged?.Invoke(this, new MidiControllerEventArgs(e.MidiEvent.Channel, (int)c.Controller, c.ControllerValue));
                 }
