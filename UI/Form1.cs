@@ -26,7 +26,7 @@ using UI.Code;
 using UI.Controls;
 
 namespace UI;
-public partial class Form1 : Form {
+public partial class frmMidiController : Form {
 
 
     Synth.SynthEngine engine = new Synth.SynthEngine();
@@ -53,7 +53,7 @@ public partial class Form1 : Form {
     ControlHandler ctls = new();
 
 
-    public Form1() {
+    public frmMidiController() {
         InitializeComponent();
         InitSynth();
 
@@ -62,16 +62,22 @@ public partial class Form1 : Form {
             var viewer = new frmWaveViewer(engine);
             viewer.Show();
         };
-        
+        cmdControllers.Click += (o, e) => {
+            var frm = new frmControlMapping();
+            frm.form = this;
+            frm.ShowDialog();
+        };
 
-        
+
         // Midi Controller Event Handler
         Dictionary<int, Knob> controlMap = new();
-        controlMap.Add(1, kVcfEnvelope);
-        controlMap.Add(74, kVcfType);
-        controlMap.Add(75, kVcfCutoff);
-        controlMap.Add(76, kVcfResonance);
-        controlMap.Add(77, kEnv1Release);
+        // 1 = Modulation Wheel on 'all' midi controllersr
+        controlMap.Add(1, kVcfEnvelope);           
+        // 74 to 77 are specific to Alesis V25 contoller, but 'standard' controller id designations are:
+        controlMap.Add(74, kVcfType);               // 74 - VCF Cutoff
+        controlMap.Add(75, kVcfCutoff);             // 75 - Sound Control 6
+        controlMap.Add(76, kVcfResonance);          // 76 - Sound Control 7
+        controlMap.Add(77, kEnv1Release);           // 77 - Sound Control 8
         mc.ControllerValueChanged += (o, e) => {
             const double MAX_RANGE = 128;
             if (!controlMap.ContainsKey(e.ControllerID))

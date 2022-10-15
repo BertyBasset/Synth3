@@ -27,6 +27,11 @@ namespace UI.Controls {
         #endregion
 
         #region Display Properties
+
+        public string Description { get; set; }
+        public override string ToString() {
+            return Description;
+        }
         public String LabelMarker0 { 
             get { return lbl0.Text; }
             set { lbl0.Text = value; }

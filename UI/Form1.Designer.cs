@@ -1,5 +1,5 @@
 ﻿namespace UI {
-    partial class Form1 {
+    partial class frmMidiController {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -23,7 +23,7 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMidiController));
             this.panel1 = new UI.Controls.Panel();
             this.kOsc1Freq = new UI.Controls.Knob();
             this.kOsc1Octave = new UI.Controls.Knob();
@@ -80,6 +80,7 @@
             this.ledGate = new UI.Controls.Led();
             this.ledLfo1 = new UI.Controls.Led();
             this.ledLfo2 = new UI.Controls.Led();
+            this.cmdControllers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,9 +96,11 @@
             // 
             // kOsc1Freq
             // 
+            this.kOsc1Freq._v = 0D;
             this.kOsc1Freq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc1Freq.BackgroundImage")));
             this.kOsc1Freq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kOsc1Freq.Default = 0D;
+            this.kOsc1Freq.Description = "VCO1 Frequency";
             this.kOsc1Freq.Divisions = 10;
             this.kOsc1Freq.ForeColor = System.Drawing.Color.White;
             this.kOsc1Freq.HideLabels = false;
@@ -121,9 +124,11 @@
             // 
             // kOsc1Octave
             // 
+            this.kOsc1Octave._v = 0D;
             this.kOsc1Octave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc1Octave.BackgroundImage")));
             this.kOsc1Octave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kOsc1Octave.Default = 0D;
+            this.kOsc1Octave.Description = "VCO1 Octave";
             this.kOsc1Octave.Divisions = 3;
             this.kOsc1Octave.ForeColor = System.Drawing.Color.White;
             this.kOsc1Octave.HideLabels = true;
@@ -147,8 +152,10 @@
             // 
             // kOsc1PW
             // 
+            this.kOsc1PW._v = 0D;
             this.kOsc1PW.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc1PW.BackgroundImage")));
             this.kOsc1PW.Default = 0D;
+            this.kOsc1PW.Description = "VCO1 Pule Width/Phase Dist.";
             this.kOsc1PW.Divisions = 10;
             this.kOsc1PW.ForeColor = System.Drawing.Color.White;
             this.kOsc1PW.HideLabels = false;
@@ -172,8 +179,10 @@
             // 
             // kOsc1Waveform
             // 
+            this.kOsc1Waveform._v = 1D;
             this.kOsc1Waveform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc1Waveform.BackgroundImage")));
             this.kOsc1Waveform.Default = 1D;
+            this.kOsc1Waveform.Description = "VCO1 Waveform";
             this.kOsc1Waveform.Divisions = 4;
             this.kOsc1Waveform.ForeColor = System.Drawing.Color.White;
             this.kOsc1Waveform.HideLabels = true;
@@ -197,8 +206,10 @@
             // 
             // kOsc2Waveform
             // 
+            this.kOsc2Waveform._v = 1D;
             this.kOsc2Waveform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc2Waveform.BackgroundImage")));
             this.kOsc2Waveform.Default = 1D;
+            this.kOsc2Waveform.Description = "VCO2 Waveform";
             this.kOsc2Waveform.Divisions = 4;
             this.kOsc2Waveform.ForeColor = System.Drawing.Color.White;
             this.kOsc2Waveform.HideLabels = true;
@@ -222,8 +233,10 @@
             // 
             // kOsc2PW
             // 
+            this.kOsc2PW._v = 0D;
             this.kOsc2PW.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc2PW.BackgroundImage")));
             this.kOsc2PW.Default = 0D;
+            this.kOsc2PW.Description = "VCO2 Pule Width/Phase Dist.";
             this.kOsc2PW.Divisions = 10;
             this.kOsc2PW.ForeColor = System.Drawing.Color.White;
             this.kOsc2PW.HideLabels = false;
@@ -247,9 +260,11 @@
             // 
             // kOsc2Octave
             // 
+            this.kOsc2Octave._v = 0D;
             this.kOsc2Octave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc2Octave.BackgroundImage")));
             this.kOsc2Octave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kOsc2Octave.Default = 0D;
+            this.kOsc2Octave.Description = "VCO2 Octave";
             this.kOsc2Octave.Divisions = 3;
             this.kOsc2Octave.ForeColor = System.Drawing.Color.White;
             this.kOsc2Octave.HideLabels = true;
@@ -273,8 +288,10 @@
             // 
             // kOsc2Freq
             // 
+            this.kOsc2Freq._v = -0.01D;
             this.kOsc2Freq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc2Freq.BackgroundImage")));
             this.kOsc2Freq.Default = 0D;
+            this.kOsc2Freq.Description = "VCO2 Frequency";
             this.kOsc2Freq.Divisions = 10;
             this.kOsc2Freq.ForeColor = System.Drawing.Color.White;
             this.kOsc2Freq.HideLabels = false;
@@ -308,8 +325,10 @@
             // 
             // kOsc3Waveform
             // 
+            this.kOsc3Waveform._v = 1D;
             this.kOsc3Waveform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc3Waveform.BackgroundImage")));
             this.kOsc3Waveform.Default = 1D;
+            this.kOsc3Waveform.Description = "VCO3 Waveform";
             this.kOsc3Waveform.Divisions = 4;
             this.kOsc3Waveform.ForeColor = System.Drawing.Color.White;
             this.kOsc3Waveform.HideLabels = true;
@@ -333,8 +352,10 @@
             // 
             // kOsc3PW
             // 
+            this.kOsc3PW._v = 0D;
             this.kOsc3PW.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc3PW.BackgroundImage")));
             this.kOsc3PW.Default = 0D;
+            this.kOsc3PW.Description = "VCO3 Pule Width/Phase Dist.";
             this.kOsc3PW.Divisions = 10;
             this.kOsc3PW.ForeColor = System.Drawing.Color.White;
             this.kOsc3PW.HideLabels = false;
@@ -358,8 +379,10 @@
             // 
             // kOsc3Octave
             // 
+            this.kOsc3Octave._v = 1D;
             this.kOsc3Octave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc3Octave.BackgroundImage")));
             this.kOsc3Octave.Default = 1D;
+            this.kOsc3Octave.Description = "VCO3 Octave";
             this.kOsc3Octave.Divisions = 3;
             this.kOsc3Octave.ForeColor = System.Drawing.Color.White;
             this.kOsc3Octave.HideLabels = true;
@@ -383,8 +406,10 @@
             // 
             // kOsc3Freq
             // 
+            this.kOsc3Freq._v = 0.01D;
             this.kOsc3Freq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc3Freq.BackgroundImage")));
             this.kOsc3Freq.Default = 0.01D;
+            this.kOsc3Freq.Description = "VCO3 Frequency";
             this.kOsc3Freq.Divisions = 10;
             this.kOsc3Freq.ForeColor = System.Drawing.Color.White;
             this.kOsc3Freq.HideLabels = false;
@@ -428,8 +453,10 @@
             // 
             // kOsc1Mix
             // 
+            this.kOsc1Mix._v = 1D;
             this.kOsc1Mix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc1Mix.BackgroundImage")));
             this.kOsc1Mix.Default = 1D;
+            this.kOsc1Mix.Description = "Mixer VCO1";
             this.kOsc1Mix.Divisions = 10;
             this.kOsc1Mix.ForeColor = System.Drawing.Color.White;
             this.kOsc1Mix.HideLabels = false;
@@ -453,8 +480,10 @@
             // 
             // kOsc2Mix
             // 
+            this.kOsc2Mix._v = 1D;
             this.kOsc2Mix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc2Mix.BackgroundImage")));
             this.kOsc2Mix.Default = 1D;
+            this.kOsc2Mix.Description = "Mixer VCO2";
             this.kOsc2Mix.Divisions = 10;
             this.kOsc2Mix.ForeColor = System.Drawing.Color.White;
             this.kOsc2Mix.HideLabels = false;
@@ -478,8 +507,10 @@
             // 
             // kOsc3Mix
             // 
+            this.kOsc3Mix._v = 1D;
             this.kOsc3Mix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kOsc3Mix.BackgroundImage")));
             this.kOsc3Mix.Default = 1D;
+            this.kOsc3Mix.Description = "Mixer VCO3";
             this.kOsc3Mix.Divisions = 10;
             this.kOsc3Mix.ForeColor = System.Drawing.Color.White;
             this.kOsc3Mix.HideLabels = false;
@@ -524,9 +555,11 @@
             // 
             // kVcfType
             // 
+            this.kVcfType._v = 1D;
             this.kVcfType.BackColor = System.Drawing.Color.Navy;
             this.kVcfType.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kVcfType.BackgroundImage")));
             this.kVcfType.Default = 1D;
+            this.kVcfType.Description = "VCF Type";
             this.kVcfType.Divisions = 5;
             this.kVcfType.ForeColor = System.Drawing.Color.White;
             this.kVcfType.HideLabels = true;
@@ -550,9 +583,11 @@
             // 
             // kVcfCutoff
             // 
+            this.kVcfCutoff._v = 0D;
             this.kVcfCutoff.BackColor = System.Drawing.Color.Navy;
             this.kVcfCutoff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kVcfCutoff.BackgroundImage")));
             this.kVcfCutoff.Default = 0D;
+            this.kVcfCutoff.Description = "VCF Cutoff";
             this.kVcfCutoff.Divisions = 10;
             this.kVcfCutoff.ForeColor = System.Drawing.Color.White;
             this.kVcfCutoff.HideLabels = false;
@@ -576,9 +611,11 @@
             // 
             // kVcfResonance
             // 
+            this.kVcfResonance._v = 1D;
             this.kVcfResonance.BackColor = System.Drawing.Color.Navy;
             this.kVcfResonance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kVcfResonance.BackgroundImage")));
             this.kVcfResonance.Default = 1D;
+            this.kVcfResonance.Description = "VCF Resonance";
             this.kVcfResonance.Divisions = 10;
             this.kVcfResonance.ForeColor = System.Drawing.Color.White;
             this.kVcfResonance.HideLabels = false;
@@ -602,9 +639,11 @@
             // 
             // kVcfEnvelope
             // 
+            this.kVcfEnvelope._v = 1D;
             this.kVcfEnvelope.BackColor = System.Drawing.Color.Navy;
             this.kVcfEnvelope.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kVcfEnvelope.BackgroundImage")));
             this.kVcfEnvelope.Default = 1D;
+            this.kVcfEnvelope.Description = "VCF Envelope Amount";
             this.kVcfEnvelope.Divisions = 10;
             this.kVcfEnvelope.ForeColor = System.Drawing.Color.White;
             this.kVcfEnvelope.HideLabels = false;
@@ -628,8 +667,10 @@
             // 
             // kEnv1Release
             // 
+            this.kEnv1Release._v = 2D;
             this.kEnv1Release.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv1Release.BackgroundImage")));
             this.kEnv1Release.Default = 2D;
+            this.kEnv1Release.Description = "VCF Envelope - Release";
             this.kEnv1Release.Divisions = 10;
             this.kEnv1Release.ForeColor = System.Drawing.Color.White;
             this.kEnv1Release.HideLabels = false;
@@ -653,8 +694,10 @@
             // 
             // kEnv1Sustain
             // 
+            this.kEnv1Sustain._v = 0.6D;
             this.kEnv1Sustain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv1Sustain.BackgroundImage")));
             this.kEnv1Sustain.Default = 0.6D;
+            this.kEnv1Sustain.Description = "VCF Envelope - Sustain";
             this.kEnv1Sustain.Divisions = 10;
             this.kEnv1Sustain.ForeColor = System.Drawing.Color.White;
             this.kEnv1Sustain.HideLabels = false;
@@ -678,8 +721,10 @@
             // 
             // kEnv1Decay
             // 
+            this.kEnv1Decay._v = 0.5D;
             this.kEnv1Decay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv1Decay.BackgroundImage")));
             this.kEnv1Decay.Default = 0.5D;
+            this.kEnv1Decay.Description = "VCF Envelope - Decay";
             this.kEnv1Decay.Divisions = 10;
             this.kEnv1Decay.ForeColor = System.Drawing.Color.White;
             this.kEnv1Decay.HideLabels = false;
@@ -703,8 +748,10 @@
             // 
             // kEnv1Attack
             // 
+            this.kEnv1Attack._v = 0D;
             this.kEnv1Attack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv1Attack.BackgroundImage")));
             this.kEnv1Attack.Default = 0D;
+            this.kEnv1Attack.Description = "VCF Envelope - Attack";
             this.kEnv1Attack.Divisions = 10;
             this.kEnv1Attack.ForeColor = System.Drawing.Color.White;
             this.kEnv1Attack.HideLabels = false;
@@ -728,8 +775,10 @@
             // 
             // kEnv2Release
             // 
+            this.kEnv2Release._v = 4D;
             this.kEnv2Release.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv2Release.BackgroundImage")));
             this.kEnv2Release.Default = 4D;
+            this.kEnv2Release.Description = "VCA Envelope - Release";
             this.kEnv2Release.Divisions = 10;
             this.kEnv2Release.ForeColor = System.Drawing.Color.White;
             this.kEnv2Release.HideLabels = false;
@@ -753,8 +802,10 @@
             // 
             // kEnv2Sustain
             // 
+            this.kEnv2Sustain._v = 0.7D;
             this.kEnv2Sustain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv2Sustain.BackgroundImage")));
             this.kEnv2Sustain.Default = 0.7D;
+            this.kEnv2Sustain.Description = "VCA Envelope - Sustain";
             this.kEnv2Sustain.Divisions = 10;
             this.kEnv2Sustain.ForeColor = System.Drawing.Color.White;
             this.kEnv2Sustain.HideLabels = false;
@@ -778,8 +829,10 @@
             // 
             // kEnv2Decay
             // 
+            this.kEnv2Decay._v = 0.3D;
             this.kEnv2Decay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv2Decay.BackgroundImage")));
             this.kEnv2Decay.Default = 0.3D;
+            this.kEnv2Decay.Description = "VCA Envelope - Decay";
             this.kEnv2Decay.Divisions = 10;
             this.kEnv2Decay.ForeColor = System.Drawing.Color.White;
             this.kEnv2Decay.HideLabels = false;
@@ -803,8 +856,10 @@
             // 
             // kEnv2Attack
             // 
+            this.kEnv2Attack._v = 0D;
             this.kEnv2Attack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv2Attack.BackgroundImage")));
             this.kEnv2Attack.Default = 0D;
+            this.kEnv2Attack.Description = "VCA Envelope - Attack";
             this.kEnv2Attack.Divisions = 10;
             this.kEnv2Attack.ForeColor = System.Drawing.Color.White;
             this.kEnv2Attack.HideLabels = false;
@@ -828,8 +883,10 @@
             // 
             // kGlide
             // 
+            this.kGlide._v = 50D;
             this.kGlide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kGlide.BackgroundImage")));
             this.kGlide.Default = 50D;
+            this.kGlide.Description = "Glide";
             this.kGlide.Divisions = 10;
             this.kGlide.ForeColor = System.Drawing.Color.White;
             this.kGlide.HideLabels = false;
@@ -853,8 +910,10 @@
             // 
             // kNoiseMix
             // 
+            this.kNoiseMix._v = 0D;
             this.kNoiseMix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kNoiseMix.BackgroundImage")));
             this.kNoiseMix.Default = 0D;
+            this.kNoiseMix.Description = "Mixer Noise";
             this.kNoiseMix.Divisions = 10;
             this.kNoiseMix.ForeColor = System.Drawing.Color.White;
             this.kNoiseMix.HideLabels = false;
@@ -888,8 +947,10 @@
             // 
             // kLfo1Shape
             // 
+            this.kLfo1Shape._v = 0D;
             this.kLfo1Shape.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kLfo1Shape.BackgroundImage")));
             this.kLfo1Shape.Default = 0D;
+            this.kLfo1Shape.Description = "LFO1 Shape";
             this.kLfo1Shape.Divisions = 5;
             this.kLfo1Shape.ForeColor = System.Drawing.Color.White;
             this.kLfo1Shape.HideLabels = true;
@@ -913,8 +974,10 @@
             // 
             // kLfo1Rate
             // 
+            this.kLfo1Rate._v = 0D;
             this.kLfo1Rate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kLfo1Rate.BackgroundImage")));
             this.kLfo1Rate.Default = 0D;
+            this.kLfo1Rate.Description = "LFO1 Rate";
             this.kLfo1Rate.Divisions = 10;
             this.kLfo1Rate.ForeColor = System.Drawing.Color.White;
             this.kLfo1Rate.HideLabels = false;
@@ -948,8 +1011,10 @@
             // 
             // kLfo2Shape
             // 
+            this.kLfo2Shape._v = 0D;
             this.kLfo2Shape.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kLfo2Shape.BackgroundImage")));
             this.kLfo2Shape.Default = 0D;
+            this.kLfo2Shape.Description = "LFO2 Shape";
             this.kLfo2Shape.Divisions = 5;
             this.kLfo2Shape.ForeColor = System.Drawing.Color.White;
             this.kLfo2Shape.HideLabels = true;
@@ -973,8 +1038,10 @@
             // 
             // kLfo2Rate
             // 
+            this.kLfo2Rate._v = 0D;
             this.kLfo2Rate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kLfo2Rate.BackgroundImage")));
             this.kLfo2Rate.Default = 0D;
+            this.kLfo2Rate.Description = "LFO2 Rate";
             this.kLfo2Rate.Divisions = 10;
             this.kLfo2Rate.ForeColor = System.Drawing.Color.White;
             this.kLfo2Rate.HideLabels = false;
@@ -998,8 +1065,10 @@
             // 
             // kEnv3Release
             // 
+            this.kEnv3Release._v = 0D;
             this.kEnv3Release.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv3Release.BackgroundImage")));
             this.kEnv3Release.Default = 0D;
+            this.kEnv3Release.Description = "Envelope 3 - Release";
             this.kEnv3Release.Divisions = 10;
             this.kEnv3Release.ForeColor = System.Drawing.Color.White;
             this.kEnv3Release.HideLabels = false;
@@ -1023,8 +1092,10 @@
             // 
             // kEnv3Sustain
             // 
+            this.kEnv3Sustain._v = 0D;
             this.kEnv3Sustain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv3Sustain.BackgroundImage")));
             this.kEnv3Sustain.Default = 0D;
+            this.kEnv3Sustain.Description = "Envelope 3 - Sustain";
             this.kEnv3Sustain.Divisions = 10;
             this.kEnv3Sustain.ForeColor = System.Drawing.Color.White;
             this.kEnv3Sustain.HideLabels = false;
@@ -1048,8 +1119,10 @@
             // 
             // kEnv3Decay
             // 
+            this.kEnv3Decay._v = 0D;
             this.kEnv3Decay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv3Decay.BackgroundImage")));
             this.kEnv3Decay.Default = 0D;
+            this.kEnv3Decay.Description = "Envelope 3 - Decay";
             this.kEnv3Decay.Divisions = 10;
             this.kEnv3Decay.ForeColor = System.Drawing.Color.White;
             this.kEnv3Decay.HideLabels = false;
@@ -1073,8 +1146,10 @@
             // 
             // kEnv3Attack
             // 
+            this.kEnv3Attack._v = 0D;
             this.kEnv3Attack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEnv3Attack.BackgroundImage")));
             this.kEnv3Attack.Default = 0D;
+            this.kEnv3Attack.Description = "Envelope 3 - Attack";
             this.kEnv3Attack.Divisions = 10;
             this.kEnv3Attack.ForeColor = System.Drawing.Color.White;
             this.kEnv3Attack.HideLabels = false;
@@ -1220,12 +1295,22 @@
             this.ledLfo2.Size = new System.Drawing.Size(15, 15);
             this.ledLfo2.TabIndex = 58;
             // 
-            // Form1
+            // cmdControllers
+            // 
+            this.cmdControllers.Location = new System.Drawing.Point(766, 258);
+            this.cmdControllers.Name = "cmdControllers";
+            this.cmdControllers.Size = new System.Drawing.Size(84, 28);
+            this.cmdControllers.TabIndex = 59;
+            this.cmdControllers.Text = "Controllers";
+            this.cmdControllers.UseVisualStyleBackColor = true;
+            // 
+            // frmMidiController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(877, 450);
+            this.Controls.Add(this.cmdControllers);
             this.Controls.Add(this.ledLfo2);
             this.Controls.Add(this.ledLfo1);
             this.Controls.Add(this.ledGate);
@@ -1282,7 +1367,7 @@
             this.Controls.Add(this.kOsc1Octave);
             this.Controls.Add(this.kOsc1Freq);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "frmMidiController";
             this.Text = "Shed Prophet";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -1349,5 +1434,6 @@
         private Controls.Led ledLfo1;
         private Controls.Led ledLfo2;
         private Label label1;
+        private Button cmdControllers;
     }
 }
