@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Immutable;
+
 namespace UI.Code;
 // Midi CC Parameter  
 public class  ControlChangeParameter{
@@ -13,12 +15,24 @@ public class  ControlChangeParameter{
             return $"CC ID: {ID.ToString()}, {ParamName}";
     }
 
+    public ControlChangeParameter() { }
 
     public ControlChangeParameter(int? iD, string paramName, bool isCommon = false) {
         ID = iD;
         ParamName = paramName;
         IsCommon = isCommon;
     }
+
+    public static ControlChangeParameter GetById(int ID) {
+        var knobs = GetList().Where(i => i.ID == ID).ToList();
+
+        if (knobs.Count == 0)
+            return new ControlChangeParameter();
+        else
+            return knobs[0];
+     
+    }
+
 
     public static List<ControlChangeParameter> GetList() { 
         var list = new List<ControlChangeParameter>();

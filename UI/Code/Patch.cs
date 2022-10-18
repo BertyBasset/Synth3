@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Text.Json;
-using System.Text.Json.Nodes;
 using UI.Controls;
 
 namespace UI.Code;
@@ -11,7 +9,7 @@ public class Patch {
     }
 
 
-    static string FileName = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\patch.json";
+    
     internal static void Save(Form Form) {
         var ctls = new ArrayList();
         ctls.AddRange(Form.Controls);
@@ -20,18 +18,17 @@ public class Patch {
         foreach (Knob? knob in ctls.OfType<Knob>()) {
             knobs.Add(new Control() { ControlName = knob?.Name??"", Value=knob?.Value??0 });
         }
-        
-        var s = JsonSerializer.Serialize(knobs);
-        System.IO.File.WriteAllText(FileName, s);
+
+        Json<List<Control>>.SaveFile("patch.json", knobs);
     }
 
     internal static void Load(Form Form) {
-        if (!System.IO.File.Exists(FileName))
+        if (!System.IO.File.Exists("patch.json"))
             return;
 
         List<Control>? json = null;
         try {
-            json = JsonSerializer.Deserialize<List<Control>>(System.IO.File.ReadAllText(FileName));
+            json = UI.Code.Json<List<Control>>.Load("patch.json");
         } catch (Exception) { }
         
 
@@ -48,8 +45,6 @@ public class Patch {
 
     }
 }
-
-internal class Pacthes : List<Patch> { }
 
 
 

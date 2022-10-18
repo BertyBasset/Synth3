@@ -261,4 +261,3 @@ public partial class frmMidiController : Form {
 
 
 
-

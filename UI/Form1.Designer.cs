@@ -1433,7 +1433,6 @@
         private Controls.Led ledGate;
         private Controls.Led ledLfo1;
         private Controls.Led ledLfo2;
-        private Label label1;
         private Button cmdControllers;
     }
 }
