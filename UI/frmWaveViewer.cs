@@ -37,7 +37,6 @@ public partial class frmWaveViewer : Form {
         picGraph.Image = b;
     }
 
-
     private void DrawGraph(Graphics g, List<double> data) {
         // Array of Doubles passed in
 
@@ -89,21 +88,12 @@ public partial class frmWaveViewer : Form {
             freq += 500;
         }
 
-
-        // 6500Hz = Total Width
-        // 500Hz = 
-
     }
 
     private double[] GetSpectrum(double[] signal) {
+        // Must be power of 2 samples
         var extract = signal[0..512];
-
-
         // Uses nuget package from https://github.com/swharden/FftSharp
-
-        // Begin with an array containing sample data
-        //double[] signal = FftSharp.SampleData.SampleAudiosc1();
-
         // Shape the signal using a Hanning window
         var window = new FftSharp.Windows.Hanning();
         window.ApplyInPlace(extract);

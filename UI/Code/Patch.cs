@@ -15,7 +15,7 @@ public class Patch {
         ctls.AddRange(Form.Controls);
 
         var knobs = new List<Control>();
-        foreach (Knob? knob in ctls.OfType<Knob>()) {
+        foreach (UI.Controls.Knob? knob in ctls.OfType<UI.Controls.Knob>()) {
             knobs.Add(new Control() { ControlName = knob?.Name??"", Value=knob?.Value??0 });
         }
 
@@ -36,7 +36,7 @@ public class Patch {
             try {
                 var ctls = Form.Controls.Find(c.ControlName, true);
                 foreach (var ctl in ctls)
-                    ((Knob)ctl).Value = c.Value;
+                    ((UI.Controls.Knob)ctl).Value = c.Value;
             } catch (Exception) { }
         }
     }

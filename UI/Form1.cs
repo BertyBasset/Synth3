@@ -1,5 +1,4 @@
 // To DO
-// 1 Smoother mouse operation
 // 2 Effects Section
 // 3 Switches
 
@@ -22,13 +21,15 @@ using Synth.Modules.Modulators;
 using Synth.Modules.Sources;
 using SynthEngine.Modules.Modulators;
 using SynthEngine.Modules.Sources;
+using System.Windows.Forms;
 using UI.Code;
 using UI.Controls;
 
 namespace UI;
 public partial class frmMidiController : Form {
+    Dictionary<int, UI.Controls.Knob> controlMap = new();       // Midi Conntroller
 
-
+    #region Synth Modules
     Synth.SynthEngine engine = new Synth.SynthEngine();
     ModWheel mw = new();
     MidiControllers mc = new();         // Provides event handler when a Midi Controller changes value
@@ -51,8 +52,9 @@ public partial class frmMidiController : Form {
 
     // ControlHandler - this takes care of binding controls to synth modules, and plumbs events when control value changes
     ControlHandler ctls = new();
+    #endregion
 
-
+    #region Initiallise
     public frmMidiController() {
         InitializeComponent();
         InitSynth();
@@ -66,18 +68,13 @@ public partial class frmMidiController : Form {
             var frm = new frmControlMapping();
             frm.form = this;
             frm.ShowDialog();
+            SetupMidiControllers();
         };
 
 
-        // Midi Controller Event Handler
-        Dictionary<int, Knob> controlMap = new();
-        // 1 = Modulation Wheel on 'all' midi controllersr
-        controlMap.Add(1, kVcfEnvelope);           
-        // 74 to 77 are specific to Alesis V25 contoller, but 'standard' controller id designations are:
-        controlMap.Add(74, kVcfType);               // 74 - VCF Cutoff
-        controlMap.Add(75, kVcfCutoff);             // 75 - Sound Control 6
-        controlMap.Add(76, kVcfResonance);          // 76 - Sound Control 7
-        controlMap.Add(77, kEnv1Release);           // 77 - Sound Control 8
+        SetupMidiControllers();
+
+
         mc.ControllerValueChanged += (o, e) => {
             const double MAX_RANGE = 128;
             if (!controlMap.ContainsKey(e.ControllerID))
@@ -96,7 +93,7 @@ public partial class frmMidiController : Form {
         };
 
         this.FormClosing += (o, e) => Patch.Save(this);
-        this.Activated += (o, e) => Patch.Load(this);
+        this.Load += (o, e) => Patch.Load(this);
 
         cmdInit.Click += CmdInit_Click;
         cboMidiChannel.SelectedIndex = 0;
@@ -112,13 +109,7 @@ public partial class frmMidiController : Form {
 
         lfo1.ClockTick += (o, e) => ledLfo1.LedState = e ? Led.Enums.LedState.On : Led.Enums.LedState.Off;
         lfo2.ClockTick += (o, e) => ledLfo2.LedState = e ? Led.Enums.LedState.On : Led.Enums.LedState.Off;
-
-
-
-
     }
-
-
 
     void InitSynth() {
         vco1.Frequency.Keyboard = kbd;
@@ -213,7 +204,9 @@ public partial class frmMidiController : Form {
         ctls.Register(kEnv3Release, env3, "Release");
         ctls.Register(kGlide, kbd, "Glide");
     }
+    #endregion
 
+    #region Event Handlers
     private void FilterTypeChanged() {
         switch (kVcfType.Value) {
             case 0:
@@ -251,12 +244,24 @@ public partial class frmMidiController : Form {
     }
 
     private void CmdInit_Click(object? sender, EventArgs e) {
-        var knobs = this.Controls.OfType<Knob>();
+        var knobs = this.Controls.OfType<UI.Controls.Knob>();
         foreach (var k in knobs)
             k.Init();
     }
+    #endregion
 
+    #region Setup Midi Controllers
+    private void SetupMidiControllers() {
+        var mapping = Json<List<ControlKnobMap>>.Load(Constants.MIDI_TO_KNOB_MAPPING_FILE);
+        var knobs = this.Controls.OfType<UI.Controls.Knob>();
+        controlMap.Clear();
 
+        foreach (var m in mapping) {
+            controlMap.Add(m.ControllerID, knobs.Where(k => k.Name == m.KnobName).First());
+        }
+    }
+
+    #endregion
 }
 
 

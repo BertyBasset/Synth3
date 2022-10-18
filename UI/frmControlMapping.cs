@@ -13,23 +13,21 @@ using UI.Controls;
 
 namespace UI;
 public partial class frmControlMapping : Form {
-    const string FILENAME = "ControllerMapping.json";
+
     const int ROW_SPACING = 25;
 
     public Form? form;
     int NumRows = 0;
     new bool Activated = false;
+
+    #region Init Form
     public frmControlMapping() {
         InitializeComponent();
-
 
         cmdAdd.Click += CmdAdd_Click;
         cmdCancel.Click += (o, e) => this.Close();
         cmdSave.Click += (o, e) => SaveMapping();
         this.Click += (o, e) => LoadMapping();
-
-
-
     }
 
     protected override void OnActivated(EventArgs e) {
@@ -38,6 +36,7 @@ public partial class frmControlMapping : Form {
             InitControls();
         Activated = true;
     }
+    #endregion
 
     #region InitControls
     // Put controls into dictionaries so we can treat them as arrays
@@ -60,7 +59,7 @@ public partial class frmControlMapping : Form {
                 }
             }
             for (int j = 0; j < cboKnob[i].Items.Count; j++) {
-                if (map.KnobDescription == (string)cboKnob[i].Items[j]) {
+                if (map.KnobName == ((KnobInfo)cboKnob[i].Items[j]).Name) {
                     cboKnob[i].SelectedIndex = j;
                     break;
                 }
@@ -121,17 +120,21 @@ public partial class frmControlMapping : Form {
         if (form == null)
             return;
 
-        var availableKnobs = form.Controls.OfType<Knob>().Select(i => i.Description).ToList();
-        availableKnobs.Insert(0, "[select]");
+        List<KnobInfo> availableKnobs = form.Controls.OfType<UI.Controls.Knob>().
+            Select(i => new KnobInfo() { Name = i.Name, Description = i.Description }).
+            OrderBy(i=> i.Description).ToList();
+
+
+
+        availableKnobs.Insert(0, new KnobInfo() { Name="", Description="[select]"});
         var allControllers = ControlChangeParameter.GetList();
 
         for (int i = 0; i < cboMidi.Count; i++) {
-            var _knobs = new List<string>();
-            foreach (var k in availableKnobs)
-                _knobs.Add(k);
-
             cboMidi[i].DataSource = ControlChangeParameter.GetList();
-            cboKnob[i].DataSource = _knobs;
+            KnobInfo[] copy = new KnobInfo[availableKnobs.Count];
+            availableKnobs.CopyTo(copy);
+
+            cboKnob[i].DataSource = copy.ToList();
             cmdDelete[i].Click += (o, e) => Delete((Button)(o??(new Button())));
         }
        
@@ -139,6 +142,8 @@ public partial class frmControlMapping : Form {
 
     #endregion
 
+
+    #region Event Handlers
     void Delete(Button btn) {
         int index = int.Parse(btn.Name.Substring(btn.Name.Length - 1));
             
@@ -169,10 +174,11 @@ public partial class frmControlMapping : Form {
         NumRows++;
         cmdAdd.Location = new Point(9, cmdAdd.Location.Y + ROW_SPACING);
     }
+    #endregion
 
-
+    #region Load/Save
     private List<ControlKnobMap> LoadMapping() {
-        return Json<List<ControlKnobMap>>.Load(FILENAME);
+        return Json<List<ControlKnobMap>>.Load(Constants.MIDI_TO_KNOB_MAPPING_FILE);
     }
 
     private void SaveMapping() {
@@ -185,13 +191,13 @@ public partial class frmControlMapping : Form {
                 var id = ((ControlChangeParameter)cboMidi[i].SelectedItem).ID??0;
                 var m = new ControlKnobMap() {
                     ControllerID = (int)id,
-                    KnobDescription = ((string)cboKnob[i].SelectedItem)
+                    KnobName = ((KnobInfo)cboKnob[i].SelectedItem).Name
                 };
                 mapping.Add(m);
             }
         }
 
-        Json<List<ControlKnobMap>>.SaveFile(FILENAME, mapping);
+        Json<List<ControlKnobMap>>.SaveFile(Constants.MIDI_TO_KNOB_MAPPING_FILE, mapping);
         this.Close();
     }
 
@@ -209,17 +215,16 @@ public partial class frmControlMapping : Form {
         }
         return true;
     }
+    #endregion
 }
 
-
-
-// CHANGE cbos to store this class, so we can store name, but display Desc
-
-public class Knob {
+#region KnobInfo combo display class
+public class KnobInfo {
     public string Name { get; set; } = "";
     public string Description { get; set; } = "";
+
+    public override string ToString() {
+        return Description;
+    }
 }
-
-
-
-
+#endregion

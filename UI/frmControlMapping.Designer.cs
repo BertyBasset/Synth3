@@ -419,7 +419,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmControlMapping";
-            this.Text = "Midi Controll Mapping";
+            this.Text = "Midi Controller Mapping";
             this.ResumeLayout(false);
             this.PerformLayout();
 

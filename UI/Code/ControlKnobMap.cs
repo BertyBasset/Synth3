@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UI.Code {
     public class ControlKnobMap {
         public int ControllerID { get; set; }
-        public string KnobDescription { get; set; } = "";
+        public string KnobName  { get; set; } = "";
 
     }
 }
