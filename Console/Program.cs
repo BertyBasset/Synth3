@@ -73,7 +73,7 @@ void init() {
 
 
     vcf.Source = m;
-    vcf.FilterType = VCF.eFilterType.Notch;
+    vcf.FilterType = Synth.Enums.FilterType.Notch;
     vcf.Cutoff = 1.2;
     vcf.Modulator = mw;
     vcf.Resonance = 5;

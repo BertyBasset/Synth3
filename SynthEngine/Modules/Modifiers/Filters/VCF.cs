@@ -1,23 +1,17 @@
 ﻿using Synth.Modules.Modifiers.Filters.Types;
+using Synth;
 using System.Diagnostics;
 using System.Windows.Forms;
+using static Synth.Enums;
 
 namespace Synth.Modules.Modifiers.Filters {
 
     //  Need to calibrate cutoff and modulator properties
 
 
+
+
     public class VCF : iModule {
-        #region Enums
-        public enum eFilterType { 
-            RC,
-            Butterworth,
-            Chebyshev,
-            Bessel,
-            BandPass,
-            Notch
-        }
-        #endregion
 
         #region Public Properties
 
@@ -129,17 +123,17 @@ namespace Synth.Modules.Modifiers.Filters {
             }
         }
 
-        private eFilterType _FilterType;
-        public eFilterType FilterType { 
+        private Enums.FilterType _FilterType;
+        public FilterType FilterType { 
             get { return _FilterType; }
             set { _FilterType = value;
                 switch (_FilterType) {
-                    case eFilterType.RC: _Filter = new RC();  break;  
-                    case eFilterType.Butterworth: _Filter = new Butterworth(); break;
-                    case eFilterType.Chebyshev: _Filter = new Chebyshev(); break;
-                    case eFilterType.Bessel: _Filter = new Bessel(); break;
-                    case eFilterType.BandPass: _Filter = new BandPass(); break;
-                    case eFilterType.Notch: _Filter = new Notch(); break;
+                    case FilterType.RC: _Filter = new RC();  break;  
+                    case FilterType.Butterworth: _Filter = new Butterworth(); break;
+                    case FilterType.Chebyshev: _Filter = new Chebyshev(); break;
+                    case FilterType.Bessel: _Filter = new Bessel(); break;
+                    case FilterType.BandPass: _Filter = new BandPass(); break;
+                    case FilterType.Notch: _Filter = new Notch(); break;
                 }
                 if(_source != null)
                     _Filter.Source = _source;

@@ -3,7 +3,8 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 using UI.Controls;
-using static Synth.Modules.Modifiers.Filters.VCF;
+using  Synth.Modules.Modifiers.Filters;
+using static Synth.Enums;
 
 namespace UI.Code;
 internal class ControlHandler {
@@ -33,8 +34,10 @@ internal class ControlHandler {
             pi.SetValue(ControlledObject, VCOWaveForm.GetByType((VCOWaveformType)Controller.Value));
         else if (type == typeof(LFOWaveForm))
             pi.SetValue(ControlledObject, LFOWaveForm.GetByType((LFOWaveformType)Controller.Value));
-        else if (type == typeof(eFilterType))
-            pi.SetValue(ControlledObject, (eFilterType)Controller.Value);
+        else if (type == typeof(FilterType))
+            pi.SetValue(ControlledObject, (FilterType)Controller.Value);
+        else if (type == typeof(EffectType))
+            pi.SetValue(ControlledObject, (EffectType)Controller.Value);
         else
             pi.SetValue(ControlledObject, Controller.Value);
     }
@@ -62,8 +65,10 @@ internal class ControlHandler {
                 pi.SetValue(ControlledObject, VCOWaveForm.GetByType((VCOWaveformType)Controller.Value));
             else if (type == typeof(LFOWaveForm))
                 pi.SetValue(ControlledObject, LFOWaveForm.GetByType((LFOWaveformType)Controller.Value));
-            else if (type == typeof(eFilterType))
-                pi.SetValue(ControlledObject, (eFilterType)Controller.Value);
+            else if (type == typeof(FilterType))
+                pi.SetValue(ControlledObject, (FilterType)Controller.Value);
+            else if (type == typeof(EffectType))
+                pi.SetValue(ControlledObject, (EffectType)Controller.Value);
             else
                 pi.SetValue(ControlledObject, Controller.Value);
         };

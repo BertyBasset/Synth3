@@ -1,6 +1,7 @@
 // To DO
 // 2 Effects Section
 // 3 Switches
+// Controller Sets would be nice  e.g. VCA, VCF, Osc etc
 
 
 // Then we leave for a month !!
@@ -16,7 +17,9 @@
 
 
 using Synth.IO;
+using Synth;
 using Synth.Modules.Modifiers;
+using Synth.Modules.Modifiers.Filters;
 using Synth.Modules.Modulators;
 using Synth.Modules.Sources;
 using SynthEngine.Modules.Modulators;
@@ -24,6 +27,8 @@ using SynthEngine.Modules.Sources;
 using System.Windows.Forms;
 using UI.Code;
 using UI.Controls;
+using static Synth.Enums;
+using Synth.Modules.Effects;
 
 namespace UI;
 public partial class frmMidiController : Form {
@@ -48,6 +53,9 @@ public partial class frmMidiController : Form {
     EnvGen env1 = new();
     EnvGen env2 = new();
     EnvGen env3 = new();
+
+
+    Effects effects = new();
     AudioOut output = new();
 
     // ControlHandler - this takes care of binding controls to synth modules, and plumbs events when control value changes
@@ -60,6 +68,7 @@ public partial class frmMidiController : Form {
         InitSynth();
 
         kVcfType.ValueChanged += (o, e) => FilterTypeChanged();
+        kEffectType.ValueChanged += (o, e) => EffectTypeChanged();
         cmdViewWave.Click += (o, e) => { 
             var viewer = new frmWaveViewer(engine);
             viewer.Show();
@@ -132,8 +141,9 @@ public partial class frmMidiController : Form {
 
         vca.Source = vcf;
         vca.Modulator = env2;
+        effects.Source = vca;
 
-        output.Source = vca;
+        output.Source = effects;
 
         engine.Modules.Add(mw);
         engine.Modules.Add(kbd);
@@ -149,7 +159,7 @@ public partial class frmMidiController : Form {
         engine.Modules.Add(env2);
         engine.Modules.Add(vca);
         engine.Modules.Add(env3);       // Env3 not connected to anything yet
-
+        engine.Modules.Add(effects);
 
         engine.Modules.Add(output);
 
@@ -158,80 +168,92 @@ public partial class frmMidiController : Form {
 
     private void InitControllers() {
         // Bind controllers to modules
-        ctls.Register(kOsc1Freq, vco1.Frequency, "FineTune");
-        ctls.Register(kOsc1Octave, vco1.Frequency, "Octave");
-        ctls.Register(kOsc1Waveform, vco1, "WaveForm");
-        ctls.Register(kOsc1PW, vco1.Duty, "Value");
-        ctls.Register(kOsc2Freq, vco2.Frequency, "FineTune");
-        ctls.Register(kOsc2Octave, vco2.Frequency, "Octave");
-        ctls.Register(kOsc2Waveform, vco2, "WaveForm");
-        ctls.Register(kOsc2PW, vco2.Duty, "Value");
-        ctls.Register(kOsc3Freq, vco3.Frequency, "FineTune");
-        ctls.Register(kOsc3Octave, vco3.Frequency, "Octave");
-        ctls.Register(kOsc3Waveform, vco3, "WaveForm");
-        ctls.Register(kOsc3PW, vco3.Duty, "Value");
         
-        ctls.Register(kOsc1Mix, m, "Levels", 0);
-        ctls.Register(kOsc2Mix, m, "Levels", 1);
-        ctls.Register(kOsc3Mix, m, "Levels", 2);
-        ctls.Register(kNoiseMix, m, "Levels", 3);
+        
+        //            Knob object       Controlled object       Controller Property
+        ctls.Register(kOsc1Freq,        vco1.Frequency,         "FineTune");
+        ctls.Register(kOsc1Octave,      vco1.Frequency,         "Octave");
+        ctls.Register(kOsc1Waveform,    vco1,                   "WaveForm");
+        ctls.Register(kOsc1PW,          vco1.Duty,              "Value");
+        ctls.Register(kOsc2Freq,        vco2.Frequency,         "FineTune");
+        ctls.Register(kOsc2Octave,      vco2.Frequency,         "Octave");
+        ctls.Register(kOsc2Waveform,    vco2,                   "WaveForm");
+        ctls.Register(kOsc2PW,          vco2.Duty,              "Value");
+        ctls.Register(kOsc3Freq,        vco3.Frequency,         "FineTune");
+        ctls.Register(kOsc3Octave,      vco3.Frequency,         "Octave");
+        ctls.Register(kOsc3Waveform,    vco3,                   "WaveForm");
+        ctls.Register(kOsc3PW,          vco3.Duty,              "Value");
+        //                                                                Index - for array properties
+        ctls.Register(kOsc1Mix,         m,                      "Levels", 0);
+        ctls.Register(kOsc2Mix,         m,                      "Levels", 1);
+        ctls.Register(kOsc3Mix,         m,                      "Levels", 2);
+        ctls.Register(kNoiseMix,        m,                      "Levels", 3);
 
 
-        ctls.Register(kLfo1Rate, lfo1, "Frequency");
-        ctls.Register(kLfo1Shape, lfo1, "Shape");
-        ctls.Register(kLfo2Rate, lfo2, "Frequency");
-        ctls.Register(kLfo2Shape, lfo2, "Shape");
-        ctls.Register(kVcfType, vcf, "FilterType");
-        ctls.Register(kVcfCutoff, vcf, "Cutoff");
-        ctls.Register(kVcfResonance, vcf, "Resonance");
-        ctls.Register(kVcfResonance, vcf, "Bandwidth");
-        ctls.Register(kVcfEnvelope, vcf, "ModAmount");
+        ctls.Register(kLfo1Rate,        lfo1,                   "Frequency");
+        ctls.Register(kLfo1Shape,       lfo1,                   "Shape");
+        ctls.Register(kLfo2Rate,        lfo2,                   "Frequency");
+        ctls.Register(kLfo2Shape,       lfo2,                   "Shape");
+        ctls.Register(kVcfType,         vcf,                    "FilterType");
+        ctls.Register(kVcfCutoff,       vcf,                    "Cutoff");
+        ctls.Register(kVcfResonance,    vcf,                    "Resonance");
+        ctls.Register(kVcfResonance,    vcf,                    "Bandwidth");
+        ctls.Register(kVcfEnvelope,     vcf,                    "ModAmount");
 
 
-        //ctls.Register(kVcfEnvelope, vcf.Modulator, "FilterType");     // Need Mod Amount Property
-        ctls.Register(kEnv1Attack, env1, "Attack");
-        ctls.Register(kEnv1Decay, env1, "Decay");
-        ctls.Register(kEnv1Sustain, env1, "Sustain");
-        ctls.Register(kEnv1Release, env1, "Release");
+        //ctls.Register(kVcfEnvelope,   vcf.Modulator,          "FilterType");     // Need Mod Amount Property
+        ctls.Register(kEnv1Attack,      env1,                   "Attack");
+        ctls.Register(kEnv1Decay,       env1,                   "Decay");
+        ctls.Register(kEnv1Sustain,     env1,                   "Sustain");
+        ctls.Register(kEnv1Release,     env1,                   "Release");
 
-        ctls.Register(kEnv2Attack, env2, "Attack");
-        ctls.Register(kEnv2Decay, env2, "Decay");
-        ctls.Register(kEnv2Sustain, env2, "Sustain");
-        ctls.Register(kEnv2Release, env2, "Release");
-        ctls.Register(kEnv3Attack, env3, "Attack");
-        ctls.Register(kEnv3Decay, env3, "Decay");
-        ctls.Register(kEnv3Sustain, env3, "Sustain");
-        ctls.Register(kEnv3Release, env3, "Release");
-        ctls.Register(kGlide, kbd, "Glide");
+        ctls.Register(kEnv2Attack,      env2,                   "Attack");
+        ctls.Register(kEnv2Decay,       env2,                   "Decay");
+        ctls.Register(kEnv2Sustain,     env2,                   "Sustain");
+        ctls.Register(kEnv2Release,     env2,                   "Release");
+        ctls.Register(kEnv3Attack,      env3,                   "Attack");
+        ctls.Register(kEnv3Decay,       env3,                   "Decay");
+        ctls.Register(kEnv3Sustain,     env3,                   "Sustain");
+        ctls.Register(kEnv3Release,     env3,                   "Release");
+        ctls.Register(kGlide,           kbd,                    "Glide");
+
+        // Effects
+        ctls.Register(kEffectType,      effects,                "EffectType");
+        ctls.Register(kEffectParam1,    effects,                "Param1");
+        ctls.Register(kEffectParam2,    effects,                "Param2");
+        ctls.Register(kEffectParam3,    effects,                "Param3");
+        ctls.Register(kEffectParam4,    effects,                "Param4");
+        ctls.Register(kEffectBalance,   effects,                "Balance");
+
     }
     #endregion
 
     #region Event Handlers
     private void FilterTypeChanged() {
         switch (kVcfType.Value) {
-            case 0:
+            case (int)Enums.FilterType.RC:
                 lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Low Pass RC 1 pole"));
                 kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "n/a"));
                 break;
-            case 1:
+            case (int)Enums.FilterType.Butterworth:
                 lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Low Pass Butterworth 2 pole"));
                 kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "RESONANCE"));
                 break;
-            case 2:
+            case (int)Enums.FilterType.Chebyshev:
                 lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Low Pass Chebyshev 2 pole"));
                 kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "RIPPLE"));
                 vcf.RippleFactor = kVcfResonance.Value;
                 break;
-            case 3:
+            case (int)Enums.FilterType.Bessel:
                 lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Low Pass Bessel 2 pole"));
                 kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "n/a"));
                 break;
-            case 4:
+            case (int)Enums.FilterType.BandPass:
                 lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Band Pass"));
                 kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "BANDWIDTH"));
                 vcf.Bandwidth = kVcfResonance.Value;
                 break;
-            case 5:
+            case (int)Enums.FilterType.Notch:
                 lblFilterType.Invoke((MethodInvoker)(() => lblFilterType.Text = "Notch Pass"));
                 kVcfResonance.Invoke((MethodInvoker)(() => kVcfResonance.LabelText = "BANDWIDTH"));
                 vcf.Bandwidth = kVcfResonance.Value;
@@ -242,6 +264,56 @@ public partial class frmMidiController : Form {
         }
         vcf.ModAmount = kVcfEnvelope.Value;
     }
+
+    private void EffectTypeChanged() {
+        switch (kEffectType.Value) {
+            case (int)EffectType.Chorus:
+                lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "Chorus"));
+                kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText= "GAIN"));
+                kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "MIN DELAY"));
+                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "MAX DELAY"));
+                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "FREQUENCY"));
+                break;
+            case (int)EffectType.Reverb:
+                lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "Reverb"));
+                kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "GAIN"));
+                kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "DELAY LENGTH"));
+                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
+                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
+                break;
+            case (int)EffectType.AllPass:
+                lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "All Pass Filter"));
+                kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "GAIN"));
+                kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "DELAY LENGTH"));
+                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
+                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
+                break;
+            case (int)EffectType.FeedbackComb:
+                lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "Feedback Comb Filter"));
+                kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "GAIN"));
+                kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "DELAY LENGTH"));
+                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
+                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
+                break;
+            case (int)EffectType.FeedForwardComb:
+                lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "Feed Forward Comb Filter"));
+                kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "GAIN"));
+                kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "DELAY LENGTH"));
+                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
+                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
+                break;
+            case (int)EffectType.BitCrusher:
+                lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "Bit Crusher"));
+                kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "RESOLUTION"));
+                kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "SAMP RATE"));
+                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
+                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
+                break;
+            default:
+                break;
+        }
+    }
+
 
     private void CmdInit_Click(object? sender, EventArgs e) {
         var knobs = this.Controls.OfType<UI.Controls.Knob>();
