@@ -89,6 +89,9 @@
             this.kEffectBalance = new UI.Controls.Knob();
             this.kEffectParam4 = new UI.Controls.Knob();
             this.lblEffectType = new System.Windows.Forms.Label();
+            this.panel11 = new UI.Controls.Panel();
+            this.kBitCrushSampleRate = new UI.Controls.Knob();
+            this.kBitCrushResolution = new UI.Controls.Knob();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -546,7 +549,7 @@
             this.panel5.CornerRadius = 10;
             this.panel5.LabelText = "FILTER - ENV 1";
             this.panel5.LineWidth = 2;
-            this.panel5.Location = new System.Drawing.Point(432, 3);
+            this.panel5.Location = new System.Drawing.Point(526, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(307, 215);
             this.panel5.TabIndex = 19;
@@ -556,7 +559,7 @@
             this.panel6.CornerRadius = 10;
             this.panel6.LabelText = "AMPLIFIER - ENV 2";
             this.panel6.LineWidth = 2;
-            this.panel6.Location = new System.Drawing.Point(432, 224);
+            this.panel6.Location = new System.Drawing.Point(526, 224);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(307, 105);
             this.panel6.TabIndex = 20;
@@ -578,7 +581,7 @@
             this.kVcfType.LabelMarker5 = "5";
             this.kVcfType.LabelText = "TYPE";
             this.kVcfType.LimitToInteger = true;
-            this.kVcfType.Location = new System.Drawing.Point(436, 20);
+            this.kVcfType.Location = new System.Drawing.Point(530, 20);
             this.kVcfType.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kVcfType.Max = 5D;
             this.kVcfType.Min = 0D;
@@ -606,7 +609,7 @@
             this.kVcfCutoff.LabelMarker5 = "";
             this.kVcfCutoff.LabelText = "CUTOFF";
             this.kVcfCutoff.LimitToInteger = false;
-            this.kVcfCutoff.Location = new System.Drawing.Point(510, 20);
+            this.kVcfCutoff.Location = new System.Drawing.Point(604, 20);
             this.kVcfCutoff.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kVcfCutoff.Max = 1D;
             this.kVcfCutoff.Min = 0D;
@@ -634,7 +637,7 @@
             this.kVcfResonance.LabelMarker5 = "";
             this.kVcfResonance.LabelText = "RESONANCE";
             this.kVcfResonance.LimitToInteger = false;
-            this.kVcfResonance.Location = new System.Drawing.Point(584, 20);
+            this.kVcfResonance.Location = new System.Drawing.Point(678, 20);
             this.kVcfResonance.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kVcfResonance.Max = 1D;
             this.kVcfResonance.Min = 0D;
@@ -662,7 +665,7 @@
             this.kVcfEnvelope.LabelMarker5 = "";
             this.kVcfEnvelope.LabelText = "ENVELOPE";
             this.kVcfEnvelope.LimitToInteger = false;
-            this.kVcfEnvelope.Location = new System.Drawing.Point(658, 20);
+            this.kVcfEnvelope.Location = new System.Drawing.Point(752, 20);
             this.kVcfEnvelope.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kVcfEnvelope.Max = 1D;
             this.kVcfEnvelope.Min = 0D;
@@ -689,7 +692,7 @@
             this.kEnv1Release.LabelMarker5 = "";
             this.kEnv1Release.LabelText = "RELEASE";
             this.kEnv1Release.LimitToInteger = false;
-            this.kEnv1Release.Location = new System.Drawing.Point(659, 131);
+            this.kEnv1Release.Location = new System.Drawing.Point(753, 131);
             this.kEnv1Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv1Release.Max = 5D;
             this.kEnv1Release.Min = 0D;
@@ -716,7 +719,7 @@
             this.kEnv1Sustain.LabelMarker5 = "";
             this.kEnv1Sustain.LabelText = "SUSTAIN";
             this.kEnv1Sustain.LimitToInteger = false;
-            this.kEnv1Sustain.Location = new System.Drawing.Point(585, 131);
+            this.kEnv1Sustain.Location = new System.Drawing.Point(679, 131);
             this.kEnv1Sustain.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv1Sustain.Max = 1D;
             this.kEnv1Sustain.Min = 0D;
@@ -743,7 +746,7 @@
             this.kEnv1Decay.LabelMarker5 = "";
             this.kEnv1Decay.LabelText = "DECAY";
             this.kEnv1Decay.LimitToInteger = false;
-            this.kEnv1Decay.Location = new System.Drawing.Point(510, 131);
+            this.kEnv1Decay.Location = new System.Drawing.Point(604, 131);
             this.kEnv1Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv1Decay.Max = 5D;
             this.kEnv1Decay.Min = 0D;
@@ -770,7 +773,7 @@
             this.kEnv1Attack.LabelMarker5 = "";
             this.kEnv1Attack.LabelText = "ATTACK";
             this.kEnv1Attack.LimitToInteger = false;
-            this.kEnv1Attack.Location = new System.Drawing.Point(436, 131);
+            this.kEnv1Attack.Location = new System.Drawing.Point(530, 131);
             this.kEnv1Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv1Attack.Max = 5D;
             this.kEnv1Attack.Min = 0D;
@@ -797,7 +800,7 @@
             this.kEnv2Release.LabelMarker5 = "";
             this.kEnv2Release.LabelText = "RELEASE";
             this.kEnv2Release.LimitToInteger = false;
-            this.kEnv2Release.Location = new System.Drawing.Point(658, 242);
+            this.kEnv2Release.Location = new System.Drawing.Point(752, 242);
             this.kEnv2Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv2Release.Max = 5D;
             this.kEnv2Release.Min = 0D;
@@ -824,7 +827,7 @@
             this.kEnv2Sustain.LabelMarker5 = "";
             this.kEnv2Sustain.LabelText = "SUSTAIN";
             this.kEnv2Sustain.LimitToInteger = false;
-            this.kEnv2Sustain.Location = new System.Drawing.Point(584, 242);
+            this.kEnv2Sustain.Location = new System.Drawing.Point(678, 242);
             this.kEnv2Sustain.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv2Sustain.Max = 1D;
             this.kEnv2Sustain.Min = 0D;
@@ -851,7 +854,7 @@
             this.kEnv2Decay.LabelMarker5 = "";
             this.kEnv2Decay.LabelText = "DECAY";
             this.kEnv2Decay.LimitToInteger = false;
-            this.kEnv2Decay.Location = new System.Drawing.Point(510, 242);
+            this.kEnv2Decay.Location = new System.Drawing.Point(604, 242);
             this.kEnv2Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv2Decay.Max = 5D;
             this.kEnv2Decay.Min = 0D;
@@ -878,7 +881,7 @@
             this.kEnv2Attack.LabelMarker5 = "";
             this.kEnv2Attack.LabelText = "ATTACK";
             this.kEnv2Attack.LimitToInteger = false;
-            this.kEnv2Attack.Location = new System.Drawing.Point(436, 242);
+            this.kEnv2Attack.Location = new System.Drawing.Point(530, 242);
             this.kEnv2Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv2Attack.Max = 5D;
             this.kEnv2Attack.Min = 0D;
@@ -905,7 +908,7 @@
             this.kGlide.LabelMarker5 = "";
             this.kGlide.LabelText = "GLIDE";
             this.kGlide.LimitToInteger = false;
-            this.kGlide.Location = new System.Drawing.Point(799, 242);
+            this.kGlide.Location = new System.Drawing.Point(436, 242);
             this.kGlide.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kGlide.Max = 500D;
             this.kGlide.Min = 0D;
@@ -1087,7 +1090,7 @@
             this.kEnv3Release.LabelMarker5 = "";
             this.kEnv3Release.LabelText = "RELEASE";
             this.kEnv3Release.LimitToInteger = false;
-            this.kEnv3Release.Location = new System.Drawing.Point(658, 352);
+            this.kEnv3Release.Location = new System.Drawing.Point(752, 352);
             this.kEnv3Release.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv3Release.Max = 5D;
             this.kEnv3Release.Min = 0D;
@@ -1114,7 +1117,7 @@
             this.kEnv3Sustain.LabelMarker5 = "";
             this.kEnv3Sustain.LabelText = "SUSTAIN";
             this.kEnv3Sustain.LimitToInteger = false;
-            this.kEnv3Sustain.Location = new System.Drawing.Point(584, 352);
+            this.kEnv3Sustain.Location = new System.Drawing.Point(678, 352);
             this.kEnv3Sustain.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv3Sustain.Max = 1D;
             this.kEnv3Sustain.Min = 0D;
@@ -1141,7 +1144,7 @@
             this.kEnv3Decay.LabelMarker5 = "";
             this.kEnv3Decay.LabelText = "DECAY";
             this.kEnv3Decay.LimitToInteger = false;
-            this.kEnv3Decay.Location = new System.Drawing.Point(510, 352);
+            this.kEnv3Decay.Location = new System.Drawing.Point(604, 352);
             this.kEnv3Decay.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv3Decay.Max = 5D;
             this.kEnv3Decay.Min = 0D;
@@ -1168,7 +1171,7 @@
             this.kEnv3Attack.LabelMarker5 = "";
             this.kEnv3Attack.LabelText = "ATTACK";
             this.kEnv3Attack.LimitToInteger = false;
-            this.kEnv3Attack.Location = new System.Drawing.Point(436, 352);
+            this.kEnv3Attack.Location = new System.Drawing.Point(530, 352);
             this.kEnv3Attack.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEnv3Attack.Max = 5D;
             this.kEnv3Attack.Min = 0D;
@@ -1184,7 +1187,7 @@
             this.panel9.CornerRadius = 10;
             this.panel9.LabelText = "ENV 3 - to patchbay";
             this.panel9.LineWidth = 2;
-            this.panel9.Location = new System.Drawing.Point(432, 334);
+            this.panel9.Location = new System.Drawing.Point(526, 334);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(307, 105);
             this.panel9.TabIndex = 41;
@@ -1204,7 +1207,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFilterType.AutoSize = true;
             this.lblFilterType.ForeColor = System.Drawing.Color.White;
-            this.lblFilterType.Location = new System.Drawing.Point(459, 102);
+            this.lblFilterType.Location = new System.Drawing.Point(553, 102);
             this.lblFilterType.Name = "lblFilterType";
             this.lblFilterType.Size = new System.Drawing.Size(156, 15);
             this.lblFilterType.TabIndex = 50;
@@ -1233,17 +1236,17 @@
             // 
             this.lblMidiChannel.AutoSize = true;
             this.lblMidiChannel.ForeColor = System.Drawing.Color.White;
-            this.lblMidiChannel.Location = new System.Drawing.Point(798, 329);
+            this.lblMidiChannel.Location = new System.Drawing.Point(428, 343);
             this.lblMidiChannel.Name = "lblMidiChannel";
-            this.lblMidiChannel.Size = new System.Drawing.Size(81, 15);
+            this.lblMidiChannel.Size = new System.Drawing.Size(34, 15);
             this.lblMidiChannel.TabIndex = 53;
-            this.lblMidiChannel.Text = "Midi Channel:";
+            this.lblMidiChannel.Text = "Midi:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(799, 352);
+            this.label2.Location = new System.Drawing.Point(428, 376);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 15);
             this.label2.TabIndex = 54;
@@ -1251,7 +1254,11 @@
             // 
             // cboMidiChannel
             // 
+            this.cboMidiChannel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cboMidiChannel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMidiChannel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboMidiChannel.Font = new System.Drawing.Font("lcdfont", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cboMidiChannel.ForeColor = System.Drawing.Color.LawnGreen;
             this.cboMidiChannel.FormattingEnabled = true;
             this.cboMidiChannel.Items.AddRange(new object[] {
             "All",
@@ -1271,16 +1278,16 @@
             "14",
             "15",
             "16"});
-            this.cboMidiChannel.Location = new System.Drawing.Point(879, 325);
+            this.cboMidiChannel.Location = new System.Drawing.Point(463, 339);
             this.cboMidiChannel.Name = "cboMidiChannel";
-            this.cboMidiChannel.Size = new System.Drawing.Size(46, 23);
+            this.cboMidiChannel.Size = new System.Drawing.Size(59, 25);
             this.cboMidiChannel.TabIndex = 55;
             // 
             // ledGate
             // 
             this.ledGate.LedColor = System.Drawing.Color.Lime;
             this.ledGate.LedState = UI.Controls.Led.Enums.LedState.Off;
-            this.ledGate.Location = new System.Drawing.Point(839, 352);
+            this.ledGate.Location = new System.Drawing.Point(463, 376);
             this.ledGate.Name = "ledGate";
             this.ledGate.Size = new System.Drawing.Size(15, 15);
             this.ledGate.TabIndex = 56;
@@ -1317,16 +1324,16 @@
             this.panel10.CornerRadius = 10;
             this.panel10.LabelText = "EFFECTS";
             this.panel10.LineWidth = 2;
-            this.panel10.Location = new System.Drawing.Point(745, 3);
+            this.panel10.Location = new System.Drawing.Point(839, 3);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(254, 215);
             this.panel10.TabIndex = 60;
             // 
             // kEffectParam3
             // 
-            this.kEffectParam3._v = 2D;
+            this.kEffectParam3._v = 1D;
             this.kEffectParam3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectParam3.BackgroundImage")));
-            this.kEffectParam3.Default = 2D;
+            this.kEffectParam3.Default = 0D;
             this.kEffectParam3.Description = "Effects - Knob3";
             this.kEffectParam3.Divisions = 10;
             this.kEffectParam3.ForeColor = System.Drawing.Color.White;
@@ -1338,22 +1345,22 @@
             this.kEffectParam3.LabelMarker5 = "";
             this.kEffectParam3.LabelText = "MAX DELAY";
             this.kEffectParam3.LimitToInteger = false;
-            this.kEffectParam3.Location = new System.Drawing.Point(756, 131);
+            this.kEffectParam3.Location = new System.Drawing.Point(850, 131);
             this.kEffectParam3.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEffectParam3.Max = 5D;
+            this.kEffectParam3.Max = 1D;
             this.kEffectParam3.Min = 0D;
             this.kEffectParam3.Name = "kEffectParam3";
             this.kEffectParam3.Size = new System.Drawing.Size(77, 77);
             this.kEffectParam3.SweepAngle = 270;
             this.kEffectParam3.TabIndex = 64;
             this.kEffectParam3.Thickness = 2;
-            this.kEffectParam3.Value = 2D;
+            this.kEffectParam3.Value = 1D;
             // 
             // kEffectParam2
             // 
-            this.kEffectParam2._v = 0.6D;
+            this.kEffectParam2._v = 0D;
             this.kEffectParam2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectParam2.BackgroundImage")));
-            this.kEffectParam2.Default = 0.6D;
+            this.kEffectParam2.Default = 0D;
             this.kEffectParam2.Description = "Effects - Knob2";
             this.kEffectParam2.Divisions = 10;
             this.kEffectParam2.ForeColor = System.Drawing.Color.White;
@@ -1365,7 +1372,7 @@
             this.kEffectParam2.LabelMarker5 = "";
             this.kEffectParam2.LabelText = "MIN DELAY";
             this.kEffectParam2.LimitToInteger = false;
-            this.kEffectParam2.Location = new System.Drawing.Point(901, 20);
+            this.kEffectParam2.Location = new System.Drawing.Point(995, 20);
             this.kEffectParam2.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEffectParam2.Max = 1D;
             this.kEffectParam2.Min = 0D;
@@ -1374,13 +1381,13 @@
             this.kEffectParam2.SweepAngle = 270;
             this.kEffectParam2.TabIndex = 63;
             this.kEffectParam2.Thickness = 2;
-            this.kEffectParam2.Value = 0.6D;
+            this.kEffectParam2.Value = 0D;
             // 
             // kEffectParam1
             // 
-            this.kEffectParam1._v = 0.5D;
+            this.kEffectParam1._v = 0D;
             this.kEffectParam1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectParam1.BackgroundImage")));
-            this.kEffectParam1.Default = 0.5D;
+            this.kEffectParam1.Default = 0D;
             this.kEffectParam1.Description = "Effects - Knob1";
             this.kEffectParam1.Divisions = 10;
             this.kEffectParam1.ForeColor = System.Drawing.Color.White;
@@ -1392,16 +1399,16 @@
             this.kEffectParam1.LabelMarker5 = "";
             this.kEffectParam1.LabelText = "GAIN";
             this.kEffectParam1.LimitToInteger = false;
-            this.kEffectParam1.Location = new System.Drawing.Point(826, 20);
+            this.kEffectParam1.Location = new System.Drawing.Point(920, 20);
             this.kEffectParam1.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEffectParam1.Max = 5D;
+            this.kEffectParam1.Max = 1D;
             this.kEffectParam1.Min = 0D;
             this.kEffectParam1.Name = "kEffectParam1";
             this.kEffectParam1.Size = new System.Drawing.Size(77, 77);
             this.kEffectParam1.SweepAngle = 270;
             this.kEffectParam1.TabIndex = 62;
             this.kEffectParam1.Thickness = 2;
-            this.kEffectParam1.Value = 0.5D;
+            this.kEffectParam1.Value = 0D;
             // 
             // kEffectType
             // 
@@ -1419,7 +1426,7 @@
             this.kEffectType.LabelMarker5 = "";
             this.kEffectType.LabelText = "TYPE";
             this.kEffectType.LimitToInteger = true;
-            this.kEffectType.Location = new System.Drawing.Point(752, 20);
+            this.kEffectType.Location = new System.Drawing.Point(846, 20);
             this.kEffectType.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEffectType.Max = 5D;
             this.kEffectType.Min = 0D;
@@ -1432,9 +1439,9 @@
             // 
             // kEffectBalance
             // 
-            this.kEffectBalance._v = 0D;
+            this.kEffectBalance._v = -1D;
             this.kEffectBalance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectBalance.BackgroundImage")));
-            this.kEffectBalance.Default = 2D;
+            this.kEffectBalance.Default = 0D;
             this.kEffectBalance.Description = "Effects - Balance";
             this.kEffectBalance.Divisions = 10;
             this.kEffectBalance.ForeColor = System.Drawing.Color.White;
@@ -1446,22 +1453,22 @@
             this.kEffectBalance.LabelMarker5 = "0";
             this.kEffectBalance.LabelText = "BALANCE";
             this.kEffectBalance.LimitToInteger = false;
-            this.kEffectBalance.Location = new System.Drawing.Point(907, 131);
+            this.kEffectBalance.Location = new System.Drawing.Point(1001, 131);
             this.kEffectBalance.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEffectBalance.Max = 1D;
             this.kEffectBalance.Min = -1D;
             this.kEffectBalance.Name = "kEffectBalance";
-            this.kEffectBalance.Size = new System.Drawing.Size(77, 75);
+            this.kEffectBalance.Size = new System.Drawing.Size(77, 77);
             this.kEffectBalance.SweepAngle = 270;
             this.kEffectBalance.TabIndex = 67;
             this.kEffectBalance.Thickness = 2;
-            this.kEffectBalance.Value = 0D;
+            this.kEffectBalance.Value = -1D;
             // 
             // kEffectParam4
             // 
-            this.kEffectParam4._v = 0.6D;
+            this.kEffectParam4._v = 0D;
             this.kEffectParam4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectParam4.BackgroundImage")));
-            this.kEffectParam4.Default = 0.6D;
+            this.kEffectParam4.Default = 0D;
             this.kEffectParam4.Description = "Effects - Knob4";
             this.kEffectParam4.Divisions = 10;
             this.kEffectParam4.ForeColor = System.Drawing.Color.White;
@@ -1473,16 +1480,16 @@
             this.kEffectParam4.LabelMarker5 = "";
             this.kEffectParam4.LabelText = "FREQUENCY";
             this.kEffectParam4.LimitToInteger = false;
-            this.kEffectParam4.Location = new System.Drawing.Point(833, 131);
+            this.kEffectParam4.Location = new System.Drawing.Point(927, 131);
             this.kEffectParam4.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
             this.kEffectParam4.Max = 1D;
-            this.kEffectParam4.Min = -1D;
+            this.kEffectParam4.Min = 0D;
             this.kEffectParam4.Name = "kEffectParam4";
-            this.kEffectParam4.Size = new System.Drawing.Size(77, 75);
+            this.kEffectParam4.Size = new System.Drawing.Size(77, 77);
             this.kEffectParam4.SweepAngle = 270;
             this.kEffectParam4.TabIndex = 66;
             this.kEffectParam4.Thickness = 2;
-            this.kEffectParam4.Value = 0.6D;
+            this.kEffectParam4.Value = 0D;
             // 
             // lblEffectType
             // 
@@ -1490,19 +1497,86 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEffectType.AutoSize = true;
             this.lblEffectType.ForeColor = System.Drawing.Color.White;
-            this.lblEffectType.Location = new System.Drawing.Point(776, 102);
+            this.lblEffectType.Location = new System.Drawing.Point(870, 102);
             this.lblEffectType.Name = "lblEffectType";
             this.lblEffectType.Size = new System.Drawing.Size(43, 15);
             this.lblEffectType.TabIndex = 68;
             this.lblEffectType.Text = "Reverb";
             this.lblEffectType.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // panel11
+            // 
+            this.panel11.CornerRadius = 10;
+            this.panel11.LabelText = "BIT-CRUSH";
+            this.panel11.LineWidth = 2;
+            this.panel11.Location = new System.Drawing.Point(430, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(92, 215);
+            this.panel11.TabIndex = 69;
+            // 
+            // kBitCrushSampleRate
+            // 
+            this.kBitCrushSampleRate._v = 0D;
+            this.kBitCrushSampleRate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kBitCrushSampleRate.BackgroundImage")));
+            this.kBitCrushSampleRate.Default = 0D;
+            this.kBitCrushSampleRate.Description = "BitCrusher Sample Rate";
+            this.kBitCrushSampleRate.Divisions = 10;
+            this.kBitCrushSampleRate.ForeColor = System.Drawing.Color.White;
+            this.kBitCrushSampleRate.HideLabels = false;
+            this.kBitCrushSampleRate.HideOutine = false;
+            this.kBitCrushSampleRate.HideTicks = true;
+            this.kBitCrushSampleRate.LabelMarker0 = "0";
+            this.kBitCrushSampleRate.LabelMarker10 = "10";
+            this.kBitCrushSampleRate.LabelMarker5 = "";
+            this.kBitCrushSampleRate.LabelText = "SAMP RATE";
+            this.kBitCrushSampleRate.LimitToInteger = false;
+            this.kBitCrushSampleRate.Location = new System.Drawing.Point(436, 19);
+            this.kBitCrushSampleRate.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kBitCrushSampleRate.Max = 1D;
+            this.kBitCrushSampleRate.Min = 0D;
+            this.kBitCrushSampleRate.Name = "kBitCrushSampleRate";
+            this.kBitCrushSampleRate.Size = new System.Drawing.Size(77, 77);
+            this.kBitCrushSampleRate.SweepAngle = 270;
+            this.kBitCrushSampleRate.TabIndex = 70;
+            this.kBitCrushSampleRate.Thickness = 2;
+            this.kBitCrushSampleRate.Value = 0D;
+            // 
+            // kBitCrushResolution
+            // 
+            this.kBitCrushResolution._v = 0D;
+            this.kBitCrushResolution.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kBitCrushResolution.BackgroundImage")));
+            this.kBitCrushResolution.Default = 0D;
+            this.kBitCrushResolution.Description = "BitCrusher Resolution";
+            this.kBitCrushResolution.Divisions = 10;
+            this.kBitCrushResolution.ForeColor = System.Drawing.Color.White;
+            this.kBitCrushResolution.HideLabels = false;
+            this.kBitCrushResolution.HideOutine = false;
+            this.kBitCrushResolution.HideTicks = true;
+            this.kBitCrushResolution.LabelMarker0 = "0";
+            this.kBitCrushResolution.LabelMarker10 = "10";
+            this.kBitCrushResolution.LabelMarker5 = "";
+            this.kBitCrushResolution.LabelText = "RESOLUTION";
+            this.kBitCrushResolution.LimitToInteger = false;
+            this.kBitCrushResolution.Location = new System.Drawing.Point(436, 131);
+            this.kBitCrushResolution.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kBitCrushResolution.Max = 1D;
+            this.kBitCrushResolution.Min = 0D;
+            this.kBitCrushResolution.Name = "kBitCrushResolution";
+            this.kBitCrushResolution.Size = new System.Drawing.Size(77, 77);
+            this.kBitCrushResolution.SweepAngle = 270;
+            this.kBitCrushResolution.TabIndex = 71;
+            this.kBitCrushResolution.Thickness = 2;
+            this.kBitCrushResolution.Value = 0D;
+            // 
             // frmMidiController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(1013, 497);
+            this.ClientSize = new System.Drawing.Size(1103, 497);
+            this.Controls.Add(this.kBitCrushResolution);
+            this.Controls.Add(this.kBitCrushSampleRate);
+            this.Controls.Add(this.panel11);
             this.Controls.Add(this.lblEffectType);
             this.Controls.Add(this.kEffectBalance);
             this.Controls.Add(this.kEffectParam4);
@@ -1643,5 +1717,8 @@
         private Controls.Knob kEffectBalance;
         private Controls.Knob kEffectParam4;
         private Label lblEffectType;
+        private Controls.Panel panel11;
+        private Controls.Knob kBitCrushSampleRate;
+        private Controls.Knob kBitCrushResolution;
     }
 }

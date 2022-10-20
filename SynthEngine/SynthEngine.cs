@@ -13,7 +13,7 @@ public class SynthEngine : WaveProvider32 {
     private NAudio.Wave.WaveOut? waveOut;
 
     // These config settings are injected into constructor by client application
-    int _SampleRate;
+    internal static int _SampleRate;
     int _Channels;
     #endregion
 

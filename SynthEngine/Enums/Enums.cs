@@ -22,17 +22,12 @@ public class Enums {
         Notch
     }
     public enum EffectType {
-        Chorus = 0,
+        None=0,
+        Chorus,
         Reverb,
         AllPass,
         FeedbackComb,
-        FeedForwardComb,
-        BitCrusher
+        FeedForwardComb
     }
-
-
-
-
-
 }
 
