@@ -9,6 +9,8 @@ Improved UI
 
 Multi Filter (RC, Butterworth, Chebyshev, Bessel, BandPass, Notch
 
+Multi Effects (Chorus, Reverb, All Pass Filter, Feedback Comb, Feedforward Comb, Bit Crusher
+
 Rationalisation of Modulators/CV *
 
 PatchBay *
