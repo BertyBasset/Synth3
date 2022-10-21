@@ -1,19 +1,18 @@
 // To DO
-// 2 Effects Section
-// 3 Switches
-// Controller Sets would be nice  e.g. VCA, VCF, Osc etc
+// 1 Switches
+
 
 
 // Then we leave for a month !!
 
 
 // Version 4
-// 5 Modulaiton MAtrix System
-// 6 Patch Save/REcall
-// 7 Rationalise CV stuff (not sure if needed, but revisit anyway.
+// 2 Modulation Matrix System - maybe have a bank of VCAs to modulate modulators?
+// 3 Patch Save/Recall
+// 4 Rationalise CV stuff (not sure if needed, but revisit anyway)
 
 // Version 5
-// 8. Polyphony !
+// 5. Polyphony !
 
 
 using Synth.IO;
@@ -398,13 +397,16 @@ public partial class frmMidiController : Form {
 
             int knobNo = 0;
             foreach (var m in mapping) {
-                if (knobNo >= knobGroup.Count )
-                    break;
-                controlMap.Add(m.ControllerID, knobs.Where(k => k.Name == knobGroup[knobNo]).First());
+                if (knobNo >= knobGroup.Count || knobNo >= MAX_KNOBS_IN_GROUP) {
+                    // We've run out of Knob Group items, so use defaults
+                    controlMap.Add(m.ControllerID, knobs.Where(k => k.Name == m.KnobName).First());
+                } else {
+                    // Using selected Knob Group
+                    controlMap.Add(m.ControllerID, knobs.Where(k => k.Name == knobGroup[knobNo]).First());
+                }
 
                 knobNo++;
-                if (knobNo >= MAX_KNOBS_IN_GROUP)
-                    break;
+
             }
 
 
