@@ -1,18 +1,12 @@
 // To DO
-// 1 Switches
-
-
-
-// Then we leave for a month !!
-
 
 // Version 4
-// 2 Modulation Matrix System - maybe have a bank of VCAs to modulate modulators?
-// 3 Patch Save/Recall
-// 4 Rationalise CV stuff (not sure if needed, but revisit anyway)
+// 1 Modulation Matrix System - maybe have a bank of VCAs to modulate modulators?
+// 2 Patch Save/Recall
+// 3 Rationalise CV stuff (not sure if needed, but revisit anyway)
 
 // Version 5
-// 5. Polyphony !
+// 4. Polyphony !
 
 
 using Synth.IO;
@@ -120,6 +114,9 @@ public partial class frmMidiController : Form {
 
         lfo1.ClockTick += (o, e) => ledLfo1.LedState = e ? Led.Enums.LedState.On : Led.Enums.LedState.Off;
         lfo2.ClockTick += (o, e) => ledLfo2.LedState = e ? Led.Enums.LedState.On : Led.Enums.LedState.Off;
+
+
+
     }
 
     void InitSynth() {

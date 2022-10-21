@@ -220,14 +220,9 @@ namespace UI.Controls {
                 Knob_Paint(this, null);
 
                 //Raise Value Changed Event
-                if (ValueChanged != null) {
-                    ValueChanged(this, _v);
-                }
+                ValueChanged?.Invoke(this, _v);
             }
-
         }
-
-
 
 
         private double __v;
@@ -239,10 +234,6 @@ namespace UI.Controls {
                     _v = _min;
                 if (_v > _max)
                     _v = _max;
-
-
-
-               // }
             }
         }
 
@@ -331,9 +322,7 @@ namespace UI.Controls {
 
             Pen pen = new Pen(new SolidBrush(ForeColor), _thickness);
 
-
             int radius = this.Width / 2 - _margin;
-         
 
 
             Point pCentre = new Point(this.Width / 2, this.Height / 2-4);
@@ -374,5 +363,4 @@ namespace UI.Controls {
         }
         #endregion
     }
-
 }
