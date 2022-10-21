@@ -1,12 +1,68 @@
-﻿using static UI.Controls.Knob;
+﻿using System.Diagnostics;
+using static UI.Controls.Knob;
 
 namespace UI.Controls;
 public partial class Led : UserControl {
+    public event EventHandler<Enums.LedState>? Clicked;
+
+
     public Led() {
         InitializeComponent();
         this.Paint += Led_Paint;
         this.Resize += (o, e) => DrawLed();
 
+        this.Click += (o, e) => {
+            if (!Clickable)
+                return;
+
+            if (LedState == Enums.LedState.Off) 
+                LedState = Enums.LedState.On;
+            else 
+                LedState = Enums.LedState.Off;
+            Clicked?.Invoke(this, LedState);
+        };
+
+    }
+
+    public enum Shape { 
+        Round,
+        Square
+    }
+
+    private string _tooltip = "";
+    public string ToolTip {
+        get { return _tooltip;}
+        set {
+            _tooltip = value;
+            toolTip1.ToolTipTitle = _tooltip;
+        }
+   
+    }
+
+
+    public string ID { get; set; } = "";
+
+    private Shape _ledshape = Shape.Round;
+    public Shape LedShape {
+        get { return _ledshape; }
+        set {
+            _ledshape = value;
+            Led_Paint(this, null);
+        }
+    }
+
+    private bool _clickable;
+    public bool Clickable {
+        get {
+            return _clickable;
+        }
+        set {
+            _clickable = value;
+            if (_clickable)
+                this.Cursor = Cursors.Hand;
+            else
+                this.Cursor = Cursors.Default;
+        }
 
     }
 
@@ -50,11 +106,14 @@ public partial class Led : UserControl {
         }
 
 
-        g.FillEllipse(new SolidBrush(c), 1, 1, this.Width - 3, this.Height - 3);
-        
-        
-        g.DrawEllipse(pen, 1, 1, this.Width - 3, this.Height - 3);
-        
+        if (_ledshape == Shape.Round) {
+            g.FillEllipse(new SolidBrush(c), 1, 1, this.Width - 3, this.Height - 3);
+            g.DrawEllipse(pen, 1, 1, this.Width - 3, this.Height - 3);
+        } else {
+            g.FillRectangle(new SolidBrush(c), 1, 1, this.Width - 3, this.Height - 3);
+            g.DrawRectangle(pen, 1, 1, this.Width - 3, this.Height - 3);
+        }
+
 
     }
 }

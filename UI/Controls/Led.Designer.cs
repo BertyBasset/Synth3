@@ -23,6 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // Led
@@ -36,5 +38,7 @@
         }
 
         #endregion
+
+        private ToolTip toolTip1;
     }
 }

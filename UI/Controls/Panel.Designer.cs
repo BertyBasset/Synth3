@@ -23,7 +23,9 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.lblLabelText = new System.Windows.Forms.Label();
+            this.tipToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblLabelText
@@ -37,6 +39,11 @@
             this.lblLabelText.TabIndex = 0;
             this.lblLabelText.Text = "label1";
             this.lblLabelText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tipToolTip
+            // 
+            this.tipToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.tipToolTip.ToolTipTitle = "Click";
             // 
             // Panel
             // 
@@ -53,5 +60,6 @@
         #endregion
 
         private Label lblLabelText;
+        private ToolTip tipToolTip;
     }
 }

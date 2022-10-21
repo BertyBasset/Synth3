@@ -6,6 +6,14 @@ public partial class Panel : UserControl {
         set { 
             lblLabelText.Text = " " + value ;
             lblLabelText.Left = this.Width / 2 - lblLabelText.Width / 2;
+
+
+            if (lblLabelText.Text == "")
+                lblLabelText.Visible = false;
+            else
+                lblLabelText.Visible = true;
+
+
             DrawBorder();
         }
     }
@@ -46,6 +54,16 @@ public partial class Panel : UserControl {
         }
     }
 
+    public string ID { get; set; } = "";
+
+    private bool _selected;
+    public bool Selected { 
+        get { return _selected; }
+        set { 
+            _selected = value; 
+        }
+    }
+
 
 
     public Panel() {
@@ -53,6 +71,8 @@ public partial class Panel : UserControl {
         this.Paint += Panel_Paint;
         this.Resize += (o, e) => lblLabelText.Left = this.Width / 2 - lblLabelText.Width / 2;
         BackColorChanged += (o, e) => lblLabelText.BackColor = BackColor;
+
+
     }
 
     private void Panel_Resize(object? sender, EventArgs e) {

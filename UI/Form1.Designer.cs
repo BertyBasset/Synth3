@@ -62,7 +62,6 @@
             this.panel7 = new UI.Controls.Panel();
             this.kLfo1Shape = new UI.Controls.Knob();
             this.kLfo1Rate = new UI.Controls.Knob();
-            this.panel8 = new UI.Controls.Panel();
             this.kLfo2Shape = new UI.Controls.Knob();
             this.kLfo2Rate = new UI.Controls.Knob();
             this.kEnv3Release = new UI.Controls.Knob();
@@ -92,16 +91,31 @@
             this.panel11 = new UI.Controls.Panel();
             this.kBitCrushSampleRate = new UI.Controls.Knob();
             this.kBitCrushResolution = new UI.Controls.Knob();
+            this.ledVCO1 = new UI.Controls.Led();
+            this.ledVCO2 = new UI.Controls.Led();
+            this.ledVCO3 = new UI.Controls.Led();
+            this.ledLFO = new UI.Controls.Led();
+            this.ledMixer = new UI.Controls.Led();
+            this.ledVCF = new UI.Controls.Led();
+            this.ledEnv1 = new UI.Controls.Led();
+            this.ledBitCrush = new UI.Controls.Led();
+            this.ledEnv2 = new UI.Controls.Led();
+            this.ledEnv3 = new UI.Controls.Led();
+            this.ledEffects = new UI.Controls.Led();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.CornerRadius = 10;
+            this.panel1.ID = "VCO1";
             this.panel1.LabelText = "OSCILLATOR 1";
             this.panel1.LineWidth = 2;
             this.panel1.Location = new System.Drawing.Point(6, 2);
             this.panel1.Name = "panel1";
+            this.panel1.Selected = false;
             this.panel1.Size = new System.Drawing.Size(323, 105);
             this.panel1.TabIndex = 0;
             // 
@@ -327,10 +341,12 @@
             // panel2
             // 
             this.panel2.CornerRadius = 10;
-            this.panel2.LabelText = "OSCILLATOR 2";
+            this.panel2.ID = "";
+            this.panel2.LabelText = "VCO2";
             this.panel2.LineWidth = 2;
             this.panel2.Location = new System.Drawing.Point(6, 113);
             this.panel2.Name = "panel2";
+            this.panel2.Selected = false;
             this.panel2.Size = new System.Drawing.Size(323, 105);
             this.panel2.TabIndex = 5;
             // 
@@ -445,20 +461,24 @@
             // panel3
             // 
             this.panel3.CornerRadius = 10;
-            this.panel3.LabelText = "OSCILLATOR 3";
+            this.panel3.ID = "";
+            this.panel3.LabelText = "VCO3";
             this.panel3.LineWidth = 2;
             this.panel3.Location = new System.Drawing.Point(6, 224);
             this.panel3.Name = "panel3";
+            this.panel3.Selected = false;
             this.panel3.Size = new System.Drawing.Size(323, 105);
             this.panel3.TabIndex = 10;
             // 
             // panel4
             // 
             this.panel4.CornerRadius = 10;
+            this.panel4.ID = "Mixer";
             this.panel4.LabelText = "MIXER";
             this.panel4.LineWidth = 2;
             this.panel4.Location = new System.Drawing.Point(334, 2);
             this.panel4.Name = "panel4";
+            this.panel4.Selected = false;
             this.panel4.Size = new System.Drawing.Size(92, 436);
             this.panel4.TabIndex = 15;
             // 
@@ -547,20 +567,24 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.Navy;
             this.panel5.CornerRadius = 10;
+            this.panel5.ID = "";
             this.panel5.LabelText = "FILTER - ENV 1";
             this.panel5.LineWidth = 2;
             this.panel5.Location = new System.Drawing.Point(526, 3);
             this.panel5.Name = "panel5";
+            this.panel5.Selected = false;
             this.panel5.Size = new System.Drawing.Size(307, 215);
             this.panel5.TabIndex = 19;
             // 
             // panel6
             // 
             this.panel6.CornerRadius = 10;
+            this.panel6.ID = "";
             this.panel6.LabelText = "AMPLIFIER - ENV 2";
             this.panel6.LineWidth = 2;
             this.panel6.Location = new System.Drawing.Point(526, 224);
             this.panel6.Name = "panel6";
+            this.panel6.Selected = false;
             this.panel6.Size = new System.Drawing.Size(307, 105);
             this.panel6.TabIndex = 20;
             // 
@@ -949,11 +973,13 @@
             // panel7
             // 
             this.panel7.CornerRadius = 10;
-            this.panel7.LabelText = "LFO 1 - to patchbay";
+            this.panel7.ID = "LFO";
+            this.panel7.LabelText = "";
             this.panel7.LineWidth = 2;
             this.panel7.Location = new System.Drawing.Point(6, 333);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(160, 105);
+            this.panel7.Selected = false;
+            this.panel7.Size = new System.Drawing.Size(322, 105);
             this.panel7.TabIndex = 35;
             // 
             // kLfo1Shape
@@ -1009,16 +1035,6 @@
             this.kLfo1Rate.TabIndex = 36;
             this.kLfo1Rate.Thickness = 2;
             this.kLfo1Rate.Value = 0D;
-            // 
-            // panel8
-            // 
-            this.panel8.CornerRadius = 10;
-            this.panel8.LabelText = "LFO 2 - to patchbay";
-            this.panel8.LineWidth = 2;
-            this.panel8.Location = new System.Drawing.Point(169, 333);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(160, 105);
-            this.panel8.TabIndex = 38;
             // 
             // kLfo2Shape
             // 
@@ -1185,10 +1201,12 @@
             // panel9
             // 
             this.panel9.CornerRadius = 10;
+            this.panel9.ID = "";
             this.panel9.LabelText = "ENV 3 - to patchbay";
             this.panel9.LineWidth = 2;
             this.panel9.Location = new System.Drawing.Point(526, 334);
             this.panel9.Name = "panel9";
+            this.panel9.Selected = false;
             this.panel9.Size = new System.Drawing.Size(307, 105);
             this.panel9.TabIndex = 41;
             // 
@@ -1254,11 +1272,11 @@
             // 
             // cboMidiChannel
             // 
-            this.cboMidiChannel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboMidiChannel.BackColor = System.Drawing.Color.DarkGreen;
             this.cboMidiChannel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMidiChannel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboMidiChannel.Font = new System.Drawing.Font("lcdfont", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cboMidiChannel.ForeColor = System.Drawing.Color.LawnGreen;
+            this.cboMidiChannel.ForeColor = System.Drawing.Color.Lime;
             this.cboMidiChannel.FormattingEnabled = true;
             this.cboMidiChannel.Items.AddRange(new object[] {
             "All",
@@ -1285,30 +1303,42 @@
             // 
             // ledGate
             // 
+            this.ledGate.Clickable = false;
+            this.ledGate.ID = "";
             this.ledGate.LedColor = System.Drawing.Color.Lime;
+            this.ledGate.LedShape = UI.Controls.Led.Shape.Round;
             this.ledGate.LedState = UI.Controls.Led.Enums.LedState.Off;
             this.ledGate.Location = new System.Drawing.Point(463, 376);
             this.ledGate.Name = "ledGate";
             this.ledGate.Size = new System.Drawing.Size(15, 15);
             this.ledGate.TabIndex = 56;
+            this.ledGate.ToolTip = null;
             // 
             // ledLfo1
             // 
+            this.ledLfo1.Clickable = false;
+            this.ledLfo1.ID = "";
             this.ledLfo1.LedColor = System.Drawing.Color.Lime;
+            this.ledLfo1.LedShape = UI.Controls.Led.Shape.Round;
             this.ledLfo1.LedState = UI.Controls.Led.Enums.LedState.Off;
             this.ledLfo1.Location = new System.Drawing.Point(69, 350);
             this.ledLfo1.Name = "ledLfo1";
             this.ledLfo1.Size = new System.Drawing.Size(15, 15);
             this.ledLfo1.TabIndex = 57;
+            this.ledLfo1.ToolTip = null;
             // 
             // ledLfo2
             // 
+            this.ledLfo2.Clickable = false;
+            this.ledLfo2.ID = "";
             this.ledLfo2.LedColor = System.Drawing.Color.Lime;
+            this.ledLfo2.LedShape = UI.Controls.Led.Shape.Round;
             this.ledLfo2.LedState = UI.Controls.Led.Enums.LedState.Off;
             this.ledLfo2.Location = new System.Drawing.Point(231, 350);
             this.ledLfo2.Name = "ledLfo2";
             this.ledLfo2.Size = new System.Drawing.Size(15, 15);
             this.ledLfo2.TabIndex = 58;
+            this.ledLfo2.ToolTip = null;
             // 
             // cmdControllers
             // 
@@ -1322,10 +1352,12 @@
             // panel10
             // 
             this.panel10.CornerRadius = 10;
+            this.panel10.ID = "";
             this.panel10.LabelText = "EFFECTS";
             this.panel10.LineWidth = 2;
             this.panel10.Location = new System.Drawing.Point(839, 3);
             this.panel10.Name = "panel10";
+            this.panel10.Selected = false;
             this.panel10.Size = new System.Drawing.Size(254, 215);
             this.panel10.TabIndex = 60;
             // 
@@ -1414,6 +1446,7 @@
             // 
             this.kEffectType._v = 0D;
             this.kEffectType.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectType.BackgroundImage")));
+            this.kEffectType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.kEffectType.Default = 0D;
             this.kEffectType.Description = "Effects Type";
             this.kEffectType.Divisions = 6;
@@ -1507,10 +1540,12 @@
             // panel11
             // 
             this.panel11.CornerRadius = 10;
+            this.panel11.ID = "BitCrush";
             this.panel11.LabelText = "BIT-CRUSH";
             this.panel11.LineWidth = 2;
             this.panel11.Location = new System.Drawing.Point(430, 3);
             this.panel11.Name = "panel11";
+            this.panel11.Selected = false;
             this.panel11.Size = new System.Drawing.Size(92, 215);
             this.panel11.TabIndex = 69;
             // 
@@ -1568,12 +1603,197 @@
             this.kBitCrushResolution.Thickness = 2;
             this.kBitCrushResolution.Value = 0D;
             // 
+            // ledVCO1
+            // 
+            this.ledVCO1.Clickable = true;
+            this.ledVCO1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ledVCO1.ID = "VCO1";
+            this.ledVCO1.LedColor = System.Drawing.Color.Red;
+            this.ledVCO1.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledVCO1.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledVCO1.Location = new System.Drawing.Point(13, 13);
+            this.ledVCO1.Name = "ledVCO1";
+            this.ledVCO1.Size = new System.Drawing.Size(15, 10);
+            this.ledVCO1.TabIndex = 72;
+            this.ledVCO1.ToolTip = null;
+            // 
+            // ledVCO2
+            // 
+            this.ledVCO2.Clickable = true;
+            this.ledVCO2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ledVCO2.ID = "VCO2";
+            this.ledVCO2.LedColor = System.Drawing.Color.Red;
+            this.ledVCO2.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledVCO2.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledVCO2.Location = new System.Drawing.Point(13, 123);
+            this.ledVCO2.Name = "ledVCO2";
+            this.ledVCO2.Size = new System.Drawing.Size(15, 10);
+            this.ledVCO2.TabIndex = 73;
+            this.ledVCO2.ToolTip = null;
+            // 
+            // ledVCO3
+            // 
+            this.ledVCO3.Clickable = true;
+            this.ledVCO3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ledVCO3.ID = "VCO3";
+            this.ledVCO3.LedColor = System.Drawing.Color.Red;
+            this.ledVCO3.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledVCO3.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledVCO3.Location = new System.Drawing.Point(13, 234);
+            this.ledVCO3.Name = "ledVCO3";
+            this.ledVCO3.Size = new System.Drawing.Size(15, 10);
+            this.ledVCO3.TabIndex = 74;
+            this.ledVCO3.ToolTip = null;
+            // 
+            // ledLFO
+            // 
+            this.ledLFO.Clickable = true;
+            this.ledLFO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ledLFO.ID = "LFO";
+            this.ledLFO.LedColor = System.Drawing.Color.Red;
+            this.ledLFO.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledLFO.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledLFO.Location = new System.Drawing.Point(13, 343);
+            this.ledLFO.Name = "ledLFO";
+            this.ledLFO.Size = new System.Drawing.Size(15, 10);
+            this.ledLFO.TabIndex = 75;
+            this.ledLFO.ToolTip = null;
+            // 
+            // ledMixer
+            // 
+            this.ledMixer.Clickable = true;
+            this.ledMixer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ledMixer.ID = "MIXER";
+            this.ledMixer.LedColor = System.Drawing.Color.Red;
+            this.ledMixer.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledMixer.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledMixer.Location = new System.Drawing.Point(341, 13);
+            this.ledMixer.Name = "ledMixer";
+            this.ledMixer.Size = new System.Drawing.Size(15, 10);
+            this.ledMixer.TabIndex = 76;
+            this.ledMixer.ToolTip = null;
+            // 
+            // ledVCF
+            // 
+            this.ledVCF.Clickable = true;
+            this.ledVCF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ledVCF.ID = "VCF";
+            this.ledVCF.LedColor = System.Drawing.Color.Red;
+            this.ledVCF.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledVCF.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledVCF.Location = new System.Drawing.Point(533, 12);
+            this.ledVCF.Name = "ledVCF";
+            this.ledVCF.Size = new System.Drawing.Size(15, 10);
+            this.ledVCF.TabIndex = 77;
+            this.ledVCF.ToolTip = null;
+            // 
+            // ledEnv1
+            // 
+            this.ledEnv1.Clickable = true;
+            this.ledEnv1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ledEnv1.ID = "ENV1";
+            this.ledEnv1.LedColor = System.Drawing.Color.Red;
+            this.ledEnv1.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledEnv1.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledEnv1.Location = new System.Drawing.Point(533, 125);
+            this.ledEnv1.Name = "ledEnv1";
+            this.ledEnv1.Size = new System.Drawing.Size(15, 10);
+            this.ledEnv1.TabIndex = 78;
+            this.ledEnv1.ToolTip = null;
+            // 
+            // ledBitCrush
+            // 
+            this.ledBitCrush.Clickable = true;
+            this.ledBitCrush.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ledBitCrush.ID = "BITCRUSH";
+            this.ledBitCrush.LedColor = System.Drawing.Color.Red;
+            this.ledBitCrush.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledBitCrush.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledBitCrush.Location = new System.Drawing.Point(440, 13);
+            this.ledBitCrush.Name = "ledBitCrush";
+            this.ledBitCrush.Size = new System.Drawing.Size(15, 10);
+            this.ledBitCrush.TabIndex = 79;
+            this.ledBitCrush.ToolTip = null;
+            // 
+            // ledEnv2
+            // 
+            this.ledEnv2.Clickable = true;
+            this.ledEnv2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ledEnv2.ID = "ENV2";
+            this.ledEnv2.LedColor = System.Drawing.Color.Red;
+            this.ledEnv2.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledEnv2.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledEnv2.Location = new System.Drawing.Point(533, 234);
+            this.ledEnv2.Name = "ledEnv2";
+            this.ledEnv2.Size = new System.Drawing.Size(15, 10);
+            this.ledEnv2.TabIndex = 80;
+            this.ledEnv2.ToolTip = null;
+            // 
+            // ledEnv3
+            // 
+            this.ledEnv3.Clickable = true;
+            this.ledEnv3.ID = "ENV3";
+            this.ledEnv3.LedColor = System.Drawing.Color.Red;
+            this.ledEnv3.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledEnv3.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledEnv3.Location = new System.Drawing.Point(532, 346);
+            this.ledEnv3.Name = "ledEnv3";
+            this.ledEnv3.Size = new System.Drawing.Size(15, 10);
+            this.ledEnv3.TabIndex = 81;
+            this.ledEnv3.ToolTip = null;
+            // 
+            // ledEffects
+            // 
+            this.ledEffects.Clickable = true;
+            this.ledEffects.ID = "EFFECTS";
+            this.ledEffects.LedColor = System.Drawing.Color.Red;
+            this.ledEffects.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledEffects.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledEffects.Location = new System.Drawing.Point(847, 13);
+            this.ledEffects.Name = "ledEffects";
+            this.ledEffects.Size = new System.Drawing.Size(15, 10);
+            this.ledEffects.TabIndex = 82;
+            this.ledEffects.ToolTip = null;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(70, 331);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 15);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "LFO1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(230, 331);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 15);
+            this.label3.TabIndex = 84;
+            this.label3.Text = "LFO2";
+            // 
             // frmMidiController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1103, 497);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ledEffects);
+            this.Controls.Add(this.ledEnv3);
+            this.Controls.Add(this.ledEnv2);
+            this.Controls.Add(this.ledBitCrush);
+            this.Controls.Add(this.ledEnv1);
+            this.Controls.Add(this.ledVCF);
+            this.Controls.Add(this.ledMixer);
+            this.Controls.Add(this.ledLFO);
+            this.Controls.Add(this.ledVCO3);
+            this.Controls.Add(this.ledVCO2);
+            this.Controls.Add(this.ledVCO1);
             this.Controls.Add(this.kBitCrushResolution);
             this.Controls.Add(this.kBitCrushSampleRate);
             this.Controls.Add(this.panel11);
@@ -1603,7 +1823,6 @@
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.kLfo2Shape);
             this.Controls.Add(this.kLfo2Rate);
-            this.Controls.Add(this.panel8);
             this.Controls.Add(this.kLfo1Shape);
             this.Controls.Add(this.kLfo1Rate);
             this.Controls.Add(this.panel7);
@@ -1690,7 +1909,6 @@
         private Controls.Panel panel7;
         private Controls.Knob kLfo1Shape;
         private Controls.Knob kLfo1Rate;
-        private Controls.Panel panel8;
         private Controls.Knob kLfo2Shape;
         private Controls.Knob kLfo2Rate;
         private Controls.Knob kEnv3Release;
@@ -1720,5 +1938,18 @@
         private Controls.Panel panel11;
         private Controls.Knob kBitCrushSampleRate;
         private Controls.Knob kBitCrushResolution;
+        private Label label1;
+        private Label label3;
+        private Controls.Led ledVCO1;
+        private Controls.Led ledVCO2;
+        private Controls.Led ledVCO3;
+        private Controls.Led ledLFO;
+        private Controls.Led ledMixer;
+        private Controls.Led ledVCF;
+        private Controls.Led ledEnv1;
+        private Controls.Led ledBitCrush;
+        private Controls.Led ledEnv2;
+        private Controls.Led ledEnv3;
+        private Controls.Led ledEffects;
     }
 }
