@@ -76,9 +76,9 @@ public partial class frmControlMapping : Form {
         }
 
 
-        cmdAdd.Location = new Point(9, mapping.Count * ROW_SPACING + 23);
+        cmdAdd.Location = new Point(23, mapping.Count * ROW_SPACING + 23);
         if (mapping.Count == 0)
-            cmdAdd.Location = new Point(9, cmdAdd.Location.Y + ROW_SPACING);
+            cmdAdd.Location = new Point(23, cmdAdd.Location.Y + ROW_SPACING);
 
         NumRows = mapping.Count == 0? 1 : mapping.Count;
     }

@@ -17,6 +17,7 @@ namespace UI.Code {
         public static T Load(string FileName) {
             if (!System.IO.File.Exists(saveFolder + "\\" + FileName))
                 return new T();
+
             var rv= JsonSerializer.Deserialize<T>(System.IO.File.ReadAllText(saveFolder + "\\" + FileName));
             return rv ?? new T();
         }

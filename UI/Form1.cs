@@ -1,12 +1,17 @@
 // To DO
+// 1 Knock down Chorus knobs to 4
+// 2 Add VCA User Control
+// 3 Add proto mod area with 4 VCA/knob
+
+
 
 // Version 4
-// 1 Modulation Matrix System - maybe have a bank of VCAs to modulate modulators?
-// 2 Patch Save/Recall
-// 3 Rationalise CV stuff (not sure if needed, but revisit anyway)
+// 4 Modulation Matrix System - maybe have a bank of VCAs to modulate modulators?
+// 5 Patch Save/Recall
+// 6 Rationalise CV stuff (not sure if needed, but revisit anyway)
 
 // Version 5
-// 4. Polyphony !
+// 7. Polyphony !
 
 
 using Synth.IO;
@@ -223,9 +228,7 @@ public partial class frmMidiController : Form {
         ctls.Register(kEffectType, effects, "EffectType");
         ctls.Register(kEffectParam1, effects, "Param1");
         ctls.Register(kEffectParam2, effects, "Param2");
-        ctls.Register(kEffectParam3, effects, "Param3");
-        ctls.Register(kEffectParam4, effects, "Param4");
-        ctls.Register(kEffectBalance, effects, "Balance");
+        ctls.Register(kEffectMix, effects, "Mix");
 
     }
     #endregion
@@ -274,51 +277,37 @@ public partial class frmMidiController : Form {
                 lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "None"));
                 kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "n/a"));
                 kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "n/a"));
-                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
-                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
                 break;
             case (int)EffectType.Chorus:
                 lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "Chorus"));
-                kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "GAIN"));
-                kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "MIN DELAY"));
-                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "MAX DELAY"));
-                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "FREQUENCY"));
+                kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "FREQUENCY"));
+                kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "DELAY"));
                 break;
             case (int)EffectType.Reverb:
                 lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "Reverb"));
                 kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "GAIN"));
                 kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "DELAY LENGTH"));
-                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
-                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
                 break;
             case (int)EffectType.AllPass:
                 lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "All Pass Filter"));
                 kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "GAIN"));
                 kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "DELAY LENGTH"));
-                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
-                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
                 break;
             case (int)EffectType.FeedbackComb:
                 lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "Feedback Comb Filter"));
                 kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "GAIN"));
                 kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "DELAY LENGTH"));
-                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
-                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
                 break;
             case (int)EffectType.FeedForwardComb:
                 lblEffectType.Invoke((MethodInvoker)(() => lblEffectType.Text = "Feed Forward Comb Filter"));
                 kEffectParam1.Invoke((MethodInvoker)(() => kEffectParam1.LabelText = "GAIN"));
                 kEffectParam2.Invoke((MethodInvoker)(() => kEffectParam2.LabelText = "DELAY LENGTH"));
-                kEffectParam3.Invoke((MethodInvoker)(() => kEffectParam3.LabelText = "n/a"));
-                kEffectParam4.Invoke((MethodInvoker)(() => kEffectParam4.LabelText = "n/a"));
                 break;
             default:
                 break;
         }
         effects.Param1 = kEffectParam1.Value;
         effects.Param2 = kEffectParam2.Value;
-        effects.Param3 = kEffectParam3.Value;
-        effects.Param4 = kEffectParam4.Value;
     }
 
 
@@ -368,7 +357,7 @@ public partial class frmMidiController : Form {
         knobGroups.Add("ENV1", new List<string>() { "kEnv1Attack", "kEnv1Decay", "kEnv1Sustain", "kEnv1Release" });
         knobGroups.Add("ENV2", new List<string>() { "kEnv2Attack", "kEnv2Decay", "kEnv2Sustain", "kEnv2Release" });
         knobGroups.Add("ENV3", new List<string>() { "kEnv3Attack", "kEnv3Decay", "kEnv3Sustain", "kEnv3Release" });
-        knobGroups.Add("EFFECTS", new List<string>() { "kEffectType", "kEffectParam1", "kEffectParam2", "kEffectBalance" });
+        knobGroups.Add("EFFECTS", new List<string>() { "kEffectType", "kEffectParam1", "kEffectParam2", "kEffectMix" });
 
 
     }

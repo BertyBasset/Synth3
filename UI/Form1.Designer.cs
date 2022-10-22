@@ -81,12 +81,10 @@
             this.ledLfo2 = new UI.Controls.Led();
             this.cmdControllers = new System.Windows.Forms.Button();
             this.panel10 = new UI.Controls.Panel();
-            this.kEffectParam3 = new UI.Controls.Knob();
-            this.kEffectParam2 = new UI.Controls.Knob();
             this.kEffectParam1 = new UI.Controls.Knob();
             this.kEffectType = new UI.Controls.Knob();
-            this.kEffectBalance = new UI.Controls.Knob();
-            this.kEffectParam4 = new UI.Controls.Knob();
+            this.kEffectMix = new UI.Controls.Knob();
+            this.kEffectParam2 = new UI.Controls.Knob();
             this.lblEffectType = new System.Windows.Forms.Label();
             this.panel11 = new UI.Controls.Panel();
             this.kBitCrushSampleRate = new UI.Controls.Knob();
@@ -104,6 +102,9 @@
             this.ledEffects = new UI.Controls.Led();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel8 = new UI.Controls.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1358,62 +1359,8 @@
             this.panel10.Location = new System.Drawing.Point(839, 3);
             this.panel10.Name = "panel10";
             this.panel10.Selected = false;
-            this.panel10.Size = new System.Drawing.Size(254, 215);
+            this.panel10.Size = new System.Drawing.Size(322, 115);
             this.panel10.TabIndex = 60;
-            // 
-            // kEffectParam3
-            // 
-            this.kEffectParam3._v = 1D;
-            this.kEffectParam3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectParam3.BackgroundImage")));
-            this.kEffectParam3.Default = 0D;
-            this.kEffectParam3.Description = "Effects - Knob3";
-            this.kEffectParam3.Divisions = 10;
-            this.kEffectParam3.ForeColor = System.Drawing.Color.White;
-            this.kEffectParam3.HideLabels = false;
-            this.kEffectParam3.HideOutine = true;
-            this.kEffectParam3.HideTicks = true;
-            this.kEffectParam3.LabelMarker0 = "0";
-            this.kEffectParam3.LabelMarker10 = "10";
-            this.kEffectParam3.LabelMarker5 = "";
-            this.kEffectParam3.LabelText = "MAX DELAY";
-            this.kEffectParam3.LimitToInteger = false;
-            this.kEffectParam3.Location = new System.Drawing.Point(850, 131);
-            this.kEffectParam3.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEffectParam3.Max = 1D;
-            this.kEffectParam3.Min = 0D;
-            this.kEffectParam3.Name = "kEffectParam3";
-            this.kEffectParam3.Size = new System.Drawing.Size(77, 77);
-            this.kEffectParam3.SweepAngle = 270;
-            this.kEffectParam3.TabIndex = 64;
-            this.kEffectParam3.Thickness = 2;
-            this.kEffectParam3.Value = 1D;
-            // 
-            // kEffectParam2
-            // 
-            this.kEffectParam2._v = 0D;
-            this.kEffectParam2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectParam2.BackgroundImage")));
-            this.kEffectParam2.Default = 0D;
-            this.kEffectParam2.Description = "Effects - Knob2";
-            this.kEffectParam2.Divisions = 10;
-            this.kEffectParam2.ForeColor = System.Drawing.Color.White;
-            this.kEffectParam2.HideLabels = false;
-            this.kEffectParam2.HideOutine = true;
-            this.kEffectParam2.HideTicks = true;
-            this.kEffectParam2.LabelMarker0 = "0";
-            this.kEffectParam2.LabelMarker10 = "10";
-            this.kEffectParam2.LabelMarker5 = "";
-            this.kEffectParam2.LabelText = "MIN DELAY";
-            this.kEffectParam2.LimitToInteger = false;
-            this.kEffectParam2.Location = new System.Drawing.Point(995, 20);
-            this.kEffectParam2.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEffectParam2.Max = 1D;
-            this.kEffectParam2.Min = 0D;
-            this.kEffectParam2.Name = "kEffectParam2";
-            this.kEffectParam2.Size = new System.Drawing.Size(77, 77);
-            this.kEffectParam2.SweepAngle = 270;
-            this.kEffectParam2.TabIndex = 63;
-            this.kEffectParam2.Thickness = 2;
-            this.kEffectParam2.Value = 0D;
             // 
             // kEffectParam1
             // 
@@ -1470,59 +1417,59 @@
             this.kEffectType.Thickness = 2;
             this.kEffectType.Value = 0D;
             // 
-            // kEffectBalance
+            // kEffectMix
             // 
-            this.kEffectBalance._v = -1D;
-            this.kEffectBalance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectBalance.BackgroundImage")));
-            this.kEffectBalance.Default = 0D;
-            this.kEffectBalance.Description = "Effects - Balance";
-            this.kEffectBalance.Divisions = 10;
-            this.kEffectBalance.ForeColor = System.Drawing.Color.White;
-            this.kEffectBalance.HideLabels = false;
-            this.kEffectBalance.HideOutine = true;
-            this.kEffectBalance.HideTicks = true;
-            this.kEffectBalance.LabelMarker0 = "-1";
-            this.kEffectBalance.LabelMarker10 = "+1";
-            this.kEffectBalance.LabelMarker5 = "0";
-            this.kEffectBalance.LabelText = "BALANCE";
-            this.kEffectBalance.LimitToInteger = false;
-            this.kEffectBalance.Location = new System.Drawing.Point(1001, 131);
-            this.kEffectBalance.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEffectBalance.Max = 1D;
-            this.kEffectBalance.Min = -1D;
-            this.kEffectBalance.Name = "kEffectBalance";
-            this.kEffectBalance.Size = new System.Drawing.Size(77, 77);
-            this.kEffectBalance.SweepAngle = 270;
-            this.kEffectBalance.TabIndex = 67;
-            this.kEffectBalance.Thickness = 2;
-            this.kEffectBalance.Value = -1D;
+            this.kEffectMix._v = -1D;
+            this.kEffectMix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectMix.BackgroundImage")));
+            this.kEffectMix.Default = 0D;
+            this.kEffectMix.Description = "Effects - Mix";
+            this.kEffectMix.Divisions = 10;
+            this.kEffectMix.ForeColor = System.Drawing.Color.White;
+            this.kEffectMix.HideLabels = false;
+            this.kEffectMix.HideOutine = true;
+            this.kEffectMix.HideTicks = true;
+            this.kEffectMix.LabelMarker0 = "-1";
+            this.kEffectMix.LabelMarker10 = "+1";
+            this.kEffectMix.LabelMarker5 = "0";
+            this.kEffectMix.LabelText = "MIX";
+            this.kEffectMix.LimitToInteger = false;
+            this.kEffectMix.Location = new System.Drawing.Point(1076, 20);
+            this.kEffectMix.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEffectMix.Max = 1D;
+            this.kEffectMix.Min = -1D;
+            this.kEffectMix.Name = "kEffectMix";
+            this.kEffectMix.Size = new System.Drawing.Size(77, 77);
+            this.kEffectMix.SweepAngle = 270;
+            this.kEffectMix.TabIndex = 67;
+            this.kEffectMix.Thickness = 2;
+            this.kEffectMix.Value = -1D;
             // 
-            // kEffectParam4
+            // kEffectParam2
             // 
-            this.kEffectParam4._v = 0D;
-            this.kEffectParam4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectParam4.BackgroundImage")));
-            this.kEffectParam4.Default = 0D;
-            this.kEffectParam4.Description = "Effects - Knob4";
-            this.kEffectParam4.Divisions = 10;
-            this.kEffectParam4.ForeColor = System.Drawing.Color.White;
-            this.kEffectParam4.HideLabels = false;
-            this.kEffectParam4.HideOutine = true;
-            this.kEffectParam4.HideTicks = true;
-            this.kEffectParam4.LabelMarker0 = "0";
-            this.kEffectParam4.LabelMarker10 = "10";
-            this.kEffectParam4.LabelMarker5 = "";
-            this.kEffectParam4.LabelText = "FREQUENCY";
-            this.kEffectParam4.LimitToInteger = false;
-            this.kEffectParam4.Location = new System.Drawing.Point(927, 131);
-            this.kEffectParam4.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
-            this.kEffectParam4.Max = 1D;
-            this.kEffectParam4.Min = 0D;
-            this.kEffectParam4.Name = "kEffectParam4";
-            this.kEffectParam4.Size = new System.Drawing.Size(77, 77);
-            this.kEffectParam4.SweepAngle = 270;
-            this.kEffectParam4.TabIndex = 66;
-            this.kEffectParam4.Thickness = 2;
-            this.kEffectParam4.Value = 0D;
+            this.kEffectParam2._v = 0D;
+            this.kEffectParam2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kEffectParam2.BackgroundImage")));
+            this.kEffectParam2.Default = 0D;
+            this.kEffectParam2.Description = "Effects - Knob2";
+            this.kEffectParam2.Divisions = 10;
+            this.kEffectParam2.ForeColor = System.Drawing.Color.White;
+            this.kEffectParam2.HideLabels = false;
+            this.kEffectParam2.HideOutine = true;
+            this.kEffectParam2.HideTicks = true;
+            this.kEffectParam2.LabelMarker0 = "0";
+            this.kEffectParam2.LabelMarker10 = "10";
+            this.kEffectParam2.LabelMarker5 = "";
+            this.kEffectParam2.LabelText = "FREQUENCY";
+            this.kEffectParam2.LimitToInteger = false;
+            this.kEffectParam2.Location = new System.Drawing.Point(1002, 20);
+            this.kEffectParam2.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kEffectParam2.Max = 1D;
+            this.kEffectParam2.Min = 0D;
+            this.kEffectParam2.Name = "kEffectParam2";
+            this.kEffectParam2.Size = new System.Drawing.Size(77, 77);
+            this.kEffectParam2.SweepAngle = 270;
+            this.kEffectParam2.TabIndex = 66;
+            this.kEffectParam2.Thickness = 2;
+            this.kEffectParam2.Value = 0D;
             // 
             // lblEffectType
             // 
@@ -1530,7 +1477,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEffectType.AutoSize = true;
             this.lblEffectType.ForeColor = System.Drawing.Color.White;
-            this.lblEffectType.Location = new System.Drawing.Point(870, 102);
+            this.lblEffectType.Location = new System.Drawing.Point(870, 100);
             this.lblEffectType.Name = "lblEffectType";
             this.lblEffectType.Size = new System.Drawing.Size(43, 15);
             this.lblEffectType.TabIndex = 68;
@@ -1775,12 +1722,53 @@
             this.label3.TabIndex = 84;
             this.label3.Text = "LFO2";
             // 
+            // panel8
+            // 
+            this.panel8.CornerRadius = 10;
+            this.panel8.ID = "";
+            this.panel8.LabelText = "MODULATION";
+            this.panel8.LineWidth = 2;
+            this.panel8.Location = new System.Drawing.Point(839, 123);
+            this.panel8.Name = "panel8";
+            this.panel8.Selected = false;
+            this.panel8.Size = new System.Drawing.Size(322, 316);
+            this.panel8.TabIndex = 85;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(1071, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 15);
+            this.label4.TabIndex = 86;
+            this.label4.Text = "Dry";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(1136, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 15);
+            this.label5.TabIndex = 87;
+            this.label5.Text = "FX";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // frmMidiController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(1103, 497);
+            this.ClientSize = new System.Drawing.Size(1175, 497);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ledEffects);
@@ -1798,9 +1786,7 @@
             this.Controls.Add(this.kBitCrushSampleRate);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.lblEffectType);
-            this.Controls.Add(this.kEffectBalance);
-            this.Controls.Add(this.kEffectParam4);
-            this.Controls.Add(this.kEffectParam3);
+            this.Controls.Add(this.kEffectMix);
             this.Controls.Add(this.kEffectParam2);
             this.Controls.Add(this.kEffectParam1);
             this.Controls.Add(this.kEffectType);
@@ -1928,12 +1914,10 @@
         private Controls.Led ledLfo2;
         private Button cmdControllers;
         private Controls.Panel panel10;
-        private Controls.Knob kEffectParam3;
-        private Controls.Knob kEffectParam2;
         private Controls.Knob kEffectParam1;
         private Controls.Knob kEffectType;
-        private Controls.Knob kEffectBalance;
-        private Controls.Knob kEffectParam4;
+        private Controls.Knob kEffectMix;
+        private Controls.Knob kEffectParam2;
         private Label lblEffectType;
         private Controls.Panel panel11;
         private Controls.Knob kBitCrushSampleRate;
@@ -1951,5 +1935,8 @@
         private Controls.Led ledEnv2;
         private Controls.Led ledEnv3;
         private Controls.Led ledEffects;
+        private Controls.Panel panel8;
+        private Label label4;
+        private Label label5;
     }
 }

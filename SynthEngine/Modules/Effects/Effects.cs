@@ -10,27 +10,19 @@ namespace Synth.Modules.Effects {
                 _param1 = value;
                 switch (_EffectType) {
                     case EffectType.Chorus: 
-                        ((Chorus)_Effect).Gain = _param1;
-                        ((Chorus)_Effect).MinDelay = _param2;
-                        ((Chorus)_Effect).MaxDelay= _param3;
-                        ((Chorus)_Effect).Frequency = _param4;
-
+                        ((Chorus)_Effect).Frequency = _param1;
                         break;
                     case EffectType.Reverb: 
                         ((Reverb)_Effect).Gain = _param1;
-                        ((Reverb)_Effect).DelayLength = _param2;
                         break;
                     case EffectType.AllPass:
                         ((AllPassFilter)_Effect).Gain = _param1;
-                        ((AllPassFilter)_Effect).DelayLength = _param2;
                         break;
                     case EffectType.FeedbackComb:
                         ((FeedbackCombFilter)_Effect).Gain = _param1;
-                        ((FeedbackCombFilter)_Effect).DelayLength = _param2;
                         break;
                     case EffectType.FeedForwardComb:
                         ((FeedForwardCombFilter)_Effect).Gain = _param1;
-                        ((FeedForwardCombFilter)_Effect).DelayLength = _param2;
                         break;
                     default:
                         break;
@@ -45,7 +37,7 @@ namespace Synth.Modules.Effects {
                 _param2 = value;
                 switch (_EffectType) {
                     case EffectType.Chorus:
-                        ((Chorus)_Effect).MinDelay = _param2;
+                        ((Chorus)_Effect).MaxDelay = _param2;
                         break;
                     case EffectType.Reverb:
                         ((Reverb)_Effect).DelayLength = _param2;
@@ -65,35 +57,7 @@ namespace Synth.Modules.Effects {
             }
         }
 
-        private double _param3;
-        public double Param3 {
-            get { return _param3; }
-            set {
-                _param3 = value;
-                switch (_EffectType) {
-                    case EffectType.Chorus:
-                        ((Chorus)_Effect).MaxDelay = _param3;
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
-        private double _param4;
-        public double Param4 {
-            get { return _param4; }
-            set {
-                _param4 = value;
-                switch (_EffectType) {
-                    case EffectType.Chorus:
-                        ((Chorus)_Effect).Frequency = _param4;
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
+     
 
 
         public iModule Source { get; set; } = new NullModule();
@@ -117,7 +81,7 @@ namespace Synth.Modules.Effects {
             }
         }
 
-        public double Balance { get; set; } = 0;             // -1 to 1, 0 is equal mix of dry and effect
+        public double Mix { get; set; } = 0;             // -1 to 1, 0 is equal mix of dry and effect
         #endregion
 
         #region iModule Members
@@ -126,8 +90,8 @@ namespace Synth.Modules.Effects {
         void iModule.Tick(double TimeIncrement) {
             _Effect.Tick(TimeIncrement);
 
-            double dry = -(Balance - 1) / 2;
-            double wet = (Balance * 2 + 2) / 4;
+            double dry = -(Mix - 1) / 2;
+            double wet = (Mix* 2 + 2) / 4;
 
 
 

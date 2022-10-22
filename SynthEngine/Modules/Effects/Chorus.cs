@@ -9,7 +9,8 @@ public class Chorus : iEffect {
     public Chorus() {
         buffer = new double[SynthEngine._SampleRate / 2];
     }
-         
+
+    /*
     private double _mindelay;
     public double MinDelay {
         get { return _mindelay * 8; }
@@ -19,8 +20,10 @@ public class Chorus : iEffect {
                 _mindelay = .125;
         }
     }
+    */
+    private double MinDelay = 0.5;
 
-    private double _maxdelay;
+    /*private double _maxdelay;
     public double MaxDelay {
         get { return _maxdelay * 8; }
         set {
@@ -29,18 +32,34 @@ public class Chorus : iEffect {
                 _maxdelay = .125;
         }
     }
+    */
+
+
+
+    // .5 to .6
+    private double _maxdelay;
+    private double _v;
+    public double MaxDelay {
+        get { return _v; }
+        set {
+            _maxdelay = .5 - value / 10;
+            _v = value;
+        }
+    }
+
+
 
     private double _frequency;
-    public double Frequency{
+    public double Frequency {
         get { return _frequency / 4; }
         set {
-            _frequency = value *4;
+            _frequency = value * 4;
             if (_frequency > 4)
                 _frequency = 4;
         }
     }
 
-    public double Gain{ get; set; }
+    private double Gain { get; set; } = .3;
     #endregion
 
     #region iEffect Members
@@ -50,10 +69,10 @@ public class Chorus : iEffect {
     int i;
     double phase;
     public void Tick(double TimeIncrement) {
-        phase += TimeIncrement * _frequency* 360;
+        phase += TimeIncrement * _frequency * 360;
         phase %= 360;
 
-        var delay = (int)((_mindelay + (_maxdelay - _mindelay) * (Math.Sin(phase * Math.PI / 180) / 2 + 0.5)) * SynthEngine._SampleRate);
+        var delay = (int)((MinDelay + (_maxdelay - MinDelay) * (Math.Sin(phase * Math.PI / 180) / 2 + 0.5)) * SynthEngine._SampleRate);
 
         var index = mod(i - delay, buffer.Length);
 
