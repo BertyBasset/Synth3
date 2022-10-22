@@ -1,6 +1,6 @@
 ﻿using Synth.Modules;
 
-namespace SynthEngine.Modules.Modulators;
+namespace Synth.Modules.Modulators;
 
 internal class ModKnob : iModule {
     double iModule.Value => throw new NotImplementedException();

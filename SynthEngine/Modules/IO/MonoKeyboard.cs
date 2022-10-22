@@ -1,7 +1,7 @@
 ﻿using Synth.Modules;
 using Synth.Properties;
-using SynthEngine.Modules.IO;
-using static SynthEngine.Modules.IO.Midi;
+using Synth.Modules.IO;
+using static Synth.Modules.IO.Midi;
 
 namespace Synth.IO;
 

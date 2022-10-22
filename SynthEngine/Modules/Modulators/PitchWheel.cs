@@ -1,9 +1,9 @@
 ﻿
 using Synth.Modules;
-using SynthEngine.Modules.IO;
+using Synth.Modules.IO;
 using System.Windows.Forms;
 
-namespace SynthEngine.Modules.Modulators;
+namespace Synth.Modules.Modulators;
 public class PitchWheel : iModule {
     private Midi midi = Midi.Instance;
 

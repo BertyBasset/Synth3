@@ -2,7 +2,6 @@
 using Synth.Modules;
 using Synth.Modules.Modulators;
 using Synth.Properties;
-using SynthEngine.Modules.Modulators;
 using System.Windows.Forms;
 
 namespace Synth.Properties;

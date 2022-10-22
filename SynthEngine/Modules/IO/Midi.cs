@@ -2,9 +2,9 @@
 using Synth.Properties;
 using System.Diagnostics;
 using System.Threading;
-using static SynthEngine.Modules.IO.Midi;
+using static Synth.Modules.IO.Midi;
 
-namespace SynthEngine.Modules.IO;
+namespace Synth.Modules.IO;
 
 public class Midi {
 

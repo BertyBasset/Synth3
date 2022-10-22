@@ -1,17 +1,17 @@
 // To DO
-// 1 Knock down Chorus knobs to 4
-// 2 Add VCA User Control
-// 3 Add proto mod area with 4 VCA/knob
+// 1 Add VCA User Control - just a triangle with some lines
+
+// 2 Add proto mod area with 3 VCA/knob
 
 
 
 // Version 4
-// 4 Modulation Matrix System - maybe have a bank of VCAs to modulate modulators?
-// 5 Patch Save/Recall
-// 6 Rationalise CV stuff (not sure if needed, but revisit anyway)
+// 3 Modulation Matrix System - maybe have a bank of VCAs to modulate modulators?
+// 4 Patch Save/Recall
+// 5 Rationalise CV stuff (not sure if needed, but revisit anyway)
 
 // Version 5
-// 7. Polyphony !
+// 6. Polyphony !
 
 
 using Synth.IO;
@@ -20,13 +20,11 @@ using Synth.Modules.Modifiers;
 using Synth.Modules.Modifiers.Filters;
 using Synth.Modules.Modulators;
 using Synth.Modules.Sources;
-using SynthEngine.Modules.Modulators;
-using SynthEngine.Modules.Sources;
-using System.Windows.Forms;
 using UI.Code;
 using UI.Controls;
 using static Synth.Enums;
 using Synth.Modules.Effects;
+
 using System.Diagnostics;
 
 namespace UI;

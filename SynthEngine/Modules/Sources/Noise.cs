@@ -1,7 +1,6 @@
 ﻿
-using Synth.Modules;
 
-namespace SynthEngine.Modules.Sources;
+namespace Synth.Modules.Sources;
 
 public class Noise : iModule {
     const double AMPLITUDE_NORMALISATION = .5;

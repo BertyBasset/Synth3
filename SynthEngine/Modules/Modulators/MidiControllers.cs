@@ -1,7 +1,7 @@
 ﻿using Synth.Modules;
-using SynthEngine.Modules.IO;
+using Synth.Modules.IO;
 
-namespace SynthEngine.Modules.Modulators;
+namespace Synth.Modules.Modulators;
 
 public class MidiControllers : iModule {
     public event EventHandler<MidiControllerEventArgs>? ControllerValueChanged;
