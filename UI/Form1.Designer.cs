@@ -105,6 +105,43 @@
             this.panel8 = new UI.Controls.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.triangle1 = new UI.Controls.Triangle();
+            this.kVca2 = new UI.Controls.Knob();
+            this.triangle2 = new UI.Controls.Triangle();
+            this.kVca3 = new UI.Controls.Knob();
+            this.triangle3 = new UI.Controls.Triangle();
+            this.kVca4 = new UI.Controls.Knob();
+            this.rect1 = new UI.Controls.Rect();
+            this.rect2 = new UI.Controls.Rect();
+            this.rect3 = new UI.Controls.Rect();
+            this.rect4 = new UI.Controls.Rect();
+            this.rect5 = new UI.Controls.Rect();
+            this.rect6 = new UI.Controls.Rect();
+            this.rect7 = new UI.Controls.Rect();
+            this.rect8 = new UI.Controls.Rect();
+            this.rect9 = new UI.Controls.Rect();
+            this.rect10 = new UI.Controls.Rect();
+            this.rect11 = new UI.Controls.Rect();
+            this.rect12 = new UI.Controls.Rect();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.rect13 = new UI.Controls.Rect();
+            this.rect14 = new UI.Controls.Rect();
+            this.rect15 = new UI.Controls.Rect();
+            this.rect16 = new UI.Controls.Rect();
+            this.triangle4 = new UI.Controls.Triangle();
+            this.kVca5 = new UI.Controls.Knob();
+            this.ledVcas = new UI.Controls.Led();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +149,7 @@
             // 
             this.panel1.CornerRadius = 10;
             this.panel1.ID = "VCO1";
-            this.panel1.LabelText = "OSCILLATOR 1";
+            this.panel1.LabelText = "OSCILLATOR VCO1";
             this.panel1.LineWidth = 2;
             this.panel1.Location = new System.Drawing.Point(6, 2);
             this.panel1.Name = "panel1";
@@ -343,7 +380,7 @@
             // 
             this.panel2.CornerRadius = 10;
             this.panel2.ID = "";
-            this.panel2.LabelText = "VCO2";
+            this.panel2.LabelText = "OSCILLATOR VCO2";
             this.panel2.LineWidth = 2;
             this.panel2.Location = new System.Drawing.Point(6, 113);
             this.panel2.Name = "panel2";
@@ -463,7 +500,7 @@
             // 
             this.panel3.CornerRadius = 10;
             this.panel3.ID = "";
-            this.panel3.LabelText = "VCO3";
+            this.panel3.LabelText = "OSCILLATOR VCO3";
             this.panel3.LineWidth = 2;
             this.panel3.Location = new System.Drawing.Point(6, 224);
             this.panel3.Name = "panel3";
@@ -569,7 +606,7 @@
             this.panel5.BackColor = System.Drawing.Color.Navy;
             this.panel5.CornerRadius = 10;
             this.panel5.ID = "";
-            this.panel5.LabelText = "FILTER - ENV 1";
+            this.panel5.LabelText = "FILTER VCF - ENV 1";
             this.panel5.LineWidth = 2;
             this.panel5.Location = new System.Drawing.Point(526, 3);
             this.panel5.Name = "panel5";
@@ -581,7 +618,7 @@
             // 
             this.panel6.CornerRadius = 10;
             this.panel6.ID = "";
-            this.panel6.LabelText = "AMPLIFIER - ENV 2";
+            this.panel6.LabelText = "AMPLIFIER VCA1 - ENV 2";
             this.panel6.LineWidth = 2;
             this.panel6.Location = new System.Drawing.Point(526, 224);
             this.panel6.Name = "panel6";
@@ -1276,7 +1313,7 @@
             this.cboMidiChannel.BackColor = System.Drawing.Color.DarkGreen;
             this.cboMidiChannel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMidiChannel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboMidiChannel.Font = new System.Drawing.Font("lcdfont", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cboMidiChannel.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cboMidiChannel.ForeColor = System.Drawing.Color.Lime;
             this.cboMidiChannel.FormattingEnabled = true;
             this.cboMidiChannel.Items.AddRange(new object[] {
@@ -1299,7 +1336,7 @@
             "16"});
             this.cboMidiChannel.Location = new System.Drawing.Point(463, 339);
             this.cboMidiChannel.Name = "cboMidiChannel";
-            this.cboMidiChannel.Size = new System.Drawing.Size(59, 25);
+            this.cboMidiChannel.Size = new System.Drawing.Size(59, 24);
             this.cboMidiChannel.TabIndex = 55;
             // 
             // ledGate
@@ -1728,7 +1765,7 @@
             this.panel8.ID = "";
             this.panel8.LabelText = "MODULATION";
             this.panel8.LineWidth = 2;
-            this.panel8.Location = new System.Drawing.Point(839, 123);
+            this.panel8.Location = new System.Drawing.Point(841, 122);
             this.panel8.Name = "panel8";
             this.panel8.Selected = false;
             this.panel8.Size = new System.Drawing.Size(322, 316);
@@ -1742,9 +1779,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(1071, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 15);
+            this.label4.Size = new System.Drawing.Size(29, 15);
             this.label4.TabIndex = 86;
-            this.label4.Text = "Dry";
+            this.label4.Text = "DRY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label5
@@ -1753,12 +1790,437 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1136, 19);
+            this.label5.Location = new System.Drawing.Point(1136, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(20, 15);
             this.label5.TabIndex = 87;
             this.label5.Text = "FX";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // triangle1
+            // 
+            this.triangle1.ForeColor = System.Drawing.Color.White;
+            this.triangle1.Label = "VCA2";
+            this.triangle1.Location = new System.Drawing.Point(865, 138);
+            this.triangle1.Name = "triangle1";
+            this.triangle1.Size = new System.Drawing.Size(41, 54);
+            this.triangle1.TabIndex = 88;
+            this.triangle1.Thickness = 2;
+            // 
+            // kVca2
+            // 
+            this.kVca2._v = 0D;
+            this.kVca2.BackColor = System.Drawing.Color.Navy;
+            this.kVca2.Default = 1D;
+            this.kVca2.Description = "VCF Resonance";
+            this.kVca2.Divisions = 10;
+            this.kVca2.ForeColor = System.Drawing.Color.White;
+            this.kVca2.HideLabels = true;
+            this.kVca2.HideOutine = false;
+            this.kVca2.HideTicks = true;
+            this.kVca2.LabelMarker0 = "0";
+            this.kVca2.LabelMarker10 = "";
+            this.kVca2.LabelMarker5 = "";
+            this.kVca2.LabelText = "";
+            this.kVca2.LimitToInteger = false;
+            this.kVca2.Location = new System.Drawing.Point(853, 180);
+            this.kVca2.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kVca2.Max = 1D;
+            this.kVca2.Min = 0D;
+            this.kVca2.Name = "kVca2";
+            this.kVca2.Size = new System.Drawing.Size(63, 63);
+            this.kVca2.SweepAngle = 270;
+            this.kVca2.TabIndex = 91;
+            this.kVca2.Thickness = 2;
+            this.kVca2.Value = 0D;
+            // 
+            // triangle2
+            // 
+            this.triangle2.ForeColor = System.Drawing.Color.White;
+            this.triangle2.Label = "VCA3";
+            this.triangle2.Location = new System.Drawing.Point(942, 138);
+            this.triangle2.Name = "triangle2";
+            this.triangle2.Size = new System.Drawing.Size(41, 54);
+            this.triangle2.TabIndex = 92;
+            this.triangle2.Thickness = 2;
+            // 
+            // kVca3
+            // 
+            this.kVca3._v = 0D;
+            this.kVca3.BackColor = System.Drawing.Color.Navy;
+            this.kVca3.Default = 1D;
+            this.kVca3.Description = "VCF Resonance";
+            this.kVca3.Divisions = 10;
+            this.kVca3.ForeColor = System.Drawing.Color.White;
+            this.kVca3.HideLabels = true;
+            this.kVca3.HideOutine = false;
+            this.kVca3.HideTicks = true;
+            this.kVca3.LabelMarker0 = "0";
+            this.kVca3.LabelMarker10 = "";
+            this.kVca3.LabelMarker5 = "";
+            this.kVca3.LabelText = "";
+            this.kVca3.LimitToInteger = false;
+            this.kVca3.Location = new System.Drawing.Point(930, 180);
+            this.kVca3.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kVca3.Max = 1D;
+            this.kVca3.Min = 0D;
+            this.kVca3.Name = "kVca3";
+            this.kVca3.Size = new System.Drawing.Size(63, 63);
+            this.kVca3.SweepAngle = 270;
+            this.kVca3.TabIndex = 93;
+            this.kVca3.Thickness = 2;
+            this.kVca3.Value = 0D;
+            // 
+            // triangle3
+            // 
+            this.triangle3.ForeColor = System.Drawing.Color.White;
+            this.triangle3.Label = "VCA4";
+            this.triangle3.Location = new System.Drawing.Point(1022, 138);
+            this.triangle3.Name = "triangle3";
+            this.triangle3.Size = new System.Drawing.Size(41, 54);
+            this.triangle3.TabIndex = 94;
+            this.triangle3.Thickness = 2;
+            // 
+            // kVca4
+            // 
+            this.kVca4._v = 0D;
+            this.kVca4.BackColor = System.Drawing.Color.Navy;
+            this.kVca4.Default = 1D;
+            this.kVca4.Description = "VCF Resonance";
+            this.kVca4.Divisions = 10;
+            this.kVca4.ForeColor = System.Drawing.Color.White;
+            this.kVca4.HideLabels = true;
+            this.kVca4.HideOutine = false;
+            this.kVca4.HideTicks = true;
+            this.kVca4.LabelMarker0 = "0";
+            this.kVca4.LabelMarker10 = "";
+            this.kVca4.LabelMarker5 = "";
+            this.kVca4.LabelText = "";
+            this.kVca4.LimitToInteger = false;
+            this.kVca4.Location = new System.Drawing.Point(1010, 180);
+            this.kVca4.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kVca4.Max = 1D;
+            this.kVca4.Min = 0D;
+            this.kVca4.Name = "kVca4";
+            this.kVca4.Size = new System.Drawing.Size(63, 63);
+            this.kVca4.SweepAngle = 270;
+            this.kVca4.TabIndex = 95;
+            this.kVca4.Thickness = 2;
+            this.kVca4.Value = 0D;
+            // 
+            // rect1
+            // 
+            this.rect1.BackColor = System.Drawing.Color.White;
+            this.rect1.Color = System.Drawing.Color.White;
+            this.rect1.Location = new System.Drawing.Point(884, 179);
+            this.rect1.Name = "rect1";
+            this.rect1.Size = new System.Drawing.Size(1, 15);
+            this.rect1.TabIndex = 96;
+            // 
+            // rect2
+            // 
+            this.rect2.BackColor = System.Drawing.Color.White;
+            this.rect2.Color = System.Drawing.Color.White;
+            this.rect2.Location = new System.Drawing.Point(961, 178);
+            this.rect2.Name = "rect2";
+            this.rect2.Size = new System.Drawing.Size(1, 15);
+            this.rect2.TabIndex = 97;
+            // 
+            // rect3
+            // 
+            this.rect3.BackColor = System.Drawing.Color.White;
+            this.rect3.Color = System.Drawing.Color.White;
+            this.rect3.Location = new System.Drawing.Point(1041, 180);
+            this.rect3.Name = "rect3";
+            this.rect3.Size = new System.Drawing.Size(1, 15);
+            this.rect3.TabIndex = 98;
+            // 
+            // rect4
+            // 
+            this.rect4.BackColor = System.Drawing.Color.White;
+            this.rect4.Color = System.Drawing.Color.White;
+            this.rect4.Location = new System.Drawing.Point(885, 223);
+            this.rect4.Name = "rect4";
+            this.rect4.Size = new System.Drawing.Size(1, 12);
+            this.rect4.TabIndex = 99;
+            // 
+            // rect5
+            // 
+            this.rect5.BackColor = System.Drawing.Color.White;
+            this.rect5.Color = System.Drawing.Color.White;
+            this.rect5.Location = new System.Drawing.Point(963, 223);
+            this.rect5.Name = "rect5";
+            this.rect5.Size = new System.Drawing.Size(1, 12);
+            this.rect5.TabIndex = 100;
+            // 
+            // rect6
+            // 
+            this.rect6.BackColor = System.Drawing.Color.White;
+            this.rect6.Color = System.Drawing.Color.White;
+            this.rect6.Location = new System.Drawing.Point(1042, 222);
+            this.rect6.Name = "rect6";
+            this.rect6.Size = new System.Drawing.Size(1, 12);
+            this.rect6.TabIndex = 101;
+            // 
+            // rect7
+            // 
+            this.rect7.BackColor = System.Drawing.Color.White;
+            this.rect7.Color = System.Drawing.Color.White;
+            this.rect7.Location = new System.Drawing.Point(855, 164);
+            this.rect7.Name = "rect7";
+            this.rect7.Size = new System.Drawing.Size(10, 1);
+            this.rect7.TabIndex = 102;
+            // 
+            // rect8
+            // 
+            this.rect8.BackColor = System.Drawing.Color.White;
+            this.rect8.Color = System.Drawing.Color.White;
+            this.rect8.Location = new System.Drawing.Point(931, 164);
+            this.rect8.Name = "rect8";
+            this.rect8.Size = new System.Drawing.Size(10, 1);
+            this.rect8.TabIndex = 103;
+            // 
+            // rect9
+            // 
+            this.rect9.BackColor = System.Drawing.Color.White;
+            this.rect9.Color = System.Drawing.Color.White;
+            this.rect9.Location = new System.Drawing.Point(1012, 164);
+            this.rect9.Name = "rect9";
+            this.rect9.Size = new System.Drawing.Size(10, 1);
+            this.rect9.TabIndex = 104;
+            // 
+            // rect10
+            // 
+            this.rect10.BackColor = System.Drawing.Color.White;
+            this.rect10.Color = System.Drawing.Color.White;
+            this.rect10.Location = new System.Drawing.Point(905, 165);
+            this.rect10.Name = "rect10";
+            this.rect10.Size = new System.Drawing.Size(10, 1);
+            this.rect10.TabIndex = 105;
+            // 
+            // rect11
+            // 
+            this.rect11.BackColor = System.Drawing.Color.White;
+            this.rect11.Color = System.Drawing.Color.White;
+            this.rect11.Location = new System.Drawing.Point(983, 165);
+            this.rect11.Name = "rect11";
+            this.rect11.Size = new System.Drawing.Size(10, 1);
+            this.rect11.TabIndex = 106;
+            // 
+            // rect12
+            // 
+            this.rect12.BackColor = System.Drawing.Color.White;
+            this.rect12.Color = System.Drawing.Color.White;
+            this.rect12.Location = new System.Drawing.Point(1063, 165);
+            this.rect12.Name = "rect12";
+            this.rect12.Size = new System.Drawing.Size(10, 1);
+            this.rect12.TabIndex = 107;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(849, 149);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 15);
+            this.label6.TabIndex = 108;
+            this.label6.Text = "a";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(871, 227);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 15);
+            this.label7.TabIndex = 109;
+            this.label7.Text = "b";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(908, 149);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 15);
+            this.label8.TabIndex = 110;
+            this.label8.Text = "c";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(985, 150);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(11, 15);
+            this.label9.TabIndex = 113;
+            this.label9.Text = "f";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(948, 227);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(13, 15);
+            this.label10.TabIndex = 112;
+            this.label10.Text = "e";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(925, 149);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(14, 15);
+            this.label11.TabIndex = 111;
+            this.label11.Text = "d";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(1066, 150);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(10, 15);
+            this.label12.TabIndex = 116;
+            this.label12.Text = "i";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(1028, 227);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(14, 15);
+            this.label13.TabIndex = 115;
+            this.label13.Text = "h";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(1005, 148);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(14, 15);
+            this.label14.TabIndex = 114;
+            this.label14.Text = "g";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(1145, 151);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(10, 15);
+            this.label15.TabIndex = 125;
+            this.label15.Text = "l";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(1108, 228);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(13, 15);
+            this.label16.TabIndex = 124;
+            this.label16.Text = "k";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(1084, 149);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(10, 15);
+            this.label17.TabIndex = 123;
+            this.label17.Text = "j";
+            // 
+            // rect13
+            // 
+            this.rect13.BackColor = System.Drawing.Color.White;
+            this.rect13.Color = System.Drawing.Color.White;
+            this.rect13.Location = new System.Drawing.Point(1142, 166);
+            this.rect13.Name = "rect13";
+            this.rect13.Size = new System.Drawing.Size(10, 1);
+            this.rect13.TabIndex = 122;
+            // 
+            // rect14
+            // 
+            this.rect14.BackColor = System.Drawing.Color.White;
+            this.rect14.Color = System.Drawing.Color.White;
+            this.rect14.Location = new System.Drawing.Point(1091, 165);
+            this.rect14.Name = "rect14";
+            this.rect14.Size = new System.Drawing.Size(10, 1);
+            this.rect14.TabIndex = 121;
+            // 
+            // rect15
+            // 
+            this.rect15.BackColor = System.Drawing.Color.White;
+            this.rect15.Color = System.Drawing.Color.White;
+            this.rect15.Location = new System.Drawing.Point(1121, 223);
+            this.rect15.Name = "rect15";
+            this.rect15.Size = new System.Drawing.Size(1, 12);
+            this.rect15.TabIndex = 120;
+            // 
+            // rect16
+            // 
+            this.rect16.BackColor = System.Drawing.Color.White;
+            this.rect16.Color = System.Drawing.Color.White;
+            this.rect16.Location = new System.Drawing.Point(1120, 181);
+            this.rect16.Name = "rect16";
+            this.rect16.Size = new System.Drawing.Size(1, 15);
+            this.rect16.TabIndex = 119;
+            // 
+            // triangle4
+            // 
+            this.triangle4.ForeColor = System.Drawing.Color.White;
+            this.triangle4.Label = "VCA5";
+            this.triangle4.Location = new System.Drawing.Point(1101, 139);
+            this.triangle4.Name = "triangle4";
+            this.triangle4.Size = new System.Drawing.Size(41, 54);
+            this.triangle4.TabIndex = 117;
+            this.triangle4.Thickness = 2;
+            // 
+            // kVca5
+            // 
+            this.kVca5._v = 0D;
+            this.kVca5.BackColor = System.Drawing.Color.Navy;
+            this.kVca5.Default = 1D;
+            this.kVca5.Description = "VCF Resonance";
+            this.kVca5.Divisions = 10;
+            this.kVca5.ForeColor = System.Drawing.Color.White;
+            this.kVca5.HideLabels = true;
+            this.kVca5.HideOutine = false;
+            this.kVca5.HideTicks = true;
+            this.kVca5.LabelMarker0 = "0";
+            this.kVca5.LabelMarker10 = "";
+            this.kVca5.LabelMarker5 = "";
+            this.kVca5.LabelText = "";
+            this.kVca5.LimitToInteger = false;
+            this.kVca5.Location = new System.Drawing.Point(1089, 181);
+            this.kVca5.MarkerStyle = UI.Controls.Knob.MarkerStyleEnum.Line;
+            this.kVca5.Max = 1D;
+            this.kVca5.Min = 0D;
+            this.kVca5.Name = "kVca5";
+            this.kVca5.Size = new System.Drawing.Size(63, 63);
+            this.kVca5.SweepAngle = 270;
+            this.kVca5.TabIndex = 118;
+            this.kVca5.Thickness = 2;
+            this.kVca5.Value = 0D;
+            // 
+            // ledVcas
+            // 
+            this.ledVcas.Clickable = true;
+            this.ledVcas.ID = "VCAS";
+            this.ledVcas.LedColor = System.Drawing.Color.Red;
+            this.ledVcas.LedShape = UI.Controls.Led.Shape.Square;
+            this.ledVcas.LedState = UI.Controls.Led.Enums.LedState.Off;
+            this.ledVcas.Location = new System.Drawing.Point(847, 132);
+            this.ledVcas.Name = "ledVcas";
+            this.ledVcas.Size = new System.Drawing.Size(15, 10);
+            this.ledVcas.TabIndex = 126;
+            this.ledVcas.ToolTip = null;
             // 
             // frmMidiController
             // 
@@ -1766,6 +2228,43 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1175, 497);
+            this.Controls.Add(this.ledVcas);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.rect13);
+            this.Controls.Add(this.rect14);
+            this.Controls.Add(this.rect15);
+            this.Controls.Add(this.rect16);
+            this.Controls.Add(this.triangle4);
+            this.Controls.Add(this.kVca5);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.rect12);
+            this.Controls.Add(this.rect11);
+            this.Controls.Add(this.rect10);
+            this.Controls.Add(this.rect9);
+            this.Controls.Add(this.rect8);
+            this.Controls.Add(this.rect7);
+            this.Controls.Add(this.rect6);
+            this.Controls.Add(this.rect5);
+            this.Controls.Add(this.rect4);
+            this.Controls.Add(this.rect3);
+            this.Controls.Add(this.rect2);
+            this.Controls.Add(this.rect1);
+            this.Controls.Add(this.triangle3);
+            this.Controls.Add(this.kVca4);
+            this.Controls.Add(this.triangle2);
+            this.Controls.Add(this.kVca3);
+            this.Controls.Add(this.triangle1);
+            this.Controls.Add(this.kVca2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel8);
@@ -1938,5 +2437,42 @@
         private Controls.Panel panel8;
         private Label label4;
         private Label label5;
+        private Controls.Triangle triangle1;
+        private Controls.Knob kVca2;
+        private Controls.Triangle triangle2;
+        private Controls.Knob kVca3;
+        private Controls.Triangle triangle3;
+        private Controls.Knob kVca4;
+        private Controls.Rect rect1;
+        private Controls.Rect rect2;
+        private Controls.Rect rect3;
+        private Controls.Rect rect4;
+        private Controls.Rect rect5;
+        private Controls.Rect rect6;
+        private Controls.Rect rect7;
+        private Controls.Rect rect8;
+        private Controls.Rect rect9;
+        private Controls.Rect rect10;
+        private Controls.Rect rect11;
+        private Controls.Rect rect12;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private Label label14;
+        private Label label15;
+        private Label label16;
+        private Label label17;
+        private Controls.Rect rect13;
+        private Controls.Rect rect14;
+        private Controls.Rect rect15;
+        private Controls.Rect rect16;
+        private Controls.Triangle triangle4;
+        private Controls.Knob kVca5;
+        private Controls.Led ledVcas;
     }
 }

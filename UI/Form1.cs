@@ -339,6 +339,7 @@ public partial class frmMidiController : Form {
         groupLeds.Add(ledEnv2.ID, ledEnv2);
         groupLeds.Add(ledEnv3.ID, ledEnv3);
         groupLeds.Add(ledEffects.ID, ledEffects);
+        groupLeds.Add(ledVcas.ID, ledVcas);
 
         foreach (var l in groupLeds)
             l.Value.Clicked += Value_Clicked;
@@ -356,6 +357,7 @@ public partial class frmMidiController : Form {
         knobGroups.Add("ENV2", new List<string>() { "kEnv2Attack", "kEnv2Decay", "kEnv2Sustain", "kEnv2Release" });
         knobGroups.Add("ENV3", new List<string>() { "kEnv3Attack", "kEnv3Decay", "kEnv3Sustain", "kEnv3Release" });
         knobGroups.Add("EFFECTS", new List<string>() { "kEffectType", "kEffectParam1", "kEffectParam2", "kEffectMix" });
+        knobGroups.Add("VCAS", new List<string>() { "kVca2", "kVca3", "kVca4", "kVca5" });
 
 
     }
