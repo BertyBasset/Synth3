@@ -1,17 +1,17 @@
 // To DO
-// 1 Add VCA User Control - just a triangle with some lines
-
-// 2 Add proto mod area with 3 VCA/knob
 
 
 
 // Version 4
-// 3 Modulation Matrix System - maybe have a bank of VCAs to modulate modulators?
-// 4 Patch Save/Recall
-// 5 Rationalise CV stuff (not sure if needed, but revisit anyway)
+// 1 Maybe we need separate Synth Library cotaining the actual modules
+//   where patching takes place, and only give UI access to parameters and not modules themselves
+//   This might make it easier for polyphony
+// 2 Modulation Matrix System - maybe have a bank of VCAs to modulate modulators?
+// 3 Patch Save/Recall
+// 4 Rationalise CV stuff (not sure if needed, but revisit anyway)
 
 // Version 5
-// 6. Polyphony !
+// 5. Polyphony !
 
 
 using Synth.IO;
@@ -338,6 +338,7 @@ public partial class frmMidiController : Form {
         groupLeds.Add(ledEnv1.ID, ledEnv1);
         groupLeds.Add(ledEnv2.ID, ledEnv2);
         groupLeds.Add(ledEnv3.ID, ledEnv3);
+        groupLeds.Add(ledEnv4.ID, ledEnv4);
         groupLeds.Add(ledEffects.ID, ledEffects);
         groupLeds.Add(ledVcas.ID, ledVcas);
 
@@ -356,6 +357,7 @@ public partial class frmMidiController : Form {
         knobGroups.Add("ENV1", new List<string>() { "kEnv1Attack", "kEnv1Decay", "kEnv1Sustain", "kEnv1Release" });
         knobGroups.Add("ENV2", new List<string>() { "kEnv2Attack", "kEnv2Decay", "kEnv2Sustain", "kEnv2Release" });
         knobGroups.Add("ENV3", new List<string>() { "kEnv3Attack", "kEnv3Decay", "kEnv3Sustain", "kEnv3Release" });
+        knobGroups.Add("ENV4", new List<string>() { "kEnv4Attack", "kEnv4Decay", "kEnv4Sustain", "kEnv4Release" });
         knobGroups.Add("EFFECTS", new List<string>() { "kEffectType", "kEffectParam1", "kEffectParam2", "kEffectMix" });
         knobGroups.Add("VCAS", new List<string>() { "kVca2", "kVca3", "kVca4", "kVca5" });
 
